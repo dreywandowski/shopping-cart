@@ -45,7 +45,7 @@
               <div class="site-top-icons">
                 <ul>
                   <li><a href="#"><span class="icon icon-person"></span></a></li>
-                  <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
+                 <!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li>-->
                   <li>
                     <a href="/shopping-cart/cart" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
@@ -195,8 +195,8 @@
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="#">Tank Top</a></h3>
-                    <p class="mb-0">Finding perfect t-shirt</p>
-                    <p class="text-primary font-weight-bold">$50</p>
+                   
+                    <p class="text-primary font-weight-bold">NGN 7000</p>
                   </div>
                 </div>
               </div>
@@ -207,8 +207,7 @@
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="#">Corater</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
+                    <p class="text-primary font-weight-bold">NGN 9000</p>
                   </div>
                 </div>
               </div>
@@ -219,8 +218,8 @@
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="#">Polo Shirt</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
+                    
+                    <p class="text-primary font-weight-bold">NGN 3000</p>
                   </div>
                 </div>
               </div>
@@ -231,8 +230,7 @@
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="#">T-Shirt Mockup</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
+                    <p class="text-primary font-weight-bold">NGN 10000</p>
                   </div>
                 </div>
               </div>
@@ -243,8 +241,8 @@
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="#">Corater</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
+                    <!--<p class="mb-0">Finding perfect products</p>-->
+                    <p class="text-primary font-weight-bold">NGN 7000</p>
                   </div>
                 </div>
               </div>
@@ -338,9 +336,9 @@
         </div></center>
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+           <p>Developed by dreywandowski <br>Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. 
+            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>-->
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
