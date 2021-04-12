@@ -26,8 +26,20 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
 
+   protected $redirectTo = '/shopping-cart/dashboard';
+
+// logs user out
+  /** public function logout(Request $request){
+    Auth::logout();
+
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect ('/shop/');
+   }
+**/
     /**
      * Create a new controller instance.
      *

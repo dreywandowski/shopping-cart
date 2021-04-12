@@ -1,8 +1,10 @@
-@extends('layouts.app')
+@extends('shop-layout.layout')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+
+ <div class="row justify-content-center">
+        
+
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -63,6 +65,21 @@
                                     </a>
                                 @endif
                             </div>
+
+                            <div class="container">
+    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                          
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('New User? Register Here ') }}</a>
+                                </li>
+                            @endif
+                             @endguest
+                    </ul>
+
                         </div>
                     </form>
                 </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('shop-layout.layout')
 
 @section('content')
 <div class="container">
@@ -66,6 +66,19 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+<br>    <br>
+                                <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                          
+                           @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Already have an account? Login here') }}</a>
+                                </li>
+                            @endif
+                             @endguest
+                    </ul>
                             </div>
                         </div>
                     </form>

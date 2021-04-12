@@ -38,7 +38,7 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
-                 <li><a href="#"><span class="icon icon-person"></span></a></li>
+                 <li><a href="/shopping-cart/dashboard"><span class="icon icon-person"></span></a></li>
                  <!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li>-->
                   <li>
                     <a href="/shopping-cart/cart" class="site-cart">
@@ -58,13 +58,7 @@
       
     </header>
 
-    <div class="bg-light py-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 mb-0"><a href="/shop">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Contact</strong></div>
-        </div>
-      </div>
-    </div>  
+    
 @yield('content')
     <footer class="site-footer border-top">
       

@@ -24,8 +24,11 @@ Route::get('/shopping-cart/cart', [App\Http\Controllers\ShopController::class, '
 Route::get('/shopping-cart/checkout', [App\Http\Controllers\ShopController::class, 'checkout']);
 Route::get('/shopping-cart/thankyou', [App\Http\Controllers\ShopController::class, 'thanks']);
 
+Route::get('/shopping-cart/dashboard', [App\Http\Controllers\ProfileController::class, 'dashboard'])->middleware('auth');
+Route::get('/shopping-cart/success', [App\Http\Controllers\ProfileController::class, 'success'])->middleware('auth');
 
 Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
