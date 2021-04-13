@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Orders;
+use App\Models\Items;
+
 
 class ShopController extends Controller
 {
@@ -15,7 +17,18 @@ class ShopController extends Controller
 
 // this is for the main products catalogue
     public function shop () {
-  return view('shopping-cart/shop' , ['page' => 'Shop']);
+
+    	// only with type man
+    	//$items = Items::where('type' , '=', 'man')->simplePaginate(9);
+
+    	// only with type woman
+        //$items = Items::where('type' , '=', 'woman')->simplePaginate(9);
+
+        // only with type child
+       // $items = Items::where('type' , '=', 'child')->simplePaginate(9);
+
+        $items = Items::simplePaginate(9);
+  return view('shopping-cart/shop' , ['page' => 'Shop', 'items' => $items]);
 
 }
 
