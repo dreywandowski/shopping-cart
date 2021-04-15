@@ -16,19 +16,39 @@ class ShopController extends Controller
 }
 
 // this is for the main products catalogue
-    public function shop () {
+    public function shop ($req) {
+    switch($req){
 
-    	// only with type man
-    	//$items = Items::where('type' , '=', 'man')->simplePaginate(9);
+ // only with type man
+    	case 'man':
+    	$items = Items::where('type' , '=', 'man')->simplePaginate(9);
+
+    return view('shopping-cart/shop' , ['page' => 'Shop / Men collection', 'title' =>'Men collection', 'items' => $items]);
+  break;
+
 
     	// only with type woman
-        //$items = Items::where('type' , '=', 'woman')->simplePaginate(9);
+      case 'woman':
+       $items = Items::where('type' , '=', 'woman')->simplePaginate(9);
+return view('shopping-cart/shop' , ['page' => 'Shop / Women collection', 'title' =>'Women collection', 'items' => $items]);
+  break;
 
         // only with type child
-       // $items = Items::where('type' , '=', 'child')->simplePaginate(9);
+  case 'child':
+        $items = Items::where('type' , '=', 'child')->simplePaginate(9);
+return view('shopping-cart/shop' , ['page' => 'Shop / Children collection','title' =>'Children collection', 'items' => $items]);
+  break;
 
+  case 'all':
         $items = Items::simplePaginate(9);
-  return view('shopping-cart/shop' , ['page' => 'Shop', 'items' => $items]);
+        return view('shopping-cart/shop' , ['page' => 'Shop / All categories', 'title' =>'All categories','items' => $items]);
+
+        break;
+
+  default:
+
+    }
+    	
 
 }
 

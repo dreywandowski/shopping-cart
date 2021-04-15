@@ -69,7 +69,7 @@
               <a href="#about">About</a>
               
             </li>
-            <li><a href="/shopping-cart/shop">Shop</a></li>
+            <li><a href="/shopping-cart/shop/all">Shop</a></li>
             
             <li><a href="/shopping-cart/contact">Contact</a></li>
           </ul>
@@ -142,7 +142,7 @@
       <div class="container">
         <div class="row">
           <div id="items" class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-            <a class="block-2-item" href="/shopping-cart/shop">
+            <a class="block-2-item" href="/shopping-cart/shop/woman">
               <figure class="image">
                 <img src="/images/women.jpg" alt="" class="img-fluid">
               </figure>
@@ -153,7 +153,7 @@
             </a>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-            <a class="block-2-item" href="/shopping-cart/shop">
+            <a class="block-2-item" href="/shopping-cart/shop/child">
               <figure class="image">
                 <img src="/images/children.jpg" alt="" class="img-fluid">
               </figure>
@@ -164,7 +164,7 @@
             </a>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-            <a class="block-2-item" href="/shopping-cart/shop">
+            <a class="block-2-item" href="/shopping-cart/shop/man">
               <figure class="image">
                 <img src="/images/men.jpg" alt="" class="img-fluid">
               </figure>
