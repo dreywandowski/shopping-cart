@@ -17,31 +17,41 @@ class ShopController extends Controller
 
 // this is for the main products catalogue
     public function shop ($req) {
+      $man = Items::where('type' , '=', 'man')->get()->toArray();
+      $woman = Items::where('type' , '=', 'woman')->get()->toArray();
+      $child = Items::where('type' , '=', 'child')->get()->toArray();
+      $numMan = count($man);
+      $numWoman = count($woman);
+      $numChild = count($child);
+
     switch($req){
 
  // only with type man
     	case 'man':
     	$items = Items::where('type' , '=', 'man')->simplePaginate(9);
-
-    return view('shopping-cart/shop' , ['page' => 'Shop / Men collection', 'title' =>'Men collection', 'items' => $items]);
+      
+    return view('shopping-cart/shop' , ['page' => 'Shop / Men collection','man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' =>'Men collection', 'items' => $items]);
   break;
 
 
     	// only with type woman
       case 'woman':
        $items = Items::where('type' , '=', 'woman')->simplePaginate(9);
-return view('shopping-cart/shop' , ['page' => 'Shop / Women collection', 'title' =>'Women collection', 'items' => $items]);
+        
+return view('shopping-cart/shop' , ['page' => 'Shop / Women collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild,'title' =>'Women collection', 'items' => $items]);
   break;
 
         // only with type child
   case 'child':
         $items = Items::where('type' , '=', 'child')->simplePaginate(9);
-return view('shopping-cart/shop' , ['page' => 'Shop / Children collection','title' =>'Children collection', 'items' => $items]);
+        
+
+return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' =>'Children collection', 'items' => $items]);
   break;
 
   case 'all':
         $items = Items::simplePaginate(9);
-        return view('shopping-cart/shop' , ['page' => 'Shop / All categories', 'title' =>'All categories','items' => $items]);
+        return view('shopping-cart/shop' , ['page' => 'Shop / All categories', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' =>'All categories','items' => $items]);
 
         break;
 

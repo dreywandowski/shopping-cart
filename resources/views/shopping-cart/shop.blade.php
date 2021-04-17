@@ -24,9 +24,9 @@
                       Latest
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="#">Men</a>
-                      <a class="dropdown-item" href="#">Women</a>
-                      <a class="dropdown-item" href="#">Children</a>
+                      <a class="dropdown-item" href="/shopping-cart/shop/man">Men</a>
+                      <a class="dropdown-item" href="/shopping-cart/shop/woman">Women</a>
+                      <a class="dropdown-item" href="/shopping-cart/shop/child">Children</a>
                     </div>
                   </div>
                   <div class="btn-group">
@@ -88,13 +88,12 @@
             <div class="border p-4 rounded mb-4">
               <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
               <ul class="list-unstyled mb-0">
-                <li class="mb-1"><a href="#" class="d-flex"><span>Men</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Women</span> <span class="text-black ml-auto">(2,550)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Children</span> <span class="text-black ml-auto">(2,124)</span></a></li>
+                <li class="mb-1"><a href="/shopping-cart/shop/man" class="d-flex"><span>Men</span> <span class="text-black ml-auto">({{$man}})</span></a></li>
+                <li class="mb-1"><a href="/shopping-cart/shop/woman" class="d-flex"><span>Women</span> <span class="text-black ml-auto">({{$woman}})</span></a></li>
+                <li class="mb-1"><a href="/shopping-cart/shop/child" class="d-flex"><span>Children</span> <span class="text-black ml-auto">({{$child}})</span></a></li>
               </ul>
             </div>
-
-            <div class="border p-4 rounded mb-4">
+   <div class="border p-4 rounded mb-4">
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
                 <div id="slider-range" class="border-primary"></div>
