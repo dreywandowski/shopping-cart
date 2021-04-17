@@ -76,6 +76,7 @@
     </footer>
   </div>
 
+  <script src="/js/jquery-3.2.1.js"></script>
   <script src="/js/jquery-3.3.1.min.js"></script>
   <script src="/js/jquery-ui.js"></script>
   <script src="/js/popper.min.js"></script>
@@ -83,8 +84,33 @@
   <script src="/js/owl.carousel.min.js"></script>
   <script src="/js/jquery.magnific-popup.min.js"></script>
   <script src="/js/aos.js"></script>
-
   <script src="/js/main.js"></script>
     
+     <script>
+  $('.button').on('click', function(event){
+          event.preventDefault();
+          var btn = $(this).val();
+          //alert(hi);
+          var txt = $(location).attr('href');
+         //alert(txt);
+
+         var txtRpl = txt.substr(41); //alert(txtRpl);
+         
+          $.ajax({
+               type:'GET',
+               url:'/shopping-cart/shop/'+txtRpl,
+               data:'_token = <?php echo csrf_token() ?>',
+               success:function(data) {
+                console.log(data);
+                 // $("#newcontent").html(data.msg);
+               }
+            });
+        
+
+         
+});
+         
+
+      </script>
   </body>
 </html>
