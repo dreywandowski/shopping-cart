@@ -16,7 +16,7 @@ class ShopController extends Controller
 }
 
 // this is for the main products catalogue
-    public function shop ($req) {
+    public function shop (Request $request, $req) {
       $man = Items::where('type' , '=', 'man')->get()->toArray();
       $woman = Items::where('type' , '=', 'woman')->get()->toArray();
       $child = Items::where('type' , '=', 'child')->get()->toArray();
@@ -55,14 +55,14 @@ class ShopController extends Controller
 //,'items' => $items, 'allAsc' => $allAsc, 'allDesc'=> $allDesc, 'allPriceAsc' => $allPriceAsc, 'allPriceDesc' => $allPriceDesc
 
     switch($req){
-
+//$request->session()->put('key', 'value');
  // only with type man
     	case 'man':
     	$items = Items::where('type' , '=', 'man')->simplePaginate(9);
-      foreach($items as $item ){
-        session(['key' => $item->name]);
-      
-      }
+     // foreach($items as $item ){
+        //session(['key' => $item->name]);
+     // $request->session()->put('key', $item->name);
+      //}
 
      // print_r($_SESSION['item']);
       
@@ -112,10 +112,10 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
 }
 
 // this returns a single item to be added to the cart
-    public function single () {
-      $value = session('key');
-      print_r($value);
-  return view('shopping-cart/shop-single', ['page' => 'Cart / My product']);
+    public function single (Request $request, $req) {
+    $items = Items::where('name' , '=', $req)->get();
+    //echo "show".$item;
+  return view('shopping-cart/shop-single', ['page' => 'Cart / My product', 'items' => $items]);
 
 }
 

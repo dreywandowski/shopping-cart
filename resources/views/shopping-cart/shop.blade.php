@@ -50,10 +50,10 @@
 <div class="col-sm-6 col-lg-4 mb-4" id = "newcontent" data-aos="fade-up">
                 <div class="block-4 text-center border">
                   <figure class="block-4-image">
-                    <a href="/shopping-cart/shop-single"><img src="{{ $item->file_path }}" alt="Image placeholder" class="img-fluid"></a>
+                    <a href="/shopping-cart/shop-single/{{ $item->name }}"><img src="{{ $item->file_path }}" alt="Image placeholder" class="img-fluid"></a>
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="/shopping-cart/shop-single">{{ $item->name }}</a></h3>
+                    <h3><a href="/shopping-cart/shop-single/{{ $item->name }}">{{ $item->name }}</a></h3>
                     <p class="mb-0">Finding perfect t-shirt</p>
                     <p class="text-primary font-weight-bold">{{ $item->price }}</p>
                   </div>

@@ -1,7 +1,7 @@
 
 
-# E-commerce system
+## E-commerce system
 
-## A simple web app built to simulate an e-commerce system
-## Live link: adura-shop.000webhostapp.com/shop
+# A simple web app built to simulate an e-commerce system, with payment gateways (Paystack and Flutterwave) intergrated. 
+# Live link: adura-shop.000webhostapp.com/shop
 

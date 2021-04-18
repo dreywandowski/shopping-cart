@@ -43,7 +43,7 @@
                   <li>
                     <a href="/shopping-cart/cart" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
-                      <span class="count">2</span>
+                      <span id="count" class="count">2</span>
                     </a>
                   </li> 
                   <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
@@ -87,6 +87,39 @@
   <script src="/js/main.js"></script>
     
      <script>
+var count = 0;
+      $('.buy-now').on('click', function(event){
+          event.preventDefault();
+          var name = $('#itemName').text();
+          var price = $('#itemPrice').text();
+          var type = $('#itemType').text();
+          var number = $('#itemNumber').val();
+          var file = $('#itemFile').attr('src');
+          alert(name + ' '+ price + ' '+ type + ' '+ number + ' '+ file);
+          
+          count++; 
+          $('#count').html(count);
+            alert(count);
+         
+         //alert(txt);
+
+        // var txtRpl = txt.substr(41); //alert(txtRpl);
+         
+         /** $.ajax({
+               type:'GET',
+               url:'/shopping-cart/shop/'+txtRpl,
+               data:'_token = <?php echo csrf_token() ?>',
+               success:function(data) {
+                console.log(data);
+                 // $("#newcontent").html(data.msg);
+               }
+            });**/
+        
+
+         
+});
+    
+
   $('.button').on('click', function(event){
           event.preventDefault();
           var btn = $(this).val();
@@ -95,7 +128,7 @@
          //alert(txt);
 
          var txtRpl = txt.substr(41); //alert(txtRpl);
-         
+
           $.ajax({
                type:'GET',
                url:'/shopping-cart/shop/'+txtRpl,
