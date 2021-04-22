@@ -17,6 +17,12 @@ class ShopController extends Controller
 
 // this is for the main products catalogue
     public function shop (Request $request, $req) {
+      $data = $request->session()->all();
+
+      echo "<pre>";
+      print_r($data);
+      echo "</pre>";
+
       $man = Items::where('type' , '=', 'man')->get()->toArray();
       $woman = Items::where('type' , '=', 'woman')->get()->toArray();
       $child = Items::where('type' , '=', 'child')->get()->toArray();
@@ -115,6 +121,9 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
     public function single (Request $request, $req) {
     $items = Items::where('name' , '=', $req)->get();
     //echo "show".$item;
+
+    $request->session()->put('cart_no', 'aduramimo');
+
   return view('shopping-cart/shop-single', ['page' => 'Cart / My product', 'items' => $items]);
 
 }
