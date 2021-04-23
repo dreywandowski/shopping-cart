@@ -4,6 +4,7 @@
     <title>Shopping Cart</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
     <link rel="stylesheet" href="/fonts/icomoon/style.css">
@@ -43,7 +44,7 @@
                   <li>
                     <a href="/shopping-cart/cart" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
-                      <span id="count" class="count">2</span>
+                      <span id="count" class="count"></span>
                     </a>
                   </li> 
                   <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
@@ -100,48 +101,35 @@ var count = 0;
           count++; 
           $('#count').html(count);
             alert(count);
-         
-         //alert(txt);
 
-        // var txtRpl = txt.substr(41); //alert(txtRpl);
-         
-         /** $.ajax({
-               type:'GET',
-               url:'/shopping-cart/shop/'+txtRpl,
-               data:'_token = <?php echo csrf_token() ?>',
-               success:function(data) {
-                console.log(data);
-                 // $("#newcontent").html(data.msg);
-               }
-            });**/
         
-
-         
-});
-    
-
-  $('.button').on('click', function(event){
-          event.preventDefault();
-          var btn = $(this).val();
-          //alert(hi);
-          var txt = $(location).attr('href');
-         //alert(txt);
-
-         var txtRpl = txt.substr(41); //alert(txtRpl);
-
-          $.ajax({
-               type:'GET',
-               url:'/shopping-cart/shop/'+txtRpl,
-               data:'_token = <?php echo csrf_token() ?>',
-               success:function(data) {
-                console.log(data);
-                 // $("#newcontent").html(data.msg);
-               }
-            });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        event.preventDefault();
         
+        var ajaxurl = '/shopping-cart/shop/shop-single';
+        $.ajax({
+            name: name,
+            price: price,
+            type: type,
+            number: number,
+            file: file,
+            url: ajaxurl,
+            dataType: 'json',
+            success: function (data) {
+                alert(data);
+                console.log(data);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    });
 
-         
-});
+      
          
 
       </script>

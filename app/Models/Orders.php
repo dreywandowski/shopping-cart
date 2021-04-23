@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Orders extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'items' => 'array'
+    ];
+
+
 }

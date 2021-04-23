@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Orders;
 use App\Models\Items;
 use Illuminate\Support\Facades\DB;
+use Response;
 
 class ShopController extends Controller
 {
@@ -121,6 +122,14 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
     public function single (Request $request, $req) {
     $items = Items::where('name' , '=', $req)->get();
     //echo "show".$item;
+
+    // we want to return ajax details
+    $data = $request;
+    $rep = Response::json("Okay");
+    $resArr = (array)$rep;    
+      echo "<pre>";
+      print_r($resArr);
+      echo "</pre>";
 
     $request->session()->put('cart_no', 'aduramimo');
 
