@@ -10,20 +10,67 @@ use Response;
 
 class ShopController extends Controller
 {
+
+
+
 	// this is for the home page of the app
     public function index () {
-   return view('shop');
+
+   $data = session('details');
+      $cant;
+      
+      if($data != null){
+        if(array_key_exists('count', $data)){
+        $cant = session('details')['count'];
+      } 
+
+      else{
+        $cant = ' ';
+      }
+      }
+
+      else{
+        $cant = ' ';
+      }
+
+
+   return view('shop', ['show' => $cant]);
   
 }
 
 // this is for the main products catalogue
     public function shop (Request $request, $req) {
-      $data = $request->session()->all();
 
-      echo "<pre>";
-      print_r($data);
-      echo "</pre>";
+      // retrieve all session items
+      //$data = $request->session()->all();
 
+   $data = session('details');
+      $cant;
+      
+      if($data != null){
+        if(array_key_exists('count', $data)){
+        $cant = session('details')['count'];
+      } 
+
+      else{
+        $cant = ' ';
+      }
+      }
+
+      else{
+        $cant = ' ';
+      }
+
+     
+      
+      //echo "<pre>"."session ";
+      //print_r($data);
+      //echo "</pre>";
+//var_dump($data);
+      // determine if session has an element or key
+/**if ($request->session()->has('details')) {
+    echo "Yaay";
+}**/
       $man = Items::where('type' , '=', 'man')->get()->toArray();
       $woman = Items::where('type' , '=', 'woman')->get()->toArray();
       $child = Items::where('type' , '=', 'child')->get()->toArray();
@@ -73,7 +120,7 @@ class ShopController extends Controller
 
      // print_r($_SESSION['item']);
       
-    return view('shopping-cart/shop' , ['page' => 'Shop / Men collection','man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' =>'Men collection', 'items' => $items ]);
+    return view('shopping-cart/shop' , ['page' => 'Shop / Men collection','man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' =>'Men collection', 'items' => $items, 'show' => $cant ]);
   break;
 
 
@@ -81,7 +128,7 @@ class ShopController extends Controller
       case 'woman':
        $items = Items::where('type' , '=', 'woman')->simplePaginate(9);
         
-return view('shopping-cart/shop' , ['page' => 'Shop / Women collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild,'title' =>'Women collection', 'items' => $items, 'womanAsc' => $womanAsc]);
+return view('shopping-cart/shop' , ['page' => 'Shop / Women collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild,'title' =>'Women collection', 'items' => $items, 'womanAsc' => $womanAsc, 'show' => $cant]);
   break;
 
         // only with type child
@@ -89,12 +136,12 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Women collection', 'man' =
         $items = Items::where('type' , '=', 'child')->simplePaginate(9);
         
 
-return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' =>'Children collection', 'items' => $items ]);
+return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' =>'Children collection', 'items' => $items, 'show' => $cant ]);
   break;
 
   case 'all':
         $items = Items::simplePaginate(9);
-        return view('shopping-cart/shop' , ['page' => 'Shop / All categories', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' =>'All categories', 'items' => $items]);
+        return view('shopping-cart/shop' , ['page' => 'Shop / All categories', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' =>'All categories', 'items' => $items, 'show' => $cant]);
 
         break;
 
@@ -108,38 +155,120 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
 
 // this is for the contact us page
     public function contact () {
-  return view('shopping-cart/contact', ['page' => 'Contact']);
+       $data = session('details');
+      $cant;
+      
+      if($data != null){
+        if(array_key_exists('count', $data)){
+        $cant = session('details')['count'];
+      } 
+
+      else{
+        $cant = ' ';
+      }
+      }
+
+      else{
+        $cant = ' ';
+      }
+
+  return view('shopping-cart/contact', ['page' => 'Contact', 'show' => $cant]);
 
 }
 
 // this returns the cart for us
     public function cart () {
-  return view('shopping-cart/cart', ['page' => 'Cart']);
+       $data = session('details');
+      $cant;
+      
+      if($data != null){
+        if(array_key_exists('count', $data)){
+        $cant = session('details')['count'];
+      } 
+
+      else{
+        $cant = ' ';
+      }
+      }
+
+      else{
+        $cant = ' ';
+      }
+
+
+  return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant]);
 
 }
 
 // this returns a single item to be added to the cart
     public function single (Request $request, $req) {
     $items = Items::where('name' , '=', $req)->get();
-    //echo "show".$item;
+      $data = session('details');
+      $cant;
+      
+      if($data != null){
+        if(array_key_exists('count', $data)){
+        $cant = session('details')['count'];
+      } 
 
-    // we want to return ajax details
-    $data = $request;
-    $rep = Response::json("Okay");
-    $resArr = (array)$rep;    
-      echo "<pre>";
-      print_r($resArr);
-      echo "</pre>";
+      else{
+        $cant = ' ';
+      }
+      }
 
-    $request->session()->put('cart_no', 'aduramimo');
+      else{
+        $cant = ' ';
+      }
 
-  return view('shopping-cart/shop-single', ['page' => 'Cart / My product', 'items' => $items]);
+
+ if($request->ajax()){
+ // we want to return ajax details
+
+   $name = $request->input('name');
+   $type = $request->input('type');
+   $price = $request->input('price');
+   $file = $request->input('file');
+   $number = $request->input('number');
+   $count = $request->input('count'); 
+
+   $values = compact('name', 'type', 'price', 'file', 'number', 'count');
+
+   //remove a session item
+   //$request->session()->pull('cart_no', 'aduramimo');
+
+   // add session items
+   $request->session()->put('details', $values);
+
+  return response()->json($number.' '."items added to cart successfully", 200);
+ }
+   else{
+     
+
+  return view('shopping-cart/shop-single', ['page' => 'Cart / My product', 'items' => $items, 'show' => $cant]);
+   }
 
 }
 
 // this returns a single item to be added to the cart
     public function checkout () {
-  return view('shopping-cart/checkout', ['page' => 'Checkout']);
+      $data = session('details');
+      $cant;
+      
+      if($data != null){
+        if(array_key_exists('count', $data)){
+        $cant = session('details')['count'];
+      } 
+
+      else{
+        $cant = ' ';
+      }
+      }
+
+      else{
+        $cant = ' ';
+      }
+
+  return view('shopping-cart/checkout', ['page' => 'Checkout', 'show' => $cant]);
 
 }
 
@@ -147,7 +276,24 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
 
 // thank you page after sucessful order and payment
     public function thanks () {
-  return view('shopping-cart/thankyou', ['page' => 'Thanks for your order']);
+      $data = session('details');
+      $cant;
+      
+      if($data != null){
+        if(array_key_exists('count', $data)){
+        $cant = session('details')['count'];
+      } 
+
+      else{
+        $cant = ' ';
+      }
+      }
+
+      else{
+        $cant = ' ';
+      }
+
+  return view('shopping-cart/thankyou', ['page' => 'Thanks for your order', 'show' => $cant]);
 
 }
 }

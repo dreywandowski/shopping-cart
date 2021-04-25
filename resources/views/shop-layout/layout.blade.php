@@ -44,7 +44,7 @@
                   <li>
                     <a href="/shopping-cart/cart" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
-                      <span id="count" class="count"></span>
+                      <span id="count" class="count"><p>{{ $show }}</p></span>
                     </a>
                   </li> 
                   <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
@@ -87,6 +87,8 @@
   <script src="/js/aos.js"></script>
   <script src="/js/main.js"></script>
     
+
+    <!-- we want to send info about the product as a sesssion array for us to use in the app-->
      <script>
 var count = 0;
       $('.buy-now').on('click', function(event){
@@ -96,12 +98,20 @@ var count = 0;
           var type = $('#itemType').text();
           var number = $('#itemNumber').val();
           var file = $('#itemFile').attr('src');
-          alert(name + ' '+ price + ' '+ type + ' '+ number + ' '+ file);
+          var data = new Array();
+          data.push(name);
+          data.push(price);
+          data.push(type);
+          data.push(number);
+          data.push(file);
+
+          //alert(name + ' '+ price + ' '+ type + ' '+ number + ' '+ file);
           
           count++; 
           $('#count').html(count);
-            alert(count);
-
+            //alert(count);
+            data.push(count);
+            //alert('array items: '+ data);
         
         $.ajaxSetup({
             headers: {
@@ -110,21 +120,25 @@ var count = 0;
         });
         event.preventDefault();
         
-        var ajaxurl = '/shopping-cart/shop/shop-single';
+        var ajaxurl = '/shopping-cart/shop-single/'+name+'?';//alert(ajaxurl);
         $.ajax({
-            name: name,
-            price: price,
-            type: type,
-            number: number,
-            file: file,
+            type: 'get',
+            data: {
+              name: data[0],
+              price: data[1],
+              type: data[2],
+              number: data[3],
+              file: data[4],
+              count: data[5] 
+            },
             url: ajaxurl,
-            dataType: 'json',
+           
             success: function (data) {
-                alert(data);
+                $('#ajaxRep').text(data);
                 console.log(data);
             },
             error: function (data) {
-                console.log(data);
+                console.log(data.status);
             }
         });
     });
