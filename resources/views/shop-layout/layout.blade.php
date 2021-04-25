@@ -61,6 +61,7 @@
 
     
 @yield('content')
+
     <footer class="site-footer border-top">
       
         <div class="row pt-5 mt-5 text-center">
@@ -94,9 +95,11 @@ var count = 0;
       $('.buy-now').on('click', function(event){
           event.preventDefault();
           var name = $('#itemName').text();
-          var price = $('#itemPrice').text();
+          var priceInit = $('#itemPrice').text();
+          var priceFin = priceInit.match(/\d+$/)[0];
           var type = $('#itemType').text();
           var number = $('#itemNumber').val();
+          var price = number * priceFin;
           var file = $('#itemFile').attr('src');
           var data = new Array();
           data.push(name);
@@ -104,11 +107,11 @@ var count = 0;
           data.push(type);
           data.push(number);
           data.push(file);
-
+          data.push(priceFin);
           //alert(name + ' '+ price + ' '+ type + ' '+ number + ' '+ file);
           
           count++; 
-          $('#count').html(count);
+          //$('#count').html(count);
             //alert(count);
             data.push(count);
             //alert('array items: '+ data);
@@ -129,12 +132,14 @@ var count = 0;
               type: data[2],
               number: data[3],
               file: data[4],
-              count: data[5] 
+              count: data[6],
+              priceFin: data[5] 
             },
             url: ajaxurl,
            
             success: function (data) {
                 $('#ajaxRep').text(data);
+                //$('#count').html(count)
                 console.log(data);
             },
             error: function (data) {

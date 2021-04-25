@@ -1,6 +1,8 @@
 @extends('shop-layout.layout')
 @section('content')
 
+
+
 <div class="bg-light py-3">
       <div class="container">
         <div class="row">
@@ -11,10 +13,10 @@
     
     <div class="site-section">
       <div class="container">
-        <div class="row mb-5">
-          <form class="col-md-12" method="post">
-            <div class="site-blocks-table">
-              <table class="table table-bordered">
+        <div class="row mb-5" style="overflow-x:auto;">
+          <form class="col-md-12" method="post" style="overflow-x:auto;">
+            <div class="site-blocks-table" style="overflow-x:auto;">
+              <table class="table table-bordered" style="overflow-x:auto;">
                 <thead>
                   <tr>
                     <th class="product-thumbnail">Image</th>
@@ -27,52 +29,33 @@
                 </thead>
                 <tbody>
                   <tr>
+                    @foreach($data as $row)
+                    @foreach($row as $item)
                     <td class="product-thumbnail">
-                      <img src="/images/cloth_1.jpg" alt="Image" class="img-fluid">
+                      <img src="{{ $item['file'] }}" alt="Image" class="img-fluid">
                     </td>
                     <td class="product-name">
-                      <h2 class="h5 text-black">Top Up T-Shirt</h2>
+                      <h2 class="h5 text-black">{{ $item['name'] }}</h2>
                     </td>
-                    <td>$49.00</td>
+                    <td>NGN {{ $item['priceFin'] }}</td>
                     <td>
                       <div class="input-group mb-3" style="max-width: 120px;">
-                        <div class="input-group-prepend">
+                       <!-- <div class="input-group-prepend">
                           <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                        </div>
-                        <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        <div class="input-group-append">
+                        </div>-->
+                        <input type="text" readonly class="form-control text-center" value="{{ $item['number'] }}" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <!--<div class="input-group-append">
                           <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-                        </div>
+                        </div>-->
                       </div>
 
                     </td>
-                    <td>$49.00</td>
+                    <td>NGN {{ $item['price']  }}</td>
                     <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
                   </tr>
-
-                  <tr>
-                    <td class="product-thumbnail">
-                      <img src="/images/cloth_2.jpg" alt="Image" class="img-fluid">
-                    </td>
-                    <td class="product-name">
-                      <h2 class="h5 text-black">Polo Shirt</h2>
-                    </td>
-                    <td>$49.00</td>
-                    <td>
-                      <div class="input-group mb-3" style="max-width: 120px;">
-                        <div class="input-group-prepend">
-                          <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                        </div>
-                        <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-                        </div>
-                      </div>
-
-                    </td>
-                    <td>$49.00</td>
-                    <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
-                  </tr>
+@endforeach
+@endforeach
+                 
                 </tbody>
               </table>
             </div>
@@ -86,7 +69,7 @@
                 <button class="btn btn-primary btn-sm btn-block">Update Cart</button>
               </div>
               <div class="col-md-6">
-                <p><a href="/shopping-cart/shop" class="buy-now btn btn-sm btn-primary">Continue Shopping</a></p>
+                <p><a href="/shopping-cart/shop/all" class="btn btn-sm btn-primary">Continue Shopping</a></p>
               </div>
             </div>
             <div class="row">

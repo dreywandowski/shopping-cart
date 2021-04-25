@@ -20,18 +20,15 @@ class ShopController extends Controller
       $cant;
       
       if($data != null){
-        if(array_key_exists('count', $data)){
-        $cant = session('details')['count'];
+        
+        $cant = count($data);
       } 
 
       else{
         $cant = ' ';
       }
-      }
+      
 
-      else{
-        $cant = ' ';
-      }
 
 
    return view('shop', ['show' => $cant]);
@@ -45,25 +42,19 @@ class ShopController extends Controller
       //$data = $request->session()->all();
 
    $data = session('details');
-      $cant;
-      
-      if($data != null){
-        if(array_key_exists('count', $data)){
-        $cant = session('details')['count'];
+     if($data != null){
+        
+        $cant = count($data);
       } 
 
       else{
         $cant = ' ';
       }
-      }
-
-      else{
-        $cant = ' ';
-      }
+      
 
      
       
-      //echo "<pre>"."session ";
+     // echo "<pre>"."session ";
       //print_r($data);
       //echo "</pre>";
 //var_dump($data);
@@ -157,16 +148,12 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
     public function contact () {
        $data = session('details');
       $cant;
+     $cant;
       
       if($data != null){
-        if(array_key_exists('count', $data)){
-        $cant = session('details')['count'];
+        
+        $cant = count($data);
       } 
-
-      else{
-        $cant = ' ';
-      }
-      }
 
       else{
         $cant = ' ';
@@ -176,29 +163,46 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
 
 }
 
+
+
 // this returns the cart for us
     public function cart () {
        $data = session('details');
-      $cant;
+       $cant;
       
       if($data != null){
-        if(array_key_exists('count', $data)){
-        $cant = session('details')['count'];
+        
+        $cant = count($data);
       } 
 
       else{
         $cant = ' ';
       }
-      }
 
-      else{
-        $cant = ' ';
-      }
+      //dd($data);
+//$result = array();
+      //loop 2ru 2D array
+/**foreach($data as $row) {
+foreach($row as $item){
 
 
-  return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant]);
+         }
+       }**/
+ 
+   
+  // echo "<pre>"."session ";
+    // print_r($data);
+      //echo "</pre>";
+
+     
+
+  return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => $data]);
 
 }
+
+
+
+
 
 // this returns a single item to be added to the cart
     public function single (Request $request, $req) {
@@ -207,19 +211,14 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
       $cant;
       
       if($data != null){
-        if(array_key_exists('count', $data)){
-        $cant = session('details')['count'];
+        
+        $cant = count($data);
       } 
 
       else{
         $cant = ' ';
       }
-      }
-
-      else{
-        $cant = ' ';
-      }
-
+      
 
  if($request->ajax()){
  // we want to return ajax details
@@ -230,14 +229,19 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
    $file = $request->input('file');
    $number = $request->input('number');
    $count = $request->input('count'); 
+   $priceFin = $request->input('priceFin'); 
 
-   $values = compact('name', 'type', 'price', 'file', 'number', 'count');
+   $values = compact('name', 'type', 'price', 'file', 'number', 'count', 'priceFin');
 
    //remove a session item
    //$request->session()->pull('cart_no', 'aduramimo');
 
    // add session items
-   $request->session()->put('details', $values);
+
+   $sessionValues[] = $values;
+
+
+   $request->session()->push('details', $sessionValues);
 
   return response()->json($number.' '."items added to cart successfully", 200);
  }
@@ -255,18 +259,14 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
       $cant;
       
       if($data != null){
-        if(array_key_exists('count', $data)){
-        $cant = session('details')['count'];
+        
+        $cant = count($data);
       } 
 
       else{
         $cant = ' ';
       }
-      }
-
-      else{
-        $cant = ' ';
-      }
+      
 
   return view('shopping-cart/checkout', ['page' => 'Checkout', 'show' => $cant]);
 
@@ -279,19 +279,15 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
       $data = session('details');
       $cant;
       
-      if($data != null){
-        if(array_key_exists('count', $data)){
-        $cant = session('details')['count'];
+     if($data != null){
+        
+        $cant = count($data);
       } 
 
       else{
         $cant = ' ';
       }
-      }
-
-      else{
-        $cant = ' ';
-      }
+      
 
   return view('shopping-cart/thankyou', ['page' => 'Thanks for your order', 'show' => $cant]);
 
