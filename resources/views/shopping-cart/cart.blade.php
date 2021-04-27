@@ -28,7 +28,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr>@if($data != null)  
                     @foreach($data as $row)
                     @foreach($row as $item)
                     <td class="product-thumbnail">
@@ -37,16 +37,16 @@
                     <td class="product-name">
                       <h2 class="h5 text-black">{{ $item['name'] }}</h2>
                     </td>
-                    <td>NGN {{ $item['priceFin'] }}</td>
+                    <td class="price">NGN {{ $item['price'] }}</td>
                     <td>
                       <div class="input-group mb-3" style="max-width: 120px;">
-                       <!-- <div class="input-group-prepend">
+                        <div class="input-group-prepend">
                           <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                        </div>-->
-                        <input type="text" readonly class="form-control text-center" value="{{ $item['number'] }}" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        <!--<div class="input-group-append">
+                        </div>
+                        <input type="text" class="form-control text-center" value="{{ $item['number'] }}" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <div class="input-group-append">
                           <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-                        </div>-->
+                        </div>
                       </div>
 
                     </td>
@@ -66,10 +66,12 @@
           <div class="col-md-6">
             <div class="row mb-5">
               <div class="col-md-6 mb-3 mb-md-0">
-                <button class="btn btn-primary btn-sm btn-block">Update Cart</button>
+               <!-- <button class="btn btn-primary btn-sm btn-block">Update Cart</button>--> @else
+          <h3><b>Your cart is currently empty at the momment</b></h3><br><br><br>
+          @endif
               </div>
               <div class="col-md-6">
-                <p><a href="/shopping-cart/shop/all" class="btn btn-sm btn-primary">Continue Shopping</a></p>
+                <p><a href="/shopping-cart/shop/all  " class="btn btn-sm btn-primary">Continue Shopping</a></p>
               </div>
             </div>
             <div class="row">
@@ -98,7 +100,7 @@
                     <span class="text-black">Subtotal</span>
                   </div>
                   <div class="col-md-6 text-right">
-                    <strong class="text-black">$230.00</strong>
+                    <strong class="text-black finPrice"></strong>
                   </div>
                 </div>
                 <div class="row mb-5">
@@ -106,7 +108,7 @@
                     <span class="text-black">Total</span>
                   </div>
                   <div class="col-md-6 text-right">
-                    <strong class="text-black">$230.00</strong>
+                    <strong class="text-black  finPrice"></strong>
                   </div>
                 </div>
 

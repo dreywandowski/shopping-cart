@@ -39,14 +39,14 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
-                 <li><a href="/shopping-cart/dashboard"><span class="icon icon-person"></span></a></li>
-                 <!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li>-->
-                  <li>
+                 <!-- <li><a href="/shopping-cart/dashboard"><span class="icon icon-person"></span></a></li>
+                 <li><a href="#"><span class="icon icon-heart-o"></span></a></li>-->
+                  <!--<li>
                     <a href="/shopping-cart/cart" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
-                      <span id="count" class="count"><p>{{ $show }}</p></span>
+                      <span id="count" class="count"><p></p></span>
                     </a>
-                  </li> 
+                  </li> -->
                   <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                
                 </ul>
@@ -58,11 +58,8 @@
       </div> 
       
     </header>
-
-    
-@yield('content')
-
-    <footer class="site-footer border-top">
+    @yield('content')
+     <footer class="site-footer border-top">
       
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
@@ -87,79 +84,3 @@
   <script src="/js/jquery.magnific-popup.min.js"></script>
   <script src="/js/aos.js"></script>
   <script src="/js/main.js"></script>
-    
-
-    <!-- we want to send info about the product as a sesssion array for us to use in the app-->
-     <script>
-var count = 0;
-      $('.buy-now').on('click', function(event){
-          event.preventDefault();
-          var name = $('#itemName').text();
-          var priceInit = $('#itemPrice').text();
-          var priceFin = priceInit.match(/\d+$/)[0];
-          var type = $('#itemType').text();
-          var number = $('#itemNumber').val();
-          var price = number * priceFin;
-          var file = $('#itemFile').attr('src');
-          var data = new Array();
-          data.push(name);
-          data.push(price);
-          data.push(type);
-          data.push(number);
-          data.push(file);
-          data.push(priceFin);
-          //alert(name + ' '+ price + ' '+ type + ' '+ number + ' '+ file);
-          
-          count++; 
-          //$('#count').html(count);
-            //alert(count);
-            data.push(count);
-            //alert('array items: '+ data);
-        
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        event.preventDefault();
-        
-        var ajaxurl = '/shopping-cart/shop-single/'+name+'?';//alert(ajaxurl);
-        $.ajax({
-            type: 'get',
-            data: {
-              name: data[0],
-              price: data[1],
-              type: data[2],
-              number: data[3],
-              file: data[4],
-              count: data[6],
-              priceFin: data[5] 
-            },
-            url: ajaxurl,
-           
-            success: function (data) {
-                $('#ajaxRep').text(data);
-                //$('#count').html(count)
-                console.log(data);
-            },
-            error: function (data) {
-                console.log(data.status);
-            }
-        });
-    });
-
-      
-  // calculate total price in cart  
-  var sum = new Array();   //alert($('.price').text());  
-var totPrice = $('.price').text();
-var arr = totPrice.split(/['NGN    ' ]/);
-sum.push(arr);
-console.log(sum);
-var res = sum.reduce(function(a, b) { return a + b; }, 0); alert(res);
-for(var i=0; i<arr.length; i++)
- // alert (typeof arr[i]);
-
-$('.finPrice').text(sum);
-      </script>
-  </body>
-</html>
