@@ -16,7 +16,10 @@
         <div class="row mb-5" style="overflow-x:auto;">
           <form class="col-md-12" method="post" style="overflow-x:auto;">
             <div class="site-blocks-table" style="overflow-x:auto;">
-              <table class="table table-bordered" style="overflow-x:auto;">
+              @if($data != null)  
+                    @foreach($data as $row)
+                    @foreach($row as $item)
+                    <table class="table table-bordered" style="overflow-x:auto;">
                 <thead>
                   <tr>
                     <th class="product-thumbnail">Image</th>
@@ -28,9 +31,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>@if($data != null)  
-                    @foreach($data as $row)
-                    @foreach($row as $item)
+                  <tr>
                     <td class="product-thumbnail">
                       <img src="{{ $item['file'] }}" alt="Image" class="img-fluid">
                     </td>
@@ -67,6 +68,7 @@
             <div class="row mb-5">
               <div class="col-md-6 mb-3 mb-md-0">
                <!-- <button class="btn btn-primary btn-sm btn-block">Update Cart</button>--> @else
+               <img src="/images/6011.jpg">
           <h3><b>Your cart is currently empty at the momment</b></h3><br><br><br>
           @endif
               </div>

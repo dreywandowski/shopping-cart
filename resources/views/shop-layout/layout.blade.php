@@ -155,7 +155,7 @@ var totPrice = $('.price').text();
 var arr = totPrice.split(/['NGN    ' ]/);
 sum.push(arr);
 console.log(sum);
-var res = sum.reduce(function(a, b) { return a + b; }, 0); alert(res);
+var res = sum.reduce(function(a, b) { return a + b; }, 0); //alert(res);
 for(var i=0; i<arr.length; i++)
  // alert (typeof arr[i]);
 
