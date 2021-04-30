@@ -14,7 +14,7 @@
     <div class="site-section">
       <div class="container">
         <div class="row mb-5" style="overflow-x:auto;">
-          <form class="col-md-12" method="post" style="overflow-x:auto;">
+          <!--<form class="col-md-12" method="post" style="overflow-x:auto;">-->
             <div class="site-blocks-table" style="overflow-x:auto;">
                @if($data != null) 
                <table class="table table-bordered" style="overflow-x:auto;">
@@ -54,7 +54,7 @@
 
                     </td>
                     <td>NGN {{ $item['price']  }}</td>
-                    <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
+                    <td><button  class="btn btn-primary">X</button></td>
                   </tr>
 @endforeach
 @endforeach
@@ -62,7 +62,7 @@
                 </tbody>
               </table>
             </div>
-          </form>
+         <!-- </form>-->
         </div>
 
         <div class="row">
