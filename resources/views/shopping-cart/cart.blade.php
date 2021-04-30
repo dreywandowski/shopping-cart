@@ -16,10 +16,8 @@
         <div class="row mb-5" style="overflow-x:auto;">
           <form class="col-md-12" method="post" style="overflow-x:auto;">
             <div class="site-blocks-table" style="overflow-x:auto;">
-              @if($data != null)  
-                    @foreach($data as $row)
-                    @foreach($row as $item)
-                    <table class="table table-bordered" style="overflow-x:auto;">
+               @if($data != null) 
+               <table class="table table-bordered" style="overflow-x:auto;">
                 <thead>
                   <tr>
                     <th class="product-thumbnail">Image</th>
@@ -32,6 +30,10 @@
                 </thead>
                 <tbody>
                   <tr>
+              
+                    @foreach($data as $row)
+                    @foreach($row as $item)
+                   
                     <td class="product-thumbnail">
                       <img src="{{ $item['file'] }}" alt="Image" class="img-fluid">
                     </td>
@@ -41,13 +43,13 @@
                     <td class="price">NGN {{ $item['price'] }}</td>
                     <td>
                       <div class="input-group mb-3" style="max-width: 120px;">
-                        <div class="input-group-prepend">
+                        <!--<div class="input-group-prepend">
                           <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                        </div>
+                        </div>-->
                         <input type="text" class="form-control text-center" value="{{ $item['number'] }}" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        <div class="input-group-append">
+                       <!-- <div class="input-group-append">
                           <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-                        </div>
+                        </div>-->
                       </div>
 
                     </td>

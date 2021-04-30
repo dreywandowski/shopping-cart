@@ -150,16 +150,31 @@ var count = 0;
 
       
   // calculate total price in cart  
-  var sum = new Array();   //alert($('.price').text());  
-var totPrice = $('.price').text();
-var arr = totPrice.split(/['NGN    ' ]/);
-sum.push(arr);
-console.log(sum);
-var res = sum.reduce(function(a, b) { return a + b; }, 0); //alert(res);
-for(var i=0; i<arr.length; i++)
- // alert (typeof arr[i]);
+  var sum = [];   //alert($('.price').text());  
+//var totPrice = $('.price').text();
+$( ".price" ).each(function( index ) {
+  var arra = $( this ).text().replace(/\D/g,'');
+ // console.log('d' + arra);
+  sum.push(arra);
 
-$('.finPrice').text(sum);
+  //console.log( index + ": " + $( this ).text());
+});
+
+
+const arr = sum;
+const countNumers = (arr = []) => {
+   let sum = 0;
+   for(let i = 0; i < arr.length; i++){
+      const el = arr[i]; if(+el){
+         sum += +el;
+      };
+   };
+   return sum;
+}
+console.log(countNumers(arr));
+
+
+$('.finPrice').text('NGN '+countNumers(arr));
       </script>
   </body>
 </html>
