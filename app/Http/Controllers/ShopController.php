@@ -18,21 +18,21 @@ class ShopController extends Controller
 
    $data = session('details');
       $cant;
-      
+
       if($data != null){
-        
+
         $cant = count($data);
-      } 
+      }
 
       else{
         $cant = ' ';
       }
-      
+
 
 
 
    return view('shop', ['show' => $cant]);
-  
+
 }
 
 // this is for the main products catalogue
@@ -43,17 +43,17 @@ class ShopController extends Controller
 
    $data = session('details');
      if($data != null){
-        
+
         $cant = count($data);
-      } 
+      }
 
       else{
         $cant = ' ';
       }
-      
 
-     
-      
+
+
+
      // echo "<pre>"."session ";
       //print_r($data);
       //echo "</pre>";
@@ -68,7 +68,7 @@ class ShopController extends Controller
       $numMan = count($man);
       $numWoman = count($woman);
       $numChild = count($child);
-      
+
       // sort by type, ascending by name
     // $manAsc =  Items::where('type' , '=', 'man')->orderBy('name', 'ASC')->get();
      $womanAsc =  DB::table('items')->select('name', 'type', 'price')->orderBy('name', 'ASC');
@@ -80,7 +80,7 @@ class ShopController extends Controller
      //$womanDesc =  Items::where('type' , '=', 'woman')->orderBy('name', 'DESC')->get();
      //$childDesc = Items::where('type' , '=', 'child')->orderBy('name', 'DESC')->get();
      //$allDesc =  Items::all()->orderBy('name', 'DESC')->get();
-     
+
 
       // sort by price, ascending
      //$manPriceAsc =  Items::where('type' , '=', 'woman')->orderBy('price', 'ASC')->get();
@@ -95,7 +95,7 @@ class ShopController extends Controller
     // $allPriceDesc =  Items::all()->orderBy('price', 'DESC')->get();
 
 //'manAsc' => $manAsc, 'manDesc'=> $manDesc, 'manPriceAsc' => $manPriceAsc, 'manPriceDesc' => $manPriceDesc
-//'womanAsc' => $womanAsc, 'womanDesc'=> $womanDesc, 'womanPriceAsc' => $womanPriceAsc, 'womanPriceDesc' => $womanPriceDesc 
+//'womanAsc' => $womanAsc, 'womanDesc'=> $womanDesc, 'womanPriceAsc' => $womanPriceAsc, 'womanPriceDesc' => $womanPriceDesc
 //, 'childAsc' => $childAsc, 'childDesc'=> $childDesc, 'childPriceAsc' => $childPriceAsc, 'childPriceDesc' => $childPriceDesc
 //,'items' => $items, 'allAsc' => $allAsc, 'allDesc'=> $allDesc, 'allPriceAsc' => $allPriceAsc, 'allPriceDesc' => $allPriceDesc
 
@@ -110,7 +110,7 @@ class ShopController extends Controller
       //}
 
      // print_r($_SESSION['item']);
-      
+
     return view('shopping-cart/shop' , ['page' => 'Shop / Men collection','man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' =>'Men collection', 'items' => $items, 'show' => $cant ]);
   break;
 
@@ -118,14 +118,14 @@ class ShopController extends Controller
     	// only with type woman
       case 'woman':
        $items = Items::where('type' , '=', 'woman')->simplePaginate(9);
-        
+
 return view('shopping-cart/shop' , ['page' => 'Shop / Women collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild,'title' =>'Women collection', 'items' => $items, 'womanAsc' => $womanAsc, 'show' => $cant]);
   break;
 
         // only with type child
   case 'child':
         $items = Items::where('type' , '=', 'child')->simplePaginate(9);
-        
+
 
 return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' =>'Children collection', 'items' => $items, 'show' => $cant ]);
   break;
@@ -139,7 +139,7 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
   default:
 
     }
-    	
+
 
 }
 
@@ -149,11 +149,11 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
        $data = session('details');
       $cant;
      $cant;
-      
+
       if($data != null){
-        
+
         $cant = count($data);
-      } 
+      }
 
       else{
         $cant = ' ';
@@ -166,40 +166,55 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
 
 
 // this returns the cart for us
-    public function cart () {
+    public function cart (Request $request) {
        $data = session('details');
        $cant;
-      
+
       if($data != null){
-        
+
         $cant = count($data);
-      } 
+      }
 
       else{
         $cant = ' ';
       }
 
-      //dd($data);
-//$result = array();
-      //loop 2ru 2D array
-/**foreach($data as $row) {
-foreach($row as $item){
-
-
-         }
-       }**/
- 
-   
-  // echo "<pre>"."session ";
-    // print_r($data);
-      //echo "</pre>";
-
-     
-
-  return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => $data]);
+ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => $data]);
 
 }
 
+
+
+// this deletes cart items
+    public function delete (Request $request, $req)
+    {
+        $name = $req;
+        $data = session('details');
+        //dd($data);
+
+       /** foreach ($data as $entry) {
+            foreach ($entry as $item => $ent) {
+                if ($ent['name'] === $name) {
+                    $request->session()->forget('details.'.$item);
+                    dd($name . ' ' . " I got here");
+                    // $request->session()->forget('details.'.$name);
+                } else {
+                    dd($name . ' ' . 'nah I aint here');
+                }
+            }
+**/
+            /**foreach($data as $row) {
+             * foreach($row as $item){
+             *
+             *
+             * }
+             * }**/
+            /**
+             **/
+
+            return redirect()->back()->with('status', $req . ' ' . '  item has been deleted from the cart successfully');
+
+        }
 
 
 
@@ -209,16 +224,16 @@ foreach($row as $item){
     $items = Items::where('name' , '=', $req)->get();
       $data = session('details');
       $cant;
-      
+
       if($data != null){
-        
+
         $cant = count($data);
-      } 
+      }
 
       else{
         $cant = ' ';
       }
-      
+
 
  if($request->ajax()){
  // we want to return ajax details
@@ -228,8 +243,8 @@ foreach($row as $item){
    $price = $request->input('price');
    $file = $request->input('file');
    $number = $request->input('number');
-   $count = $request->input('count'); 
-   $priceFin = $request->input('priceFin'); 
+   $count = $request->input('count');
+   $priceFin = $request->input('priceFin');
 
    $values = compact('name', 'type', 'price', 'file', 'number', 'count', 'priceFin');
 
@@ -246,7 +261,7 @@ foreach($row as $item){
   return response()->json($number.' '."items added to cart successfully", 200);
  }
    else{
-     
+
 
   return view('shopping-cart/shop-single', ['page' => 'Cart / My product', 'items' => $items, 'show' => $cant]);
    }
@@ -257,16 +272,16 @@ foreach($row as $item){
     public function checkout () {
       $data = session('details');
       $cant;
-      
+
       if($data != null){
-        
+
         $cant = count($data);
-      } 
+      }
 
       else{
         $cant = ' ';
       }
-      
+
 
   return view('shopping-cart/checkout', ['page' => 'Checkout', 'show' => $cant]);
 
@@ -278,16 +293,16 @@ foreach($row as $item){
     public function thanks () {
       $data = session('details');
       $cant;
-      
+
      if($data != null){
-        
+
         $cant = count($data);
-      } 
+      }
 
       else{
         $cant = ' ';
       }
-      
+
 
   return view('shopping-cart/thankyou', ['page' => 'Thanks for your order', 'show' => $cant]);
 

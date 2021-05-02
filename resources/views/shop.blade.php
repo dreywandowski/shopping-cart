@@ -317,7 +317,7 @@
             <div class="block-5 mb-5">
               <h3 class="footer-heading mb-4">Contact Info</h3>
               <ul class="list-unstyled">
-                <li class="address">14, Estaport Avenue, Gbagada, Lagos </li>
+                <li class="address">Estaport Avenue, Gbagada, Lagos </li>
                 <li class="phone"><a href="tel://23923929210">+2349071710815</a></li>
                 <li class="email">aduramimo@gmail.com</li>
               </ul>

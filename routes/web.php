@@ -21,6 +21,7 @@ Route::get('/shopping-cart/shop/{req}', [App\Http\Controllers\ShopController::cl
 Route::get('/shopping-cart/shop-single/{req}', [App\Http\Controllers\ShopController::class, 'single']);
 Route::get('/shopping-cart/contact', [App\Http\Controllers\ShopController::class, 'contact']);
 Route::get('/shopping-cart/cart', [App\Http\Controllers\ShopController::class, 'cart']);
+Route::get('/shopping-cart/{req}', [App\Http\Controllers\ShopController::class, 'delete']);
 Route::get('/shopping-cart/checkout', [App\Http\Controllers\ShopController::class, 'checkout']);
 Route::get('/shopping-cart/thankyou', [App\Http\Controllers\ShopController::class, 'thanks']);
 
