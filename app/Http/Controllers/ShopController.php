@@ -192,23 +192,34 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
         $data = session('details');
         //dd($data);
 
-       /** foreach ($data as $entry) {
-            foreach ($entry as $item => $ent) {
-                if ($ent['name'] === $name) {
-                    $request->session()->forget('details.'.$item);
-                    dd($name . ' ' . " I got here");
+
+       foreach ($data as $row) {
+            foreach ($row as $item) {
+              if ($name == $item['name']){
+                echo $item['name']."<br>";
+
+                //unset($item);
+               $request->session()->forget('details'.$item['name']);
+                    echo 'I want to delete the array that has this value in name: '.' '.$name.' this is the array of the item to be deleted.'.'<br>';
+                    print_r($item);
+                     echo "<pre>"."this is the entire session from which I want to remove the session ";
+      print_r($data);
+      echo "</pre>";
+
                     // $request->session()->forget('details.'.$name);
-                } else {
-                    dd($name . ' ' . 'nah I aint here');
-                }
+             }
+             else{
+          
+             }
+               
             }
-**/
+}
             /**foreach($data as $row) {
-             * foreach($row as $item){
-             *
-             *
-             * }
-             * }**/
+             foreach($row as $item){
+
+             }
+             }**/
+             die();
             /**
              **/
 

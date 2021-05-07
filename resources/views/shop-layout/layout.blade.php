@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="/css/style.css">
     
   </head>
+  <style type="text/css">
+    body{
+      background-color: ivory;
+    }
+  </style>
   <body>
   
   <div class="site-wrap">
