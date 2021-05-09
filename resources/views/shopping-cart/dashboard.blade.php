@@ -20,7 +20,13 @@
                                         @csrf
                                     </form>
         </div>
-      </div>
-    </div>
+      </div><br><br><br>
+    </div><div>
+        <ul>
+                <li><a href="/shopping-cart/edit-profile"> My Profile</a></li>
+                    <li><a href="#"> My Orders</a></li>
+
+            </ul>
+        </div>
 
    @endsection

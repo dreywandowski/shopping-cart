@@ -52,7 +52,7 @@ class LoginController extends Controller
         $this->username = $this->findUsername();
     }
 
-
+// enables us to login via username or password
     public function findUsername()
     {
         $login = request()->input('login');
@@ -69,4 +69,10 @@ class LoginController extends Controller
         return $this->username;
     }
 
+
+    // redirect to main page after logout
+    protected function loggedOut(Request $request)
+    {
+    return redirect('/shop');
+    }
 }

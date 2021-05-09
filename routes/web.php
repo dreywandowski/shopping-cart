@@ -23,9 +23,15 @@ Route::get('/shopping-cart/contact', [App\Http\Controllers\ShopController::class
 Route::get('/shopping-cart/cart', [App\Http\Controllers\ShopController::class, 'cart']);
 Route::get('/shopping-cart/checkout', [App\Http\Controllers\ShopController::class, 'checkout']);
 Route::get('/shopping-cart/checkout_logged', [App\Http\Controllers\ShopController::class, 'checkout_logged'])->middleware('auth');
+
+
 Route::get('/shopping-cart/dashboard', [App\Http\Controllers\ProfileController::class, 'dashboard'])->middleware('auth');
 Route::get('/shopping-cart/success', [App\Http\Controllers\ProfileController::class, 'success'])->middleware('auth');
-Route::get('/shopping-cart/thankyou', [App\Http\Controllers\ShopController::class, 'thanks'])->middleware('auth');;
+Route::get('/shopping-cart/edit-profile', [App\Http\Controllers\ProfileController::class, 'edit'])->middleware('auth');
+Route::post('/shopping-cart/update_details', [App\Http\Controllers\ProfileController::class, 'update'])->middleware('auth');
+
+
+Route::get('/shopping-cart/thankyou', [App\Http\Controllers\ShopController::class, 'thanks'])->middleware('auth');
 Route::get('/shopping-cart/{req}', [App\Http\Controllers\ShopController::class, 'delete']);
 
 
