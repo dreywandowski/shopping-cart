@@ -1,4 +1,4 @@
-@extends('shop-layout.layout')
+@extends('shop-layout.auth')
 @section('content')
 <div class="bg-light py-3">
       <div class="container">

@@ -188,38 +188,54 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
 // this deletes cart items
     public function delete (Request $request, $req)
     {
+        $cant;
+
+
         $name = $req;
         $data = session('details');
         //dd($data);
+        if($data != null){
+
+            $cant = count($data);
+            foreach ($data as $row) {
+                foreach ($row as $item) {
+                    if ($name == $item['name']){
+                        echo $item['name']."<br>";
+                        //unset($item);
 
 
-       foreach ($data as $row) {
-            foreach ($row as $item) {
-              if ($name == $item['name']){
-                echo $item['name']."<br>";
+                        echo 'I want to delete the array that has this value in name: '.' '.$name.' this is the array of the item to be deleted.'.'<br>';
+                        print_r($item);
+                        echo "<pre>"."this is the entire session from which I want to remove the session ";
+                        print_r($data);
+                        echo "</pre>";
+                        if($request->session()->forget('row', $item)){
+                            echo "yaas";
+                        }
 
-                //unset($item);
-               $request->session()->forget('details'.$item['name']);
-                    echo 'I want to delete the array that has this value in name: '.' '.$name.' this is the array of the item to be deleted.'.'<br>';
-                    print_r($item);
-                     echo "<pre>"."this is the entire session from which I want to remove the session ";
-      print_r($data);
-      echo "</pre>";
+                        else{
+                            echo "nope";
+                        }
+                        // $request->session()->forget('details.'.$name);
+                    }
+                    else{
 
-                    // $request->session()->forget('details.'.$name);
-             }
-             else{
-          
-             }
-               
+                    }
+
+                }
             }
-}
+        }
+
+        else{
+            $cant = ' ';
+        }
+
             /**foreach($data as $row) {
              foreach($row as $item){
 
              }
              }**/
-             die();
+
             /**
              **/
 
@@ -279,7 +295,7 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
 
 }
 
-// this returns a single item to be added to the cart
+// checkout page -- unlogged
     public function checkout () {
       $data = session('details');
       $cant;
@@ -294,9 +310,29 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
       }
 
 
-  return view('shopping-cart/checkout', ['page' => 'Checkout', 'show' => $cant]);
+  return view('shopping-cart/checkout', ['page' => 'Checkout', 'show' => $cant, 'data' => $data]);
 
 }
+
+// checkout page -- logged in
+    public function checkout_logged () {
+        $data = session('details');
+        $cant;
+
+        if($data != null){
+
+            $cant = count($data);
+        }
+
+        else{
+            $cant = ' ';
+        }
+
+
+        return view('shopping-cart/checkout_logged', ['page' => 'Checkout', 'show' => $cant, 'data' => $data]);
+
+    }
+
 
 
 

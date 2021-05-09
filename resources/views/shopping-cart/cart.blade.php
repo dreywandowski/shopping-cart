@@ -124,16 +124,16 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-12">
-                    <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='/shopping-cart/checkout'">Proceed To Checkout</button>
+                  <div class="col-md-6">
+                      <p><a href="/shopping-cart/checkout" class="btn btn-sm btn-primary">Proceed To Checkout</a></p>
                   </div>
+              </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+
     </div>
 
     @endsection

@@ -1,4 +1,4 @@
-@extends('shop-layout.layout')
+@extends('shop-layout.auth')
 @section('content')
 
 <div class="bg-light py-3">
@@ -7,7 +7,7 @@
           <div class="col-md-12 mb-0"><a href="/shop">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Welcome!</strong></div>
         </div>
       </div>
-    </div>  
+    </div>
    <center>
     <div class="registration">
         <div class="reg-note">
