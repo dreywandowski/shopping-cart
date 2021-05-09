@@ -1,3 +1,4 @@
+/** send cart items by AJAX**/
 var count = 0;
       $('.buy-now').on('click', function(event){
           event.preventDefault();
@@ -84,4 +85,102 @@ console.log(countNumers(arr));
 
 
 $('.finPrice').text('NGN '+countNumers(arr));
+
+
+
+/** initiate payment via Flutterwave **/
+
+
+const API_publicKey = "FLWPUBK-902adba8d930e1d4748fd2554dec604b-X";
+var pay = document.getElementById("pay");
+pay.addEventListener("click", payWithRave, false);
+function payWithRave() {
+    //alert("hi");
+
+    var items = new Array();
+    $('.hide').each(function(){
+        items.push(this.value);
+    });
+
+alert(items);
+    var priceFin = document.getElementsByClassName('finPrice')[0].innerHTML;
+    var amount = priceFin.match(/\d+$/)[0];
+    var user = document.getElementById("name").value;
+
+    var number = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+ //alert(email + ''+ amount + ''+ number);
+    function getRandomString(length) {
+        //alert('hello');
+        var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var result = '';
+        for ( var i = 0; i < length; i++ ) {
+            result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
+        }
+        return result;
+    }
+    var ref = getRandomString(13);
+    var x = getpaidSetup({
+        PBFPubKey: API_publicKey,
+        customer_email: email,
+        amount:amount,
+        customer_phone: number,
+        currency: "NGN",
+        txref: getRandomString(13),
+        meta: [{
+            metaname: "flightID",
+            metavalue: "AP1234"
+        }],
+        onclose: function() {},
+        callback: function(response) {
+            var txref = response.tx.txRef;
+            var code = response.tx.chargeResponseCode;
+            var msg = response.data.respmsg;
+            var amtt = response.tx.charged_amount;
+            var status = response.tx.status;
+            // collect txRef returned and pass to a                    server page to complete status check.
+            console.log("This is the response returned after a charge", response);
+            if ((code = "00") && (amtt == amount)){
+                // window.location = "handle_bills.php";
+                console.log("Input amount " + amount +  "Proccessed amount" + amtt + txref);
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                var ajaxurl = '/shopping-cart/handle_bills.php';
+                $.ajax({
+                    type: 'post',
+                    data: {
+                        amount: amtt,
+                        msg: msg,
+                        status: status,
+                        ref: txref,
+                        user: user,
+                        items: items
+                    },
+                    url: ajaxurl,
+
+                    success: function (data) {
+                        $('#ajaxRep').text(data);
+                        //$('#count').html(count)
+                        console.log(data);
+                    },
+                    error: function (data) {
+                        $('#ajaxRep').text(data);
+                        console.log(data.status);
+                    }
+                });
+
+                alert("Thanks for your payment. Check your email for confirmation");
+
+            }
+            else {
+                // redirect to a failure page.
+            }
+            x.close(); // use this to close the modal immediately after payment.
+        }
+    });
+}
 

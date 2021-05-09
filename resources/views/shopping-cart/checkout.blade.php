@@ -141,8 +141,18 @@
                     </tbody>
                   </table>
 @endif
+                    <div class="border p-3 mb-3">
+
+                        <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsecheque" role="button" aria-expanded="false" aria-controls="collapsecheque">Pay with Flutterwave</a></h3>
+
+                        <div class="collapse" id="collapsecheque">
+                            <div class="py-2"><img src="/images/fw-1.png" alt="pay thru paysrack">
+                                <p class="mb-0">You will be redirected to the Flutterwave payment interface where you will be able to make payment securely.</p>
+                            </div>
+                        </div>
+                    </div>
                   <div class="border p-3 mb-3">
-                    <input type="radio" value="paystack">
+
                     <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Pay with Paystack</a></h3>
 
                     <div class="collapse" id="collapsebank">
@@ -152,16 +162,6 @@
                     </div>
                   </div>
 
-                  <div class="border p-3 mb-3">
-                    <input type="radio" value="flutterwave">
-                    <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsecheque" role="button" aria-expanded="false" aria-controls="collapsecheque">Pay with Flutterwave</a></h3>
-
-                    <div class="collapse" id="collapsecheque">
-                      <div class="py-2"><img src="/images/fw-1.png" alt="pay thru paysrack">
-                        <p class="mb-0">You will be redirected to the Flutterwave payment interface where you will be able to make payment securely.</p>
-                      </div>
-                    </div>
-                  </div>
 
                   <!--<div class="border p-3 mb-5">
                     <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsepaypal" role="button" aria-expanded="false" aria-controls="collapsepaypal">Paypal</a></h3>
@@ -173,9 +173,7 @@
                     </div>-->
                   </div>
 
-                  <div class="form-group">
-                    <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='/shopping-cart/thankyou'">Place Order</button>
-                  </div>
+
 
                 </div>
               </div>

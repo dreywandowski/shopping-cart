@@ -94,6 +94,7 @@
   <script src="/js/main.js"></script>
   <script src="/js/layout.js"></script>
   <script src="/js/delete.js"></script>
+  <script type="text/javascript" src="https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
 
   </body>
 </html>

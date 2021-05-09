@@ -125,7 +125,12 @@
                 </div>
 
                   <div class="col-md-6">
-                      <p><a href="/shopping-cart/checkout" class="btn btn-sm btn-primary">Proceed To Checkout</a></p>
+
+                         @auth
+                      <p><a href="/shopping-cart/checkout_logged" class="btn btn-sm btn-primary">Proceed To Checkout</a></p>
+                         @endauth
+                          @guest<p><a href="/shopping-cart/checkout" class="btn btn-sm btn-primary">Proceed To Checkout</a></p>
+                          @endguest
                   </div>
               </div>
                 </div>

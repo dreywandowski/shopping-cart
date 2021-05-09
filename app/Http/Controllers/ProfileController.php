@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Orders;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -49,4 +49,24 @@ class ProfileController extends Controller
        return redirect()->back()->with('status', '  Profile updated successfully');
 
     }
+
+    /// handle bills payment
+    public function handle (Request $request) {
+        // get post variables
+
+        // get current user to be updated
+        $order = new Orders;
+
+        $order->user = $request->input('user');
+        $order->amount = $request->input('amount');
+        $order->ref = $request->input('ref');
+        $order->status = $request->input('status');
+        $order->items = $request->input('items');
+        $order->save();
+
+        //return view('shopping-cart/update_details');
+        return response()->json("order successfull.", 200);
+
+    }
+
 }
