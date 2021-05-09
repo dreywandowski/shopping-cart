@@ -64,8 +64,8 @@ class ProfileController extends Controller
         $order->items = $request->input('items');
         $order->save();
 
-        //return view('shopping-cart/update_details');
-        return response()->json("order successfull.", 200);
+        return view('shopping-cart/handle_bills');
+        //return response()->json("order successfull.", 200);
 
     }
 

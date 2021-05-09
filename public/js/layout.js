@@ -93,9 +93,11 @@ $('.finPrice').text('NGN '+countNumers(arr));
 
 const API_publicKey = "FLWPUBK-902adba8d930e1d4748fd2554dec604b-X";
 var pay = document.getElementById("pay");
-pay.addEventListener("click", payWithRave, false);
-function payWithRave() {
-    //alert("hi");
+//pay.addEventListener("click", payWithRave, false);
+
+$('#pay').on('click', function(event){
+    event.preventDefault();
+
 
     var items = new Array();
     $('.hide').each(function(){
@@ -183,4 +185,4 @@ alert(items);
         }
     });
 }
-
+);
