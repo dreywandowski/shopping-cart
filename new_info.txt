@@ -12,3 +12,77 @@ FOREIGN KEY
 ALTER TABLE fees  --> (table with foreign key)
 ADD CONSTRAINT fk_user FOREIGN KEY (user) --> column with foreign key
 REFERENCES users (username);   --> column and table with parent/primary key
+
+
+================
+REMITA INTERGRATION
+
+  $cur_date = time() * 1000;
+            $amount = $_REQUEST['item'];
+
+             $hash = hash('sha512', '2547916'.'4430731'.$cur_date.$amount.'1946');
+             //echo 'hash == '.$hash; 
+             //die;
+             
+
+
+            $curl = curl_init();
+
+            $post_data = array("serviceTypeId" =>"4430731",
+            "amount" =>$amount,
+            "orderId" => $cur_date,
+            "payerName" => $cust_name,
+            "payerEmail" => $cust_email,
+            "payerPhone" =>$cust_gsm,
+            "description" =>
+            "Premium Payment");
+             /*echo "<pre>";
+             print_r($post_data);
+             echo "</pre>";*/
+             $post_data = json_encode($post_data);
+             //echo "post_data == $post_data";
+     
+
+   
+
+
+
+            curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://remitademo.net/remita/exapp/api/v1/send/api/echannelsvc/merchant/api/paymentinit',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS =>$post_data,
+            CURLOPT_HTTPHEADER => array(
+            "Content-Type: application/json",
+            "Authorization: remitaConsumerKey=2547916,remitaConsumerToken=$hash"
+            ),
+            ));
+
+            $response = curl_exec($curl);
+
+           // function to decode jsonp to a php std object
+            function jsonp_decode($response, $assoc = false) { 
+             if($response[0] !== '[' && $response[0] !== '{') { // we have JSONP
+                $response = substr($response, strpos($response, '('));
+             }
+             return json_decode(trim($response,'();'), $assoc);
+            }
+
+
+            $data_new = jsonp_decode($response);
+
+            // cast the std object to an array
+            $result = json_decode(json_encode($data_new), true);
+
+            echo "RRR === ".$result['RRR'];
+
+            //dbgarr('data', $result);
+            //header("Location: fall_back_script.php");
+
+          //  curl_close($curl);
+            //echo $response;
