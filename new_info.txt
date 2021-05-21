@@ -17,6 +17,8 @@ REFERENCES users (username);   --> column and table with parent/primary key
 ================
 REMITA INTERGRATION
 
+==Initialise pay
+
   $cur_date = time() * 1000;
             $amount = $_REQUEST['item'];
 
@@ -65,7 +67,6 @@ REMITA INTERGRATION
 
             $response = curl_exec($curl);
 
-           
            // function to decode jsonp to a php std object
             function jsonp_decode($response, $assoc = false) { 
              if($response[0] !== '[' && $response[0] !== '{') { // we have JSONP
@@ -83,25 +84,51 @@ REMITA INTERGRATION
             $remita_code = $result['RRR'];
 
             $_SESSION['RRR'] = $remita_code;
-            $_SESSION['transactionId'] = $_REQUEST['item2'];
+            $_SESSION['transactionId'] = $transid;
+
+
+      //store the generated transaction id and the customer id(policy number) to the session on sending payment
+       
+        $_SESSION['cust_id'] = $cust_id;
+  
+     $logdate = date('Y-m-d');
+     //echo "date== ".$logdate;
+
+     $save_arr['pay_provider'] = $paytype;
+     $save_arr['txnref']       = $transid;
+     $save_arr['productid']    = $product_id;
+     $save_arr['amount']       = $amount;
+     $save_arr['logdate']      = $logdate;
+     $save_arr['polnum']       = $polnum;
+
+    // dbgarr('save_arr', $save_arr);
+
+     //save the response 
+     $save_flag = $iwebpay_tab->saveRec($save_arr);
+     //echo 'save=='.$iwebpay_tab->get_query();
+
+     // die;  
+
+//dbgarr('save_arr', $save_arr);
+
 
            // echo "RRR === ".$result['RRR'];
 
             //dbgarr('data', $result);
-            header("Location: remita_original.php");
+            header("Location: remita_pay.php");
+
           //  curl_close($curl);
             //echo $response;
 
 
 
-            ================================
-            URL FOR PAYMENT
-            <?php
+==PROCESS PAY
+<?php
 session_start();
 
 $RRR = $_SESSION['RRR'];
 $transactionId = $_SESSION['transactionId'];
-echo "transId==".$transactionId;
+//echo "transId==".$transactionId;
 
 ?>
 <!DOCTYPE html>
@@ -243,14 +270,18 @@ echo "transId==".$transactionId;
 				 ]
 			},
             onSuccess: function (response) {
+               // alert('to redirect');
+                //window.location.replace("remita_process_payment.php");
+                 window.location.replace("onlinepay_link.php");
                 console.log('callback Successful Response', response);
+                //
             },
             onError: function (response) {
                 console.log('callback Error Response', response);
             },
-            onClose: function () {
-                console.log("closed");
-            }
+            /**onClose: function () {
+               console.log(response);
+            }**/
         });
          paymentEngine.showPaymentWidget();
     }
@@ -261,4 +292,52 @@ echo "transId==".$transactionId;
 <script type="text/javascript" src="https://remitademo.net/payment/v1/remita-pay-inline.bundle.js"></script>
 </body>
 </html>
+
+
+
+== verify pay
+//echo "here, remita";
+$RRR = $_SESSION['RRR'];
+//echo "RRR==".$RRR;
+
+
+$hash = hash('sha512', $RRR.'1946'.'2547916');
+//echo "hash== ".$hash;
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://remitademo.net/remita/ecomm/2547916/'.$RRR.'/'.$hash.'/status.reg',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json',
+    'Authorization: remitaConsumerKey=2547916,remitaConsumerToken=$hash'
+  ),
+));
+
+$response = curl_exec($curl);
+
+$verifyPay = json_decode($response, true);
+/*echo "<pre>".'Response';
+print_r($verifyPay);
+echo "</pre>";*/
+        $reason        = ''; //message that will be displayed 
+        $status        = '';
+        $img_pos       = '';
+        $directives    = '';
+        $foot_tips     = '';
+
+$responsecode = $verifyPay['status'];
+if($responsecode == '01'){
+    include_once('onlinepay_resp_remita.php');
+}
+
+//curl_close($curl);
+//echo $response;
 
