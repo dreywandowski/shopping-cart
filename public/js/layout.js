@@ -85,10 +85,10 @@ console.log(countNumers(arr));
 
 
 $('.finPrice').text('NGN '+countNumers(arr));
+$('#amt').val(countNumers(arr));
 
 
-
-/** initiate payment via Flutterwave **/
+/** initiate payment via Flutterwave
 
 
 const API_publicKey = "FLWPUBK-902adba8d930e1d4748fd2554dec604b-X";
@@ -111,7 +111,7 @@ alert(items);
 
     var number = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
- //alert(email + ''+ amount + ''+ number);
+ alert(email + ''+ amount + ''+ number+''+user);
     function getRandomString(length) {
         //alert('hello');
         var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -147,14 +147,17 @@ alert(items);
                 console.log("Input amount " + amount +  "Proccessed amount" + amtt + txref);
                 $.ajaxSetup({
                     headers: {
-                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                        'X-CSRF-TOKEN': jQuery('meta[name="csrf_token"]').attr('content')
                     }
                 });
 
-                var ajaxurl = '/shopping-cart/handle_bills.php';
+                var ajaxurl = '/shopping-cart/handle_bills';
+
                 $.ajax({
-                    type: 'post',
+                    type: 'POST',
                     data: {
+
+                        '_token': '{{csrf_token()}}',
                         amount: amtt,
                         msg: msg,
                         status: status,
@@ -164,13 +167,15 @@ alert(items);
                     },
                     url: ajaxurl,
 
+
+
                     success: function (data) {
                         $('#ajaxRep').text(data);
                         //$('#count').html(count)
                         console.log(data);
                     },
                     error: function (data) {
-                        $('#ajaxRep').text(data);
+                        $('#ajaxRep').text(data.status);
                         console.log(data.status);
                     }
                 });
@@ -186,3 +191,47 @@ alert(items);
     });
 }
 );
+
+
+
+
+/** initiate payment via Paystack
+$('#paystack').on('click', function(event){
+    event.preventDefault();
+
+    var priceFin = document.getElementsByClassName('finPrice')[0].innerHTML;
+    var amount = priceFin.match(/\d+$/)[0];
+    var name = document.getElementById("name").value;
+
+    var email = document.getElementById("email").value;
+ alert(email + ''+ amount + ''+''+name);
+$.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+   var ajaxurl = '/shopping-cart/paystack';
+                $.ajax({
+                    type: 'post',
+                    data: {
+                        amount: amount,
+                        email : email,
+                        name: name,
+
+                    },
+                    url: ajaxurl,
+
+                    success: function (data) {
+                        $('#ajaxRep').text(status);
+                        //$('#count').html(count)
+                        console.log(data);
+                    },
+                    error: function (data) {
+                        $('#ajaxRep').text(status);
+                        console.log(data.status);
+                    }
+                });
+
+});
+**/
