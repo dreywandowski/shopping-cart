@@ -337,7 +337,7 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
 
 
 // thank you page after sucessful order and payment
-    public function thanks () {
+    public function thanks (Request $request) {
       $data = session('details');
       $cant;
 
@@ -350,8 +350,64 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
         $cant = ' ';
       }
 
+// verify payment
 
-  return view('shopping-cart/thankyou', ['page' => 'Thanks for your order', 'show' => $cant]);
+        $reff = $request->reference;
+
+        $curl = curl_init();
+        $url = "https://api.paystack.co/transaction/verify/" . $reff;
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_SSL_VERIFYPEER => 0,
+            CURLOPT_SSL_VERIFYHOST => 0,
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "Authorization: Bearer sk_test_83908abce2264dc4533d99b55eec6035d18c1ba8",
+
+                "Cache-Control: no-cache",
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $res = json_decode($response, true);
+
+        if($res){
+            // get current user to be updated
+            $profile = \Auth::user();
+
+                $order = new Orders;
+                $order->user = $profile->name;
+                $order->amount = $res['data']['amount'];
+                $order->ref = $res['data']['reference'];
+                $order->status = $res['data']['gateway_response'];
+                //$order->log_time = date('d-m-Y H:i:s', strtotime($res['data']['paid_at']));
+                $order->channel = $res['data']['channel'];
+                $order->items = $data;
+                $order->save();
+                if ($order->save())$page = 'Thanks for your order. Here is your reference number:'.''.$res['data']['reference'];
+                else $page = 'Your payment was successfull but your order cannot be completed. Please take your reference
+                number '.''.$res['data']['reference'].''.' to the site admin and lodge a complaint';
+            //return response()->json("order successfull.", 200);
+            /*echo "<pre>" . "Rep2";
+            print_r($res);
+            echo "</pre>";*/
+        }
+       else $page = "Payment verification failed.Please take your reference
+                number '.''.$reff.''.' to the site admin and lodge a complaint";
+        /*$err = curl_error($curl);
+        curl_close($curl);*/
+
+
+
+
+
+
+  return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant]);
 
 }
 }

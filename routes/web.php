@@ -29,20 +29,10 @@ Route::get('/shopping-cart/dashboard', [App\Http\Controllers\ProfileController::
 Route::get('/shopping-cart/success', [App\Http\Controllers\ProfileController::class, 'success'])->middleware('auth');
 Route::get('/shopping-cart/edit-profile', [App\Http\Controllers\ProfileController::class, 'edit'])->middleware('auth');
 Route::post('/shopping-cart/update_details', [App\Http\Controllers\ProfileController::class, 'update'])->middleware('auth');
-/*Route::post('/shopping-cart/handle_bills', [App\Http\Controllers\ProfileController::class, 'handle'])->middleware('auth')->name('flutterwave');
 Route::post('/shopping-cart/paystack', [App\Http\Controllers\ProfileController::class, 'handlePaystk'])->middleware('auth')->name('paystack');
 
-Route::post('https://api.paystack.co/transaction/initialize', [App\Http\Controllers\ProfileController::class, 'handlePaystk']);
-Route::post('https://api.paystack.co/transaction/verify/{ref}', [App\Http\Controllers\ProfileController::class, 'handlePaystk']);*/
+Route::get('/shopping-cart/my-orders', [App\Http\Controllers\ProfileController::class, 'orders'])->middleware('auth')->name('orders');
 
-
-// Paystack route
-Route::post('/pay', [App\Http\Controllers\PaymentController::class, 'redirectToGateway'])->name('pay');
-
-// Flutterwave routes
-Route::post('/pay', [App\Http\Controllers\FlutterwaveController::class, 'initialize'])->name('pay');
-// The callback url after a payment
-Route::get('/rave/callback', [App\Http\Controllers\FlutterwaveController::class, 'callback'])->name('callback');
 
 
 Route::get('/shopping-cart/thankyou', [App\Http\Controllers\ShopController::class, 'thanks'])->middleware('auth');
