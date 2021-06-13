@@ -376,6 +376,7 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
         $response = curl_exec($curl);
         $res = json_decode($response, true);
 
+        $ref = $res['data']['reference'];
         if($res){
             // get current user to be updated
             $profile = \Auth::user();
@@ -389,16 +390,16 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
                 $order->channel = $res['data']['channel'];
                 $order->items = $data;
                 $order->save();
-                if ($order->save())$page = 'Thanks for your order. Here is your reference number: '.''.$res['data']['reference'];
-                else $page = 'Your payment was successfull but your order cannot be completed. Please take your reference
-                number '.''.$res['data']['reference'].''.' to the site admin and lodge a complaint';
+
+
+                if ($order->save())$page ='ok';
+                else $page = 'pending';
             //return response()->json("order successfull.", 200);
             /*echo "<pre>" . "Rep2";
             print_r($res);
             echo "</pre>";*/
         }
-       else $page = "Payment verification failed.Please take your reference
-                number '.''.$reff.''.' to the site admin and lodge a complaint";
+       else $page = 'fail';
         /*$err = curl_error($curl);
         curl_close($curl);*/
 
@@ -407,7 +408,7 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
 
 
 
-  return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant]);
+  return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $ref]);
 
 }
 }
