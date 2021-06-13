@@ -24,7 +24,7 @@
     </div><div>
         <ul>
                 <li><a href="/shopping-cart/edit-profile"> My Profile</a></li>
-                    <li><a href="#"> My Orders</a></li>
+                    <li><a href="{{ route('orders') }}"> My Orders</a></li>
 
             </ul>
         </div>

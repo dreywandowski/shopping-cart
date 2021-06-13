@@ -389,7 +389,7 @@ return view('shopping-cart/shop' , ['page' => 'Shop / Children collection', 'man
                 $order->channel = $res['data']['channel'];
                 $order->items = $data;
                 $order->save();
-                if ($order->save())$page = 'Thanks for your order. Here is your reference number:'.''.$res['data']['reference'];
+                if ($order->save())$page = 'Thanks for your order. Here is your reference number: '.''.$res['data']['reference'];
                 else $page = 'Your payment was successfull but your order cannot be completed. Please take your reference
                 number '.''.$res['data']['reference'].''.' to the site admin and lodge a complaint';
             //return response()->json("order successfull.", 200);

@@ -52,7 +52,26 @@ class ProfileController extends Controller
 
     }
 
+// Show orders for the current user
+public function orders()
+{
+    $profile = \Auth::user();
+    $profile->user = $profile->name;
+    $order = Orders::where('user' , '=', $profile->user)->get()->toArray();
 
+    /*echo "<pre>" . "Rep2";
+    print_r($order);
+    echo "</pre>";
+    foreach ($order as $item) {
+        $day = $item['updated_at'];
+
+        $fin_date = date('l jS \of F Y h:i:s A', strtotime($day));
+        foreach ($item['items'] as $items) {
+            //echo $items[0]['file'];
+        }
+    }*/
+    return view('shopping-cart/orders' , ['order' => $order]);
+}
 
     /// handle paystack bills payment
      public function handlePaystk (Request $request)
@@ -109,6 +128,8 @@ class ProfileController extends Controller
 
              header("Location: $url");
 
+// at this point, for some mysterious reasons which I'm not ready to know, the API doesn't
+//bring up the payment modal unless I die it here. Thanks Paystack :(
 die;
 
          }
