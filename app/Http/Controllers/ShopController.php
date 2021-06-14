@@ -327,7 +327,7 @@ class ShopController extends Controller
 
 
 // verify paystack payment
-
+        //print_r($request->session()->all());die;
         $reff = $request->reference;
 
         $curl = curl_init();
@@ -384,8 +384,9 @@ class ShopController extends Controller
     }
 
 
-    public function thankFlutter()
+    public function thankFlutter(Request $request)
     {
+        $CSRFToken = csrf_token();
         $data = session('details');
         $cant;
 
@@ -395,12 +396,14 @@ class ShopController extends Controller
         } else {
             $cant = ' ';
         }
+        print_r($request->session()->all());
+        var_dump($data);die;
+        $ref = $request->txref;
+        $key = "FLWSECK_TEST-bb2254afd109eb2d835b4b36a3f195fe-X";
 
-        $ref = $_GET['txref'];
         if (isset($_GET['txref'])) {
             $ref = $_GET['txref'];
-            $amount = ""; //Correct Amount from Server
-            $currency = ""; //Correct Currency from Server
+
 
             $query = array(
                 "SECKEY" => "FLWSECK_TEST-bb2254afd109eb2d835b4b36a3f195fe-X",
@@ -408,9 +411,9 @@ class ShopController extends Controller
             );
 
             $data_string = json_encode($query);
-
-            $ch = curl_init('https://api.ravepay.co/flwv3-pug/getpaidx/api/v2/verify');
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+            $url = 'https://api.ravepay.co/flwv3-pug/getpaidx/api/v2/verify';
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -425,16 +428,16 @@ class ShopController extends Controller
             curl_close($ch);
 
             $resp = json_decode($response, true);
-            echo "<pre>" . "Rep2";
+            /*echo "<pre>" . "Rep2";
             print_r($resp);
-            echo "</pre>";die;
+            echo "</pre>";die;*/
 
             $paymentStatus = $resp['data']['status'];
             $chargeResponsecode = $resp['data']['chargecode'];
             $chargeAmount = $resp['data']['amount'];
             $chargeCurrency = $resp['data']['currency'];
 
-            if (($chargeResponsecode == "00" || $chargeResponsecode == "0") && ($chargeAmount == $amount) && ($chargeCurrency == $currency)) {
+            if (($chargeResponsecode == "00" || $chargeResponsecode == "0")) {
                 // get current user to be updated
                 $profile = \Auth::user();
 
@@ -444,7 +447,7 @@ class ShopController extends Controller
                 $order->ref = $ref;
                 $order->status = $resp['data']['status'];
                 //$order->log_time = date('d-m-Y H:i:s', strtotime($res['data']['paid_at']));
-                $order->channel = $res['data']['channel'];
+                $order->channel = $resp['narration'];
                 $order->items = $data;
                 $order->pay_type = "FLUTTERWAVE";
                 $order->save();
@@ -460,11 +463,12 @@ class ShopController extends Controller
             }
 
         else {
-                //Dont Give Value and return to Failure page
+       $page = 'fail';
+        //Dont Give Value and return to Failure page
             }
 
 
-        return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $ref]);
+        return view('shopping-cart/thankyou_flutter', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $ref]);
 
 
 

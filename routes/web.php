@@ -34,9 +34,9 @@ Route::post('/shopping-cart/paystack', [App\Http\Controllers\ProfileController::
 Route::get('/shopping-cart/my-orders', [App\Http\Controllers\ProfileController::class, 'orders'])->middleware('auth')->name('orders');
 
 
-
+Route::post('/shopping-cart/thankyou_flutter', [App\Http\Controllers\ShopController::class, 'thankFlutter']);
 Route::get('/shopping-cart/thankyou', [App\Http\Controllers\ShopController::class, 'thanks'])->middleware('auth');
-//Route::post('/shopping-cart/thankyou_flutter', [App\Http\Controllers\ShopController::class, 'thankFlutter'])->middleware('auth');
+//
 Route::get('/shopping-cart/{req}', [App\Http\Controllers\ShopController::class, 'delete']);
 
 

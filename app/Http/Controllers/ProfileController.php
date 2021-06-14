@@ -86,7 +86,7 @@ public function orders()
 
          // save pay_type to the session
          $request->session()->put('pay_type', $pay_type);
-
+         //print_r($request->session()->all());die;
          // handle flutterwave payment option
          if($pay_type == "FLUTTERWAVE"){
 
@@ -97,7 +97,7 @@ public function orders()
              $currency = "NGN";
              $txref = "rave-".$rand; // ensure you generate unique references per transaction.
              $PBFPubKey = "FLWPUBK_TEST-636b39c5d49113be7c6181fd168b7b22-X"; // get your public key from the dashboard.
-             $redirect_url = "http://127.0.0.1:8000/shopping-cart/thankyou";
+             $redirect_url = "shopping-cart/thankyou_flutter";
              //$payment_plan = "pass the plan id"; // this is only required for recurring payments.
 
 
