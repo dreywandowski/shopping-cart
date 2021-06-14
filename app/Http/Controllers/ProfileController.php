@@ -73,6 +73,17 @@ public function orders()
     return view('shopping-cart/orders' , ['order' => $order]);
 }
 
+
+// redirect remita
+    public function redirectRemita(Request $request)
+    {
+        $RRR = $request->session()->get('remita_code');
+        $transID = $request->session()->get('transactionID');
+
+        return view('shopping-cart/remita_pay', ['RRR' => $RRR, 'transID' => $transID]);
+    }
+
+
     /// handle paystack bills payment
      public function handlePaystk (Request $request)
      {
@@ -81,12 +92,16 @@ public function orders()
          $amount = $request->input('amount');
          $cust_fname = $request->input('name');
          $cust_lname = '';
+         $phone  = $request->input('phone');
          $pay_type = $request->input('pay_type');
          $rand = rand();
 
          // save pay_type to the session
          $request->session()->put('pay_type', $pay_type);
+         $request->session()->put('transactionId', $rand);
          //print_r($request->session()->all());die;
+
+
          // handle flutterwave payment option
          if($pay_type == "FLUTTERWAVE"){
 
@@ -201,6 +216,74 @@ public function orders()
                  die;
 
              }
+
+         }
+
+         // handle remita payment option
+         elseif ($pay_type == "REMITA"){
+             $cur_date = time() * 1000;
+             $hash = hash('sha512', '2547916'.'4430731'.$cur_date.$amount.'1946');
+             //echo 'hash == '.$hash;
+             //die;
+            $curl = curl_init();
+
+             $post_data = array("serviceTypeId" =>"4430731",
+                 "amount" =>$amount,
+                 "orderId" => $cur_date,
+                 "payerName" => $cust_fname,
+                 "payerEmail" => $cust_email,
+                 "payerPhone" =>$phone,
+                 "description" =>
+                     "Order Payment");
+            // echo "<pre>";
+             //print_r($post_data);
+             //echo "</pre>";die;
+             $post_data = json_encode($post_data);
+             //echo "post_data == $post_data";die;
+
+             curl_setopt_array($curl, array(
+                 CURLOPT_URL => 'https://remitademo.net/remita/exapp/api/v1/send/api/echannelsvc/merchant/api/paymentinit',
+                 CURLOPT_RETURNTRANSFER => true,
+                 CURLOPT_ENCODING => '',
+                 CURLOPT_MAXREDIRS => 10,
+                 CURLOPT_TIMEOUT => 0,
+                 CURLOPT_FOLLOWLOCATION => true,
+                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                 CURLOPT_CUSTOMREQUEST => 'POST',
+                 CURLOPT_SSL_VERIFYPEER => false,
+                 CURLOPT_SSL_VERIFYHOST => false,
+                 CURLOPT_POSTFIELDS =>$post_data,
+                 CURLOPT_HTTPHEADER => array(
+                     "Content-Type: application/json",
+                     "Authorization: remitaConsumerKey=2547916,remitaConsumerToken=$hash"
+                 ),
+             ));
+
+             $response = curl_exec($curl);
+
+             // function to decode jsonp to a php std object
+             function jsonp_decode($response, $assoc = false) {
+                 if($response[0] !== '[' && $response[0] !== '{') { // we have JSONP
+                     $response = substr($response, strpos($response, '('));
+                 }
+                 return json_decode(trim($response,'();'), $assoc);
+             }
+
+            $data_new = jsonp_decode($response);
+
+             // cast the std object to an array
+             $result = json_decode(json_encode($data_new), true);
+
+             $remita_code = $result['RRR'];
+             $request->session()->put('remita_code', $remita_code);
+
+             $logdate = date('Y-m-d');
+
+             header("Location: http://127.0.0.1:8000/shopping-cart/remita_pay");
+
+             //  curl_close($curl);
+             //echo $response;
+
 
          }
      }

@@ -328,59 +328,148 @@ class ShopController extends Controller
 
 // verify paystack payment
         //print_r($request->session()->all());die;
-        $reff = $request->reference;
 
-        $curl = curl_init();
-        $url = "https://api.paystack.co/transaction/verify/" . $reff;
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_SSL_VERIFYPEER => 0,
-            CURLOPT_SSL_VERIFYHOST => 0,
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => array(
-                "Authorization: Bearer sk_test_83908abce2264dc4533d99b55eec6035d18c1ba8",
+            $pay_type = $request->session()->get('pay_type');
+            $reff = $request->reference;
 
-                "Cache-Control: no-cache",
-            ),
-        ));
+            $curl = curl_init();
+            $url = "https://api.paystack.co/transaction/verify/" . $reff;
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_SSL_VERIFYPEER => 0,
+                CURLOPT_SSL_VERIFYHOST => 0,
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer sk_test_83908abce2264dc4533d99b55eec6035d18c1ba8",
 
-        $response = curl_exec($curl);
-        $res = json_decode($response, true);
+                    "Cache-Control: no-cache",
+                ),
+            ));
 
-        $ref = $res['data']['reference'];
-        if ($res) {
-            // get current user to be updated
-            $profile = \Auth::user();
+            $response = curl_exec($curl);
+            $res = json_decode($response, true);
 
-            $order = new Orders;
-            $order->user = $profile->name;
-            $order->amount = $res['data']['amount']/100;
-            $order->ref = $res['data']['reference'];
-            $order->status = $res['data']['gateway_response'];
-            //$order->log_time = date('d-m-Y H:i:s', strtotime($res['data']['paid_at']));
-            $order->channel = $res['data']['channel'];
-            $order->items = $data;
-            $order->pay_type = "PAYSTACK";
-            $order->save();
+            $ref = $res['data']['reference'];
+            if ($res) {
+                // get current user to be updated
+                $profile = \Auth::user();
+
+                $order = new Orders;
+                $order->user = $profile->name;
+                $order->amount = $res['data']['amount']/100;
+                $order->ref = $res['data']['reference'];
+                $order->status = $res['data']['gateway_response'];
+                //$order->log_time = date('d-m-Y H:i:s', strtotime($res['data']['paid_at']));
+                $order->channel = $res['data']['channel'];
+                $order->items = $data;
+                $order->pay_type = "PAYSTACK";
+                $order->save();
 
 
-            if ($order->save()) $page = 'ok';
-            else $page = 'pending';
-            //return response()->json("order successfull.", 200);
-            /*echo "<pre>" . "Rep2";
-            print_r($res);
-            echo "</pre>";*/
-        } else $page = 'fail';
-        /*$err = curl_error($curl);
-        curl_close($curl);*/
+                if ($order->save()) $page = 'ok';
+                else $page = 'pending';
+
+                // reset cart to zero
+                $cant =  $request->session()->forget('details');
+
+                //return response()->json("order successfull.", 200);
+                /*echo "<pre>" . "Rep2";
+                print_r($res);
+                echo "</pre>";*/
+            } else $page = 'fail';
+            /*$err = curl_error($curl);
+            curl_close($curl);*/
+        return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $ref]);
+        }
+
+    public function thanksRemita(Request $request){
+        $data = session('details');
+        $cant;
+
+        if ($data != null) {
+
+            $cant = count($data);
+        } else {
+            $cant = ' ';
+        }
+
+            $RRR = $request->session()->get('remita_code');
+            $ref = $RRR;
+//echo "RRR==".$RRR;
+         $hash = hash('sha512', $RRR.'1946'.'2547916');
+//echo "hash== ".$hash;
+
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://remitademo.net/remita/ecomm/2547916/'.$RRR.'/'.$hash.'/status.reg',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                    'Content-Type: application/json',
+                    'Authorization: remitaConsumerKey=2547916,remitaConsumerToken=$hash'
+                ),
+            ));
+
+            $response = curl_exec($curl);
+
+            $verifyPay = json_decode($response, true);
+            echo "<pre>".'Response';
+            print_r($verifyPay);
+            echo "</pre>";die;
+            $reason        = ''; //message that will be displayed
+            $status        = '';
+            $img_pos       = '';
+            $directives    = '';
+            $foot_tips     = '';
+
+            $responsecode = $verifyPay['status'];
+            if($responsecode == '01'){
+                // get current user to be updated
+                $profile = \Auth::user();
+
+                $order = new Orders;
+                $order->user = $profile->name;
+                $order->amount = $verifyPay['data']['amount']/100;
+                $order->ref = $verifyPay['data']['reference'];
+                $order->status = $verifyPay['data']['gateway_response'];
+                //$order->log_time = date('d-m-Y H:i:s', strtotime($res['data']['paid_at']));
+                $order->channel = $verifyPay['data']['channel'];
+                $order->items = $verifyPay;
+                $order->pay_type = "REMITA";
+                $order->save();
+
+
+                if ($order->save()) $page = 'ok';
+                else $page = 'pending';
+
+                // reset cart to zero
+                $cant =  $request->session()->forget('details');
+                //return response()->json("order successfull.", 200);
+                /*echo "<pre>" . "Rep2";
+                print_r($res);
+                echo "</pre>";*/
+            }
+
+            else{
+                $page = 'fail';
+            }
+
+//curl_close($curl);
+//echo $response;
+
 
         return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $ref]);
-
     }
 
 

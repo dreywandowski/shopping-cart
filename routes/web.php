@@ -30,11 +30,13 @@ Route::get('/shopping-cart/success', [App\Http\Controllers\ProfileController::cl
 Route::get('/shopping-cart/edit-profile', [App\Http\Controllers\ProfileController::class, 'edit'])->middleware('auth');
 Route::post('/shopping-cart/update_details', [App\Http\Controllers\ProfileController::class, 'update'])->middleware('auth');
 Route::post('/shopping-cart/paystack', [App\Http\Controllers\ProfileController::class, 'handlePaystk'])->middleware('auth')->name('paystack');
+Route::post('/shopping-cart/remita_pay', [App\Http\Controllers\ProfileController::class, 'redirectRemita'])->middleware('auth');
 
 Route::get('/shopping-cart/my-orders', [App\Http\Controllers\ProfileController::class, 'orders'])->middleware('auth')->name('orders');
 
 
 Route::post('/shopping-cart/thankyou_flutter', [App\Http\Controllers\ShopController::class, 'thankFlutter']);
+Route::get('/shopping-cart/thankyou_remita', [App\Http\Controllers\ShopController::class, 'thanksRemita'])->middleware('auth');
 Route::get('/shopping-cart/thankyou', [App\Http\Controllers\ShopController::class, 'thanks'])->middleware('auth');
 //
 Route::get('/shopping-cart/{req}', [App\Http\Controllers\ShopController::class, 'delete']);
