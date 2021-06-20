@@ -7,6 +7,7 @@ use App\Models\Orders;
 use App\Models\Items;
 use Illuminate\Support\Facades\DB;
 use Response;
+use Session;
 
 class ShopController extends Controller
 {
@@ -178,41 +179,52 @@ class ShopController extends Controller
     public function delete(Request $request, $req)
     {
         $cant;
-
+        
 
         $name = $req;
         $data = session('details');
+
         //dd($data);
         if ($data != null) {
 
             $cant = count($data);
-            foreach ($data as $row) {
-                foreach ($row as $item) {
-                    if ($name == $item['name']) {
-                        echo $item['name'] . "<br>";
-                        //unset($item);
 
+            $reqIndex = ""; 
 
+            foreach ($data as $key => $value) {
+                    if ($name == $value[0]['name']) {
+                       // echo $value['name'] . "<br>";
+                        $reqIndex = $key;
+                       //$curr_key = array_search($name, $item);
+                       //echo "current key==".$reqIndex;
+                        $reqIndex = strval($reqIndex);
+                       /*var_dump($reqIndex);
                         echo 'I want to delete the array that has this value in name: ' . ' ' . $name . ' this is the array of the item to be deleted.' . '<br>';
-                        print_r($item);
+                        print_r($value);
                         echo "<pre>" . "this is the entire session from which I want to remove the session ";
                         print_r($data);
-                        echo "</pre>";
-                        if ($request->session()->forget('row', $item)) {
-                            echo "yaas";
-                        } else {
-                            echo "nope";
+                        echo "</pre>";*/
+
+                        $del = $request->session()->forget('details.'.$reqIndex);
+                        if ($del) {
+                                                    }
+                                                     else {
+                              //Session::flash('message', 'Error deleting the item');
+                            //Session::flash('alert-class', 'alert-warning');
+
                         }
-                        // $request->session()->forget('details.'.$name);
+                  
                     } else {
 
                     }
-
-                }
+                             Session::flash('message', $req . ' ' . '  item has been deleted from the cart successfully, please refresh the page as your cart is now empty');
+                             Session::flash('alert-class', 'alert-success');
+                
             }
         } else {
             $cant = ' ';
-        }
+                          
+ }
 
         /**foreach($data as $row) {
          * foreach($row as $item){
@@ -223,7 +235,16 @@ class ShopController extends Controller
         /**
          **/
 
-        return redirect()->back()->with('status', $req . ' ' . '  item has been deleted from the cart successfully');
+         foreach ($data as $key => $value) {
+                    if ($name != $value[0]['name']) {
+                            Session::flash('message', $req . ' ' . '  item has been deleted from the cart successfully');
+                            Session::flash('alert-class', 'alert-success');
+
+                    }
+                }
+
+return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => $data]);
+       // return redirect()->back()->with('status', $req . ' ' . '  item has been deleted from the cart successfully');
 
     }
 

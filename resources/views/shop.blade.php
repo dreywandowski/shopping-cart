@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/css/style.css">
     
   </head>
-  <body>
+  <body class="theme-dark">
   
   <div class="site-wrap">
     <header class="site-navbar" role="banner">
@@ -28,12 +28,23 @@
         <div class="container">
           <div class="row align-items-center">
 
-            <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+                  <!-- Dark theme setting -->
+<!--<div class="col-9 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center theme-dark">
+ <h6  class="theme-dark"> Site Theme</h6>
+<select id="theme"> 
+  <option value="auto">Auto</option>
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+</select>
+</div>-->
+
+          <!--  <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
               <form action="" class="site-block-top-search">
                 <span class="icon icon-search2"></span>
                 <input type="text" class="form-control border-0" placeholder="Search">
               </form>
-            </div>
+            </div>-->
+
 
             <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
               <div class="site-logo">
@@ -60,6 +71,8 @@
           </div>
         </div>
       </div> 
+
+
       <nav class="site-navigation text-right text-md-center" role="navigation">
         <div class="container">
           <ul class="site-menu js-clone-nav d-none d-md-block">

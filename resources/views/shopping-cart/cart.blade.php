@@ -11,6 +11,8 @@
       </div>
     </div>
 
+
+
     <div class="site-section">
       <div class="container">
         <div class="row mb-5" style="overflow-x:auto;">
@@ -32,9 +34,9 @@
                 <tbody>
                   <tr>
       <!-- to return deletion msg -->
-                      @if(Session::has('status'))
-                          <div class="alert alert-warning">
-            {{ Session::get('status')  }}</div>
+                      @if(Session::has('message'))
+                       
+            <p class="alert-warning" > {{ Session::get('message')  }}
             @endif
 
                     @foreach($data as $row)

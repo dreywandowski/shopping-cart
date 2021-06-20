@@ -1,5 +1,20 @@
 /* Base */
-body {
+
+  /** dark theme settings start **/
+  
+
+  :root {
+    --dark-background-color: #111111;
+    --dark-text-color: #eeeeee;
+  }
+.theme.dark{
+  --background-color:var(--dark-background-color);
+  --text-color: var(--dark-text-color);
+}
+
+ /** dark theme settings end **/
+
+
   line-height: 1.7;
   color: #8c92a0;
   font-weight: 300;
