@@ -97,7 +97,7 @@
 
         <li>
             <label>RRR<span class="required">*</span></label>
-            <input type="text" id="js-rrr" name="rrr"  class="field-long"/>
+            <input type="text" id="js-rrr" name="rrr"  readonly class="field-long"/>
         </li>
 
         <li>

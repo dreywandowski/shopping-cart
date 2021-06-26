@@ -264,17 +264,21 @@ public function orders()
             $data_new = jsonp_decode($response);
 
              // cast the std object to an array
-             $result = json_decode(json_encode($data_new), true);
+                 $result = json_decode(json_encode($data_new), true);
              /*echo "<pre>" . "Rep2";
              print_r($result);
              echo "</pre>"; die;*/
+
+             // remove any initial remita code
+             $rem =  $request->session()->forget('remita_code');
+
              $remita_code = $result['RRR'];
              $request->session()->put('remita_code', $remita_code);
              //echo "rrr===".session('remita_code');die;
 
              $logdate = date('Y-m-d');
 
-             header("Location: http://127.0.0.1:8000/shopping-cart/remita_pay");
+             header("Location: http://127.0.0.1:8000/shopping-cart/remita_pay/".$remita_code);
                    die;
              //  curl_close($curl);
              //echo $response;

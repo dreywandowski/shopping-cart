@@ -334,10 +334,11 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
 
 
 // redirect remita
-    public function redirectRemita(Request $request)
+    public function redirectRemita(Request $request, $remita_code)
     {
         //echo "hereee";die;
-        $RRR = $request->session()->get('remita_code');
+        $RRR = $remita_code;
+        //$RRR = $request->session()->get('remita_code');
         $transID = $request->session()->get('transactionID');
 
         return view('shopping-cart/remita_pay', ['RRR' => $RRR, 'transID' => $transID]);
