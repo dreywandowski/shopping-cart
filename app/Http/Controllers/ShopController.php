@@ -179,7 +179,7 @@ class ShopController extends Controller
     public function delete(Request $request, $req)
     {
         $cant;
-        
+
 
         $name = $req;
         $data = session('details');
@@ -189,7 +189,7 @@ class ShopController extends Controller
 
             $cant = count($data);
 
-            $reqIndex = ""; 
+            $reqIndex = "";
 
             foreach ($data as $key => $value) {
                     if ($name == $value[0]['name']) {
@@ -213,17 +213,17 @@ class ShopController extends Controller
                             //Session::flash('alert-class', 'alert-warning');
 
                         }
-                  
+
                     } else {
 
                     }
                              Session::flash('message', $req . ' ' . '  item has been deleted from the cart successfully, please refresh the page as your cart is now empty');
                              Session::flash('alert-class', 'alert-success');
-                
+
             }
         } else {
             $cant = ' ';
-                          
+
  }
 
         /**foreach($data as $row) {
@@ -333,6 +333,17 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
     }
 
 
+// redirect remita
+    public function redirectRemita(Request $request)
+    {
+        //echo "hereee";die;
+        $RRR = $request->session()->get('remita_code');
+        $transID = $request->session()->get('transactionID');
+
+        return view('shopping-cart/remita_pay', ['RRR' => $RRR, 'transID' => $transID]);
+    }
+
+
 // thank you page after sucessful order and payment
     public function thanks(Request $request)
     {
@@ -424,16 +435,18 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
 //echo "RRR==".$RRR;
          $hash = hash('sha512', $RRR.'1946'.'2547916');
 //echo "hash== ".$hash;
-
+        // https://remitademo.net/remita/exapp/api/v1/send/api/echannelsvc/{{merchantId}}/{{rrr}}/{{apiHash}}/status.reg
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://remitademo.net/remita/ecomm/2547916/'.$RRR.'/'.$hash.'/status.reg',
+                CURLOPT_URL => 'https://remitademo.net/remita/exapp/api/v1/send/api/echannelsvc/2547916/'.$RRR.'/'.$hash.'/status.reg',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
                 CURLOPT_TIMEOUT => 0,
                 CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_SSL_VERIFYHOST => false,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
                 CURLOPT_HTTPHEADER => array(
@@ -443,30 +456,27 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
             ));
 
             $response = curl_exec($curl);
+           // if($response)echo "yeahh";
+            //else echo "nope";
 
             $verifyPay = json_decode($response, true);
-            echo "<pre>".'Response';
-            print_r($verifyPay);
-            echo "</pre>";die;
-            $reason        = ''; //message that will be displayed
-            $status        = '';
-            $img_pos       = '';
-            $directives    = '';
-            $foot_tips     = '';
+           // echo "<pre>".'Response';
+            //print_r($verifyPay);
+            //echo "</pre>";die;
 
-            $responsecode = $verifyPay['status'];
-            if($responsecode == '01'){
+           $responsecode = $verifyPay['status'];
+            if($responsecode == '00'){
                 // get current user to be updated
                 $profile = \Auth::user();
 
                 $order = new Orders;
                 $order->user = $profile->name;
-                $order->amount = $verifyPay['data']['amount']/100;
-                $order->ref = $verifyPay['data']['reference'];
-                $order->status = $verifyPay['data']['gateway_response'];
-                //$order->log_time = date('d-m-Y H:i:s', strtotime($res['data']['paid_at']));
-                $order->channel = $verifyPay['data']['channel'];
-                $order->items = $verifyPay;
+                $order->amount = $verifyPay['amount'];
+                $order->ref = $verifyPay['RRR'];
+                $order->status = $verifyPay['message'];
+                //$order->log_time = date('d-m-Y H:i:s', strtotime($verifyPay['paymentDate']));
+                $order->channel = "card";
+                $order->items = $data;
                 $order->pay_type = "REMITA";
                 $order->save();
 

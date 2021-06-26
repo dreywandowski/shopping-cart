@@ -1,4 +1,4 @@
-
+<?php //echo "rrr===".session('remita_code');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,6 +155,7 @@
     }
     window.onload = function () {
         setDemoData();
+        //makePayment();
     };
 </script>
 <script type="text/javascript" src="https://remitademo.net/payment/v1/remita-pay-inline.bundle.js"></script>

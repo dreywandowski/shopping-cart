@@ -74,14 +74,6 @@ public function orders()
 }
 
 
-// redirect remita
-    public function redirectRemita(Request $request)
-    {
-        $RRR = $request->session()->get('remita_code');
-        $transID = $request->session()->get('transactionID');
-
-        return view('shopping-cart/remita_pay', ['RRR' => $RRR, 'transID' => $transID]);
-    }
 
 
     /// handle paystack bills payment
@@ -273,14 +265,17 @@ public function orders()
 
              // cast the std object to an array
              $result = json_decode(json_encode($data_new), true);
-
+             /*echo "<pre>" . "Rep2";
+             print_r($result);
+             echo "</pre>"; die;*/
              $remita_code = $result['RRR'];
              $request->session()->put('remita_code', $remita_code);
+             //echo "rrr===".session('remita_code');die;
 
              $logdate = date('Y-m-d');
 
              header("Location: http://127.0.0.1:8000/shopping-cart/remita_pay");
-
+                   die;
              //  curl_close($curl);
              //echo $response;
 
