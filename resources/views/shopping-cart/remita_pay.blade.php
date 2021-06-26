@@ -140,7 +140,7 @@
             onSuccess: function (response) {
                // alert('to redirect');
                 //window.location.replace("remita_process_payment.php");
-                 window.location.replace("http://127.0.0.1:8000/shopping-cart/thankyou_remita");
+                 window.location.replace("http://127.0.0.1:8000/shopping-cart/thankyou_remita/{{$RRR}}");
                 console.log('callback Successful Response', response);
                 //
             },

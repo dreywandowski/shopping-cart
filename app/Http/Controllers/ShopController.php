@@ -420,7 +420,7 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
         return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $ref]);
         }
 
-    public function thanksRemita(Request $request){
+    public function thanksRemita(Request $request, $remita){
         $data = session('details');
         $cant;
 
@@ -431,8 +431,7 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
             $cant = ' ';
         }
 
-            $RRR = $request->session()->get('remita_code');
-            $ref = $RRR;
+            $RRR = $remita;
 //echo "RRR==".$RRR;
          $hash = hash('sha512', $RRR.'1946'.'2547916');
 //echo "hash== ".$hash;

@@ -214,6 +214,9 @@ public function orders()
          // handle remita payment option
          elseif ($pay_type == "REMITA"){
              $cur_date = time() * 1000;
+
+             //$hash = hash('sha512', {{merchantId}}.{{serviceTypeID}}.{{orderID}}.{{amount}}.{{apikey}});
+
              $hash = hash('sha512', '2547916'.'4430731'.$cur_date.$amount.'1946');
              //echo 'hash == '.$hash;
              //die;
