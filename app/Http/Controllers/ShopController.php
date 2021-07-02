@@ -130,6 +130,30 @@ class ShopController extends Controller
 
                 break;
 
+            case 'A':
+                $items = Items::orderBy('name', 'ASC')->simplePaginate(9);
+                return view('shopping-cart/shop', ['page' => 'Shop / A-Z', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+
+                break;
+
+            case 'Z':
+                $items = Items::orderBy('name', 'DESC')->simplePaginate(9);
+                return view('shopping-cart/shop', ['page' => 'Shop / Z-A', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+
+                break;
+
+            case 'low':
+                $items = Items::orderBy('price', 'ASC')->simplePaginate(9);
+                return view('shopping-cart/shop', ['page' => 'Shop / Price: Low to High', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+
+                break;
+
+            case 'high':
+                $items = Items::orderBy('price', 'DESC')->simplePaginate(9);
+                return view('shopping-cart/shop', ['page' => 'Shop / Price: High to Low', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+
+                break;
+
             default:
 
         }

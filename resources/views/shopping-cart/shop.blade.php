@@ -6,7 +6,7 @@
           <div class="col-md-12 mb-0"><a href="/shop/">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{$page}}</strong></div>
         </div>
       </div>
-    </div>  
+    </div>
 
     <div class="site-section">
       <div class="container">
@@ -31,12 +31,12 @@
                   <div class="btn-group">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                      <a class="dropdown-item" href="#">Relevance</a>
-                      <button   name="asc" value="asc" class="dropdown-item button" >Name, A to Z</button>
-                      <button   name="asc" value="desc" class="dropdown-item button" >Name, Z to A</button>
+
+                      <a  class="dropdown-item "  href="/shopping-cart/shop/A">Name, A to Z</a>
+                      <a class="dropdown-item" href="/shopping-cart/shop/Z" >Name, Z to A</a>
                        <div class="dropdown-divider"></div>
-                      <button  name="asc" value="asc" class="dropdown-item button" >Price, low to high</button>
-                      <button name="asc" value="desc" class="dropdown-item button" >Price, high to low</button>
+                      <a  class="dropdown-item " href="/shopping-cart/shop/low">Price, low to high</a>
+                      <a class="dropdown-item " href="/shopping-cart/shop/high">Price, high to low</a>
 
                     </div>
                   </div>
@@ -63,7 +63,7 @@
 @endforeach
 <br>
    </div>
-          
+
 <div>{{ $items->links() }}</div><br>
 
 
@@ -97,7 +97,7 @@
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
                 <div id="slider-range" class="border-primary"></div>
-                <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
+                <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white"  disabled="" />
               </div>
 
               <div class="mb-4">
@@ -133,5 +133,5 @@
           </div>
         </div>
 
-       
+
     @endsection

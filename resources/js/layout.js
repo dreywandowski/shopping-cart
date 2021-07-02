@@ -18,20 +18,20 @@
           data.push(file);
           data.push(priceFin);
           //alert(name + ' '+ price + ' '+ type + ' '+ number + ' '+ file);
-          
-          count++; 
+
+          count++;
           //$('#count').html(count);
             //alert(count);
             data.push(count);
             //alert('array items: '+ data);
-        
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
             }
         });
         event.preventDefault();
-        
+
         var ajaxurl = '/shopping-cart/shop-single/'+name+'?';//alert(ajaxurl);
         $.ajax({
             type: 'get',
@@ -42,10 +42,10 @@
               number: data[3],
               file: data[4],
               count: data[6],
-              priceFin: data[5] 
+              priceFin: data[5]
             },
             url: ajaxurl,
-           
+
             success: function (data) {
                 $('#ajaxRep').text(data);
                 //$('#count').html(count)
@@ -57,10 +57,10 @@
         });
     });
 
-      
 
-  /** calculate total price in cart  **/  
-  var sum = [];   //alert($('.price').text());  
+
+  /** calculate total price in cart  **/
+  var sum = [];   //alert($('.price').text());
 //var totPrice = $('.price').text();
 $( ".price" ).each(function( index ) {
   var arra = $( this ).text().replace(/\D/g,'');
@@ -83,4 +83,11 @@ const countNumers = (arr = []) => {
 }
 console.log(countNumers(arr));
 
+
+// this allows us to reload the shop items based on price items selected in the dynamic slider
+//var curr_amt = document.getElementById('amount');
+alert("hey");
+curr_amt.addEventListener('click', function () {
+    console.log("heyyy" + curr_amt.value());
+}, false);
 
