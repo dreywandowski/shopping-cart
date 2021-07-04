@@ -113,7 +113,7 @@
                 </label>
               </div>
 
-              <div class="mb-4">
+              <div class="mb-4" >
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Color</h3>
                 <a href="#" class="d-flex color-item align-items-center" >
                   <span class="bg-danger color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Red (2,429)</span>

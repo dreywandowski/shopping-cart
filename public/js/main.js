@@ -154,13 +154,49 @@ jQuery(document).ready(function($) {
       min: 200,
       max: 50000,
       values: [ 200, 8000 ],
+        change: function(event, ui) {
+            //alert("initial "+ui.values[ 0 ] + "final "+ ui.values[ 1 ]);
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            event.preventDefault();
+
+            var url = $(location).attr('href');
+             url = url.substring(url.lastIndexOf("/") + 1);
+            var ajaxurl = '/shopping-cart/shop/'+url;//alert(ajaxurl);
+            $.ajax({
+                type: 'get',
+                data: {
+                    initial: ui.values[ 0 ],
+                    final:   ui.values[ 1 ]
+                },
+                url: ajaxurl,
+
+                success: function (data) {
+                    $('#ajaxRep').text(data);
+                    //$('#count').html(count)
+                    console.log(status);
+                },
+                error: function (data) {
+                    $('#ajaxRep').text(data);
+                    console.log(data.status);
+                }
+            });
+
+        },
       slide: function( event, ui ) {
         $( "#amount" ).val( "NGN" + ui.values[ 0 ] + " - NGN" + ui.values[ 1 ] );
       }
     });
+
     $( "#amount" ).val( "NGN" + $( "#slider-range" ).slider( "values", 0 ) +
       " - NGN" + $( "#slider-range" ).slider( "values", 1 ) );
 	};
+
+
 	siteSliderRange();
 
 

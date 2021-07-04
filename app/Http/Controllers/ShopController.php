@@ -157,8 +157,9 @@ class ShopController extends Controller
             default:
 
         }
-
-
+        if ($request->ajax()) {
+            echo "here";
+        }
     }
 
 

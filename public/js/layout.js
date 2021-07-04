@@ -88,11 +88,12 @@ $('.finPrice').text('NGN '+countNumers(arr));
 $('#amt').val(countNumers(arr));
 
 // this allows us to reload the shop items based on price items selected in the dynamic slider
-//var curr_amt = document.getElementById('amount');
-alert("hey");
-curr_amt.addEventListener('click', function () {
-    console.log("heyyy" + curr_amt.value());
-}, false);
+/*$('#slider-range').slider({
+    change: function(event, ui){
+        alert("heyyyy"+ui.value);
+    }
+})*/
+
 
 /** initiate payment via Flutterwave
 
