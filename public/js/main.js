@@ -178,11 +178,11 @@ jQuery(document).ready(function($) {
                 success: function (data) {
                     $('#ajaxRep').text(data);
                     //$('#count').html(count)
-                    console.log(status);
+                    //console.log("here" + data);
                 },
                 error: function (data) {
                     $('#ajaxRep').text(data);
-                    console.log(data.status);
+                   // console.log("nope" + status);
                 }
             });
 
