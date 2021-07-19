@@ -156,7 +156,8 @@ jQuery(document).ready(function($) {
       values: [ 200, 8000 ],
         change: function(event, ui) {
             //alert("initial "+ui.values[ 0 ] + "final "+ ui.values[ 1 ]);
-
+      $('#first').val(ui.values[ 0 ]);
+      $('#second').val(ui.values[ 1]);
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
@@ -166,7 +167,9 @@ jQuery(document).ready(function($) {
 
             var url = $(location).attr('href');
              url = url.substring(url.lastIndexOf("/") + 1);
-            var ajaxurl = '/shopping-cart/shop/'+url;//alert(ajaxurl);
+            var ajaxurl = '/shopping-cart/shop/'+url;//,,,,,,
+
+            // alert(ajaxurl);
             $.ajax({
                 type: 'get',
                 data: {
@@ -175,10 +178,10 @@ jQuery(document).ready(function($) {
                 },
                 url: ajaxurl,
 
-                success: function (data) {
-                    $('#ajaxRep').text(data);
+                success: function (response) {
+                    $('#ajaxRep').html(response.html);
                     //$('#count').html(count)
-                    //console.log("here" + data);
+                    console.log(response);
                 },
                 error: function (data) {
                     $('#ajaxRep').text(data);

@@ -7,7 +7,11 @@
         </div>
       </div>
     </div>
+
+
 <span id="ajaxRep" > </span>
+
+
     <div class="site-section">
       <div class="container">
 
@@ -97,10 +101,22 @@
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
                 <div id="slider-range" class="border-primary"></div>
+
                 <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white"  disabled="" />
               </div>
-
-              <div class="mb-4">
+       <form method="GET" action="/shopping-cart/apply">
+           @csrf
+       <div class="col-md-6">
+           <input type="text" name="first" id="first" class="form-control border-0 pl-0 bg-white"  hidden="" />
+           <input type="text" name="second" id="second" class="form-control border-0 pl-0 bg-white"  hidden="" />
+           <input type="text" name="req" id="last" class="form-control border-0 pl-0 bg-white"  hidden value="{{$req}}" />
+           <button type="submit" class="btn btn-primary">
+               APPLY
+           </button>
+       </div>
+       </form>
+          <br>
+              <!--<div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Size</h3>
                 <label for="s_sm" class="d-flex">
                   <input type="checkbox" id="s_sm" class="mr-2 mt-1"> <span class="text-black">Small (2,319)</span>
@@ -130,7 +146,7 @@
               </div>
 
             </div>
-          </div>
+          </div>-->
         </div>
 
 

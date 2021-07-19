@@ -58,9 +58,10 @@ class ShopController extends Controller
             $final = $request->input('final');
 
             $items = Items::where('type', '=', $req)->whereBetween('price', [$initial, $final])->get()->toArray();
-           // dd($items);
-            $returnHTML = view('shopping-cart/shop', ['page' => 'Shop /'. $req. 'collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => $req.' collection', 'items' => $items, 'show' => $cant])->render();
-            return response()->json(array('success' => true, 'html' =>$returnHTML));
+
+            //dd($items);
+            //$returnHTML = view('shopping-cart/shop', ['page' => 'Shop /'. $req. 'collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => $req.' collection', 'items' => $items, 'show' => $cant])->render();
+            //return response()->json(array('success' => true, 'html' =>$returnHTML));
         }
 
         else {
@@ -70,7 +71,7 @@ class ShopController extends Controller
                 case 'man':
                     $items = Items::where('type', '=', 'man')->simplePaginate(9);
 
-                    return view('shopping-cart/shop', ['page' => 'Shop / Men collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'Men collection', 'items' => $items, 'show' => $cant]);
+                    return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / Men collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'Men collection', 'items' => $items, 'show' => $cant]);
                     break;
 
 
@@ -78,7 +79,7 @@ class ShopController extends Controller
                 case 'woman':
                     $items = Items::where('type', '=', 'woman')->simplePaginate(9);
 
-                    return view('shopping-cart/shop', ['page' => 'Shop / Women collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'Women collection', 'items' => $items, 'womanAsc' => $womanAsc, 'show' => $cant]);
+                    return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / Women collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'Women collection', 'items' => $items, 'womanAsc' => $womanAsc, 'show' => $cant]);
                     break;
 
                 // only with type child
@@ -86,36 +87,36 @@ class ShopController extends Controller
                     $items = Items::where('type', '=', 'child')->simplePaginate(9);
 
 
-                    return view('shopping-cart/shop', ['page' => 'Shop / Children collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'Children collection', 'items' => $items, 'show' => $cant]);
+                    return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / Children collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'Children collection', 'items' => $items, 'show' => $cant]);
                     break;
 
                 case 'all':
                     $items = Items::simplePaginate(9);
-                    return view('shopping-cart/shop', ['page' => 'Shop / All categories', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+                    return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / All categories', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
 
                     break;
 
                 case 'A':
                     $items = Items::orderBy('name', 'ASC')->simplePaginate(9);
-                    return view('shopping-cart/shop', ['page' => 'Shop / A-Z', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+                    return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / A-Z', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
 
                     break;
 
                 case 'Z':
                     $items = Items::orderBy('name', 'DESC')->simplePaginate(9);
-                    return view('shopping-cart/shop', ['page' => 'Shop / Z-A', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+                    return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / Z-A', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
 
                     break;
 
                 case 'low':
                     $items = Items::orderBy('price', 'ASC')->simplePaginate(9);
-                    return view('shopping-cart/shop', ['page' => 'Shop / Price: Low to High', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+                    return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / Price: Low to High', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
 
                     break;
 
                 case 'high':
                     $items = Items::orderBy('price', 'DESC')->simplePaginate(9);
-                    return view('shopping-cart/shop', ['page' => 'Shop / Price: High to Low', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+                    return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / Price: High to Low', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
 
                     break;
 
@@ -124,6 +125,112 @@ class ShopController extends Controller
             }
         }
     }
+
+    // after applying price range
+    public function apply(Request $request){
+        $data = session('details');
+        if ($data != null) {
+
+            $cant = count($data);
+        } else {
+            $cant = ' ';
+        }
+
+        $man = Items::where('type', '=', 'man')->get()->toArray();
+        $woman = Items::where('type', '=', 'woman')->get()->toArray();
+        $child = Items::where('type', '=', 'child')->get()->toArray();
+        $numMan = count($man);
+        $numWoman = count($woman);
+        $numChild = count($child);
+
+
+            $initial = $request->input('first');
+            $final = $request->input('second');
+            $req =   $request->input('req');
+            $req = strtoupper($req);
+
+        if($req =="all"){
+            $items = Items::simplePaginate(9);
+            return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / All categories', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+              }
+        elseif($req =="A") {
+            $items = Items::orderBy('name', 'ASC')->simplePaginate(9);
+            return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / A-Z', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+        }
+        elseif($req =="Z") {
+            $items = Items::orderBy('name', 'DESC')->simplePaginate(9);
+            return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / Z-A', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+        }
+        elseif($req =="low") {
+            $items = Items::orderBy('price', 'ASC')->simplePaginate(9);
+            return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / Price: Low to High', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+        }
+        elseif($req =="high"){
+        $items = Items::orderBy('price', 'DESC')->simplePaginate(9);
+        return view('shopping-cart/shop', ['req' => $req, 'page' => 'Shop / Price: High to Low', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+    }
+        else{
+            $items = Items::where('type', '=', $req)->whereBetween('price', [$initial, $final])->simplePaginate(9);
+        }
+
+
+       /* echo "<pre>" . "heeeere ";
+        print_r($items);
+        echo "</pre>";die;*/
+                return view('shopping-cart/shop', ['req' => $req,'page' => 'Shop /'.' '. $req.' '. 'collection / Prices from NGN'.$initial.' '.' to NGN'.$final, 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => $req.' collection', 'items' => $items, 'show' => $cant]);
+
+
+/*
+            // only with type woman
+            case 'woman':
+                $items = Items::where('type', '=', 'woman')->simplePaginate(9);
+
+                return view('shopping-cart/shop', ['page' => 'Shop / Women collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'Women collection', 'items' => $items, 'womanAsc' => $womanAsc, 'show' => $cant]);
+                break;
+
+            // only with type child
+            case 'child':
+                $items = Items::where('type', '=', 'child')->simplePaginate(9);
+
+
+                return view('shopping-cart/shop', ['page' => 'Shop / Children collection', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'Children collection', 'items' => $items, 'show' => $cant]);
+                break;
+*/
+        switch ($req){
+            case 'all':
+                $items = Items::simplePaginate(9);
+                return view('shopping-cart/shop', ['page' => 'Shop / All categories', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+
+                break;
+
+            case 'A':
+                $items = Items::orderBy('name', 'ASC')->simplePaginate(9);
+                return view('shopping-cart/shop', ['page' => 'Shop / A-Z', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+
+                break;
+
+            case 'Z':
+                $items = Items::orderBy('name', 'DESC')->simplePaginate(9);
+                return view('shopping-cart/shop', ['page' => 'Shop / Z-A', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+
+                break;
+
+            case 'low':
+                $items = Items::orderBy('price', 'ASC')->simplePaginate(9);
+                return view('shopping-cart/shop', ['page' => 'Shop / Price: Low to High', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+
+                break;
+
+            case 'high':
+                $items = Items::orderBy('price', 'DESC')->simplePaginate(9);
+                return view('shopping-cart/shop', ['page' => 'Shop / Price: High to Low', 'man' => $numMan, 'woman' => $numWoman, 'child' => $numChild, 'title' => 'All categories', 'items' => $items, 'show' => $cant]);
+
+                break;
+
+            default:
+
+        }
+        }
 
 
 // this is for the contact us page
