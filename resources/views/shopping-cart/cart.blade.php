@@ -35,7 +35,7 @@
                   <tr>
       <!-- to return deletion msg -->
                       @if(Session::has('message'))
-                       
+
             <p class="alert-warning" > {{ Session::get('message')  }}
             @endif
 
@@ -94,10 +94,18 @@
                 <p>Enter your coupon code if you have one.</p>
               </div>
               <div class="col-md-8 mb-3 mb-md-0">
-                <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
+                  <form method = "post" action="{{ route('coupon') }}" >
+                      @csrf
+                <input type="text" class="form-control py-3"  name="coupon" id="coupon" placeholder="Coupon Code">
               </div>
               <div class="col-md-4">
-                <button class="btn btn-primary btn-sm">Apply Coupon</button>
+                  <button class="btn btn-sm btn-primary" type="submit">Apply Coupon</button>
+                  <!-- to return coupon msg -->
+                  @if(Session::has('message'))
+
+                      <p class="alert-warning"  id="coupon"> {{ Session::get('message')  }}
+                  @endif
+
               </div>
             </div>
           </div>

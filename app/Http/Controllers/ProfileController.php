@@ -5,6 +5,9 @@ use App\Models\Orders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Response;
+use App\Models\Coupons;
+use App\Models\Items;
+use Session;
 
 class ProfileController extends Controller
 {
@@ -72,8 +75,6 @@ public function orders()
     }*/
     return view('shopping-cart/orders' , ['order' => $order]);
 }
-
-
 
 
     /// handle paystack bills payment
@@ -289,6 +290,59 @@ public function orders()
 
          }
      }
+
+
+    public function applyCoupon(Request $request)
+    {
+        $cant;
+
+        $data = session('details');
+
+        //dd($data);
+        if ($data != null) {
+
+            $cant = count($data);
+            // get coupon code to be applied
+
+            $coupon_code = $request->input('coupon');
+
+            $user = \Auth::user()->username;
+
+            $coupon = Coupons::where('coupon_code', '=', $coupon_code)->firstOrFail();
+
+            if (($coupon->consumed == 1) && ($coupon->user_who_consumed_coupon_code == $user)) {
+                Session::flash('message', 'Sorry, this coupon code has already been used');
+                Session::flash('alert-class', 'alert-warning');
+                Session::flash('alert-info', 'coupon');
+
+            } else {
+                // next task is to make the user_who_consumed_coupon_code field be an array that will hold the usernames
+                // of users ho have consumed that code, thereby allowing us to check against the array of users and
+                // attaching a new username at the end of the array if not previously in the array and keep us from repeat-
+                // rows in the table.
+                
+                $coupon->consumed = 1;
+                $coupon->user_who_consumed_coupon_code = $user;
+                $coupon->save();
+                if($coupon->save()){
+                    Session::flash('message', 'Coupon code applied successfully');
+                    Session::flash('alert-class', 'alert-success');
+                }
+
+            }
+            //dd($coupon);
+
+            //return view('shopping-cart/admin', ['show' => '', 'page' => '']);
+        }
+        else
+        {
+            $cant = ' ';
+            Session::flash('message', 'Sorry, this coupon code has already been used');
+            Session::flash('alert-class', 'alert-warning');
+        }
+
+        return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => $data]);
+    }
 
 
 }

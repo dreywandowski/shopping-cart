@@ -39,10 +39,11 @@ Route::post('/shopping-cart/thankyou_flutter', [App\Http\Controllers\ShopControl
 Route::get('/shopping-cart/thankyou_remita/{remita}', [App\Http\Controllers\ShopController::class, 'thanksRemita'])->middleware('auth');
 Route::get('/shopping-cart/thankyou', [App\Http\Controllers\ShopController::class, 'thanks'])->middleware('auth');
 //
+Route::get('/shopping-cart/admin', [App\Http\Controllers\ShopController::class, 'admin']);
 Route::get('/shopping-cart/{req}', [App\Http\Controllers\ShopController::class, 'delete']);
 
 
-
+Route::post('/shopping-cart/coupon', [App\Http\Controllers\ProfileController::class, 'applyCoupon'])->middleware('auth')->name('coupon');
 
 Auth::routes();
 

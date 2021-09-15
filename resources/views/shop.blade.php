@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
     <link rel="stylesheet" href="/fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="/css/aos.css">
 
     <link rel="stylesheet" href="/css/style.css">
-    
+
   </head>
   <body class="theme-dark">
-  
+
   <div class="site-wrap">
     <header class="site-navbar" role="banner">
       <div class="site-navbar-top">
@@ -31,7 +31,7 @@
                   <!-- Dark theme setting -->
 <!--<div class="col-9 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center theme-dark">
  <h6  class="theme-dark"> Site Theme</h6>
-<select id="theme"> 
+<select id="theme">
   <option value="auto">Auto</option>
   <option value="light">Light</option>
   <option value="dark">Dark</option>
@@ -62,15 +62,15 @@
                       <span class="icon icon-shopping_cart"></span>
                       <span class="count">{{ $show}}</span>
                     </a>
-                  </li> 
+                  </li>
                   <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                 </ul>
-              </div> 
+              </div>
             </div>
 
           </div>
         </div>
-      </div> 
+      </div>
 
 
       <nav class="site-navigation text-right text-md-center" role="navigation">
@@ -80,10 +80,10 @@
               <a href="/shop/">Home</a>
             <li>
               <a href="#about">About</a>
-              
+
             </li>
             <li><a href="/shopping-cart/shop/all">Shop</a></li>
-            
+
             <li><a href="/shopping-cart/contact">Contact</a></li>
           </ul>
         </div>
@@ -144,7 +144,7 @@
               <h2 class="text-uppercase">24/7 Customer Support</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
             </div>-->
-      
+
 
           </div>
         </div>
@@ -208,7 +208,7 @@
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="#">Tank Top</a></h3>
-                   
+
                     <p class="text-primary font-weight-bold">NGN 7000</p>
                   </div>
                 </div>
@@ -231,7 +231,7 @@
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="#">Polo Shirt</a></h3>
-                    
+
                     <p class="text-primary font-weight-bold">NGN 3000</p>
                   </div>
                 </div>
@@ -331,7 +331,7 @@
               <h3 class="footer-heading mb-4">Contact Info</h3>
               <ul class="list-unstyled">
                 <li class="address">Estaport Avenue, Gbagada, Lagos </li>
-                <li class="phone"><a href="tel://23923929210">+2349071710815</a></li>
+                <li class="phone"><a href="tel://23923929210">+2348188542677</a></li>
                 <li class="email">aduramimo@gmail.com</li>
               </ul>
             </div>
@@ -350,12 +350,12 @@
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
            <p>Developed by dreywandowski <br>Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. 
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
             Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>-->
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
-          
+
         </div>
       </div>
     </footer>
@@ -370,6 +370,6 @@
   <script src="/js/aos.js"></script>
 
   <script src="/js/main.js"></script>
-    
+
   </body>
 </html>
