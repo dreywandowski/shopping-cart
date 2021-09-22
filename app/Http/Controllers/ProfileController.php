@@ -305,54 +305,62 @@ public function orders()
             // get coupon code to be applied
 
             $coupon_code = $request->input('coupon');
-           // echo "code==$coupon_code";
+            // echo "code==$coupon_code";
 
             $user = \Auth::user()->username;
 
             $coupon = Coupons::where('coupon_code', '=', $coupon_code)->firstOrFail();
 
             $consumer = "";
-            function getUserArray($user){
+            function getUserArray($user)
+            {
                 return explode(' ', $user);
             }
 
             $update = false;
-           
             $user_code = getUserArray($user);
-            if(!empty($coupon->user_who_consumed_coupon_code)){
-                foreach ($coupon->user_who_consumed_coupon_code as $cur_user){
-                    if($cur_user == $user){
-                        Session::flash('message', 'Sorry, this coupon code has already been used by you');
-                        Session::flash('alert-class', 'alert-warning');
-                        Session::flash('alert-info', 'coupon');
-                        $update = false;
+            $cur_date = date('Y-m-d');
 
+            // checks if the coupon is still valid
+            if ($cur_date <= $coupon->expires) {
+                if (!empty($coupon->user_who_consumed_coupon_code)) {
+                    foreach ($coupon->user_who_consumed_coupon_code as $cur_user) {
+                        if ($cur_user == $user) {
+                            Session::flash('message', 'Sorry, this coupon code has already been used by you');
+                            Session::flash('alert-class', 'alert-warning');
+                            Session::flash('alert-info', 'coupon');
+                            $update = false;
+
+                        } else {
+                            $consumer = array_merge($coupon->user_who_consumed_coupon_code, $user_code);
+                            $update = true;
+                        }
                     }
-                    else{
-                        $consumer = array_merge($coupon->user_who_consumed_coupon_code , $user_code);
-                        $update = true;
-                    }
+                } else {
+                    $consumer = $user_code;
+                    $update = true;
                 }
+
+                if ($update) {
+
+                    $coupon->consumed = 1;
+                    $coupon->user_who_consumed_coupon_code = $consumer;//
+                    $coupon->save();
+                    if ($coupon->save()) {
+                        Session::flash('message', 'Coupon code applied successfully');
+                        Session::flash('alert-class', 'alert-success');
+                    }
+
+                }
+                //dd($coupon);
+
+                //return view('shopping-cart/admin', ['show' => '', 'page' => '']);
             }
             else{
-                $consumer = $user_code;
-                $update = true;
+                Session::flash('message', 'Sorry, this coupon has expired.');
+                Session::flash('alert-class', 'alert-warning');
+                $update = false;
             }
-
-            if ($update) {
-
-                $coupon->consumed = 1;
-                $coupon->user_who_consumed_coupon_code = $consumer;//
-                $coupon->save();
-                if($coupon->save()){
-                    Session::flash('message', 'Coupon code applied successfully');
-                    Session::flash('alert-class', 'alert-success');
-                }
-
-            }
-            //dd($coupon);
-
-            //return view('shopping-cart/admin', ['show' => '', 'page' => '']);
         }
         else
         {
