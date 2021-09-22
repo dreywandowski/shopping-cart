@@ -305,24 +305,44 @@ public function orders()
             // get coupon code to be applied
 
             $coupon_code = $request->input('coupon');
+           // echo "code==$coupon_code";
 
             $user = \Auth::user()->username;
 
             $coupon = Coupons::where('coupon_code', '=', $coupon_code)->firstOrFail();
 
-            if (($coupon->consumed == 1) && ($coupon->user_who_consumed_coupon_code == $user)) {
-                Session::flash('message', 'Sorry, this coupon code has already been used');
-                Session::flash('alert-class', 'alert-warning');
-                Session::flash('alert-info', 'coupon');
+            $consumer = "";
+            function getUserArray($user){
+                return explode(' ', $user);
+            }
 
-            } else {
-                // next task is to make the user_who_consumed_coupon_code field be an array that will hold the usernames
-                // of users ho have consumed that code, thereby allowing us to check against the array of users and
-                // attaching a new username at the end of the array if not previously in the array and keep us from repeat-
-                // rows in the table.
-                
+            $update = false;
+           
+            $user_code = getUserArray($user);
+            if(!empty($coupon->user_who_consumed_coupon_code)){
+                foreach ($coupon->user_who_consumed_coupon_code as $cur_user){
+                    if($cur_user == $user){
+                        Session::flash('message', 'Sorry, this coupon code has already been used by you');
+                        Session::flash('alert-class', 'alert-warning');
+                        Session::flash('alert-info', 'coupon');
+                        $update = false;
+
+                    }
+                    else{
+                        $consumer = array_merge($coupon->user_who_consumed_coupon_code , $user_code);
+                        $update = true;
+                    }
+                }
+            }
+            else{
+                $consumer = $user_code;
+                $update = true;
+            }
+
+            if ($update) {
+
                 $coupon->consumed = 1;
-                $coupon->user_who_consumed_coupon_code = $user;
+                $coupon->user_who_consumed_coupon_code = $consumer;//
                 $coupon->save();
                 if($coupon->save()){
                     Session::flash('message', 'Coupon code applied successfully');
@@ -337,7 +357,7 @@ public function orders()
         else
         {
             $cant = ' ';
-            Session::flash('message', 'Sorry, this coupon code has already been used');
+            Session::flash('message', 'No coupons found');
             Session::flash('alert-class', 'alert-warning');
         }
 

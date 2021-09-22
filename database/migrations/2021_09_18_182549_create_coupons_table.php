@@ -19,7 +19,7 @@ class CreateCouponsTable extends Migration
             $table->string('name');
             $table->string('coupon_code');
             $table->boolean('consumed?');
-            $table->string('user_who_consumed_coupon_code');
+            $table->json('user_who_consumed_coupon_code');
         });
     }
 

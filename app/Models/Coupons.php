@@ -10,4 +10,8 @@ class Coupons extends Model
     //const CREATED_AT = 'creation_date';
     //const UPDATED_AT = 'date_consumed';
     use HasFactory;
+
+    protected $casts = [
+        'user_who_consumed_coupon_code' => 'array'
+    ];
 }
