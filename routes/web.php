@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Mail\Welcome;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,8 +41,21 @@ Route::post('/shopping-cart/thankyou_flutter', [App\Http\Controllers\ShopControl
 Route::get('/shopping-cart/thankyou_remita/{remita}', [App\Http\Controllers\ShopController::class, 'thanksRemita'])->middleware('auth');
 Route::get('/shopping-cart/thankyou', [App\Http\Controllers\ShopController::class, 'thanks'])->middleware('auth');
 //
+//Route::get('/shopping-cart/mail-test', [App\Http\Controllers\MailController::class, 'sendMail']);
+Route::get('/shopping-cart/mail-test', function (){
+    $email_data = array(
+        'title' => 'Testing from Adura-Shop',
+        'body' => 'This is for testing purposes only',
+    );
+Mail::to('aduramimodamilare@gmail.com')->send(new Welcome($email_data));
+dd('sent');
+});
+
 Route::get('/shopping-cart/admin', [App\Http\Controllers\ShopController::class, 'admin']);
 Route::get('/shopping-cart/{req}', [App\Http\Controllers\ShopController::class, 'delete']);
+
+// livewire
+//Route::get('/shopping-cart/users/live', [App\Http\Livewire\LiveTable::class, 'render']);
 
 
 Route::post('/shopping-cart/coupon', [App\Http\Controllers\ProfileController::class, 'applyCoupon'])->middleware('auth')->name('coupon');

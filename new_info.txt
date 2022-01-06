@@ -5,6 +5,8 @@ https://stackoverflow.com/questions/8746207/1071-specified-key-was-too-long-max-
 
 https://stackoverflow.com/questions/63807930/target-class-controller-does-not-exist-laravel-8
 
+https://laravelproject.com/using-events-and-listeners-in-laravel-7-with-example/
+
 
 =======================
 FOREIGN KEY
@@ -23,9 +25,9 @@ REMITA INTERGRATION
             $amount = $_REQUEST['item'];
 
              $hash = hash('sha512', '2547916'.'4430731'.$cur_date.$amount.'1946');
-             //echo 'hash == '.$hash; 
+             //echo 'hash == '.$hash;
              //die;
-             
+
 
 
             $curl = curl_init();
@@ -43,9 +45,9 @@ REMITA INTERGRATION
              echo "</pre>";*/
              $post_data = json_encode($post_data);
              //echo "post_data == $post_data";
-     
 
-   
+
+
 
 
 
@@ -68,7 +70,7 @@ REMITA INTERGRATION
             $response = curl_exec($curl);
 
            // function to decode jsonp to a php std object
-            function jsonp_decode($response, $assoc = false) { 
+            function jsonp_decode($response, $assoc = false) {
              if($response[0] !== '[' && $response[0] !== '{') { // we have JSONP
                 $response = substr($response, strpos($response, '('));
              }
@@ -88,9 +90,9 @@ REMITA INTERGRATION
 
 
       //store the generated transaction id and the customer id(policy number) to the session on sending payment
-       
+
         $_SESSION['cust_id'] = $cust_id;
-  
+
      $logdate = date('Y-m-d');
      //echo "date== ".$logdate;
 
@@ -103,11 +105,11 @@ REMITA INTERGRATION
 
     // dbgarr('save_arr', $save_arr);
 
-     //save the response 
+     //save the response
      $save_flag = $iwebpay_tab->saveRec($save_arr);
      //echo 'save=='.$iwebpay_tab->get_query();
 
-     // die;  
+     // die;
 
 //dbgarr('save_arr', $save_arr);
 
@@ -226,12 +228,12 @@ $transactionId = $_SESSION['transactionId'];
 <body>
 <form onsubmit="makePayment()" id="payment-form">
     <ul class="form-style-1">
-       
+
         <li>
             <label>RRR<span class="required">*</span></label>
             <input type="text" id="js-rrr" name="rrr"  class="field-long"/>
         </li>
-        
+
         <li>
             <input type="button" onclick="makePayment()" value="Pay"/>
         </li>
@@ -240,8 +242,8 @@ $transactionId = $_SESSION['transactionId'];
 
 <script>
 
-    
-    
+
+
     function setDemoData() {
         var rrr_value = "<?php echo $RRR;?>";
         //alert(rrr_value);
@@ -253,7 +255,7 @@ $transactionId = $_SESSION['transactionId'];
         }
     }
     function makePayment() {
-        
+
          var rrr_value = "<?php echo $RRR;?>";
          var transactionId = "<?php echo $transactionId; ?>";
         var form = document.querySelector("#payment-form");
@@ -261,12 +263,12 @@ $transactionId = $_SESSION['transactionId'];
             key:"QzAwMDAxNjMwNzl8NDA4NDEyMjQ0MHw0ODZkYTZkOTE4NTVhNzMzZmIzZTM5MTU2ZDBjZDYxY2Y4MzY4ODQ1NzRkYzIyOTI2OWQzMTU1M2NlNzdkNGZkZGIyNjI1MzA1ZjZkNzkzYzM2NTE4NzUxNTI0OWVjYjAxODUyNGZmYTM3NjY3M2IwZWNjYTU3OWEwYjE5NGMyNQ==",
 			transactionId:transactionId,
 		    processRrr: true,
-			extendedData: { 
-				customFields: [ 
-					{ 
-						name: "rrr", 
+			extendedData: {
+				customFields: [
+					{
+						name: "rrr",
 						value: rrr_value
-					} 
+					}
 				 ]
 			},
             onSuccess: function (response) {
@@ -327,7 +329,7 @@ $verifyPay = json_decode($response, true);
 /*echo "<pre>".'Response';
 print_r($verifyPay);
 echo "</pre>";*/
-        $reason        = ''; //message that will be displayed 
+        $reason        = ''; //message that will be displayed
         $status        = '';
         $img_pos       = '';
         $directives    = '';

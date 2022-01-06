@@ -117,12 +117,17 @@
                     <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
                   </div>
                 </div>
+
+                  @if(isset($coupon_val))
+                      <input type="text" id="coupon" name="coupon" value="{{ $coupon_val }}">
+                  @endif
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <span class="text-black">Subtotal</span>
                   </div>
                   <div class="col-md-6 text-right">
-                    <strong class="text-black finPrice"></strong>
+                    <strong class="text-black finPrice">
+                        </strong>
                   </div>
                 </div>
                 <div class="row mb-5">
@@ -133,7 +138,6 @@
                     <strong class="text-black  finPrice"></strong>
                   </div>
                 </div>
-
                   <div class="col-md-6">
 
                          @auth

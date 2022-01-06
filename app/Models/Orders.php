@@ -13,5 +13,16 @@ class Orders extends Model
         'items' => 'array'
     ];
 
-
+    public static function search($query)
+    {
+        return empty($query) ? static::query()->where('user', 'orders')
+            : static::where('user', 'orders')
+                ->where(function($q) use ($query) {
+                    $q
+                        ->where('ref', 'LIKE', '%'. $query . '%')
+                        ->orWhere('pay_type', 'LIKE', '%' . $query . '%')
+                        ->orWhere('amount', 'LIKE ', '%' . $query . '%')
+                        ->orWhere('updated_at', 'LIKE ', '%' . $query . '%');
+                });
+    }
 }

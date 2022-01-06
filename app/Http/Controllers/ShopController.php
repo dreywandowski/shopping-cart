@@ -257,15 +257,15 @@ class ShopController extends Controller
     {
         $data = session('details');
         $cant;
+        $finPrice = array();
 
         if ($data != null) {
-
             $cant = count($data);
         } else {
             $cant = ' ';
         }
 
-        return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => $data]);
+        return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => $data, 'price']);
 
     }
 

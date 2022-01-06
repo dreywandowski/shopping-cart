@@ -56,7 +56,7 @@ class ProfileController extends Controller
     }
 
 // Show orders for the current user
-public function orders()
+ public function orders()
 {
     $profile = \Auth::user();
     $profile->user = $profile->name;
@@ -294,18 +294,20 @@ public function orders()
 
     public function applyCoupon(Request $request)
     {
+
         $cant;
 
         $data = session('details');
 
         //dd($data);
         if ($data != null) {
-
+            $finPrice = array();
             $cant = count($data);
+            $final_val = "";
             // get coupon code to be applied
 
             $coupon_code = $request->input('coupon');
-            // echo "code==$coupon_code";
+            echo "code==$coupon_code";
 
             $user = \Auth::user()->username;
 
@@ -320,6 +322,8 @@ public function orders()
             $update = false;
             $user_code = getUserArray($user);
             $cur_date = date('Y-m-d');
+            $coupon_val = '';
+            // echo "coupon_val.....$coupon_val";
 
             // checks if the coupon is still valid
             if ($cur_date <= $coupon->expires) {
@@ -329,48 +333,57 @@ public function orders()
                             Session::flash('message', 'Sorry, this coupon code has already been used by you');
                             Session::flash('alert-class', 'alert-warning');
                             Session::flash('alert-info', 'coupon');
+                            $coupon_val = '';
                             $update = false;
 
                         } else {
                             $consumer = array_merge($coupon->user_who_consumed_coupon_code, $user_code);
+                            $coupon_val = $coupon->value;
                             $update = true;
                         }
                     }
                 } else {
                     $consumer = $user_code;
+                    $coupon_val = $coupon->value;
                     $update = true;
                 }
-
                 if ($update) {
-
                     $coupon->consumed = 1;
                     $coupon->user_who_consumed_coupon_code = $consumer;//
                     $coupon->save();
                     if ($coupon->save()) {
                         Session::flash('message', 'Coupon code applied successfully');
                         Session::flash('alert-class', 'alert-success');
+                        $coupon_val = $coupon->value;
+                       // print_r($data);
+                        foreach ($data as $row){
+                            foreach ($row as $item)
+                            $finPrice[] = $item['price'];
+                        }
+                        $finPrice = array_sum($finPrice);
+                        $final_val = $finPrice - $coupon_val;
                     }
 
                 }
                 //dd($coupon);
 
                 //return view('shopping-cart/admin', ['show' => '', 'page' => '']);
-            }
-            else{
+            } else {
                 Session::flash('message', 'Sorry, this coupon has expired.');
                 Session::flash('alert-class', 'alert-warning');
                 $update = false;
+                $final_val = '';
+
             }
-        }
-        else
-        {
+        } else {
             $cant = ' ';
             Session::flash('message', 'No coupons found');
             Session::flash('alert-class', 'alert-warning');
+            $final_val = '';
         }
 
-        return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => $data]);
-    }
-
+//echo "coupon====$coupon_val..fin=$final_val";
+            return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => $data, 'coupon_val' => $final_val]);
+        }
 
 }

@@ -84,8 +84,17 @@ const countNumers = (arr = []) => {
 console.log(countNumers(arr));
 
 
+// find a way to get dynamic coupon value to be seen in the js file and removed from the final price computation
+
+
 $('.finPrice').text('NGN '+countNumers(arr));
 $('#amt').val(countNumers(arr));
+
+function findCoupon(){
+    var value = $('#coupon').find('[name=coupon]').val();
+    //alert("value" + value);
+}
+findCoupon();
 
 // this allows us to reload the shop items based on price items selected in the dynamic slider
 /*$('#slider-range').slider({
