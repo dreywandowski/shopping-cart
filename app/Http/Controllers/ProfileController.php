@@ -170,6 +170,8 @@ class ProfileController extends Controller
                  'last_name' => $cust_lname,
              ];
              $fields_string = http_build_query($fields);
+             //api key
+             $api_key = env('PAYSTACK_SECRET_KEY');
 
 //open connection
              $ch = curl_init();
@@ -181,7 +183,7 @@ class ProfileController extends Controller
              curl_setopt($ch, CURLOPT_POST, true);
              curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
              curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                 "Authorization: Bearer sk_test_83908abce2264dc4533d99b55eec6035d18c1ba8",
+                 "Authorization: Bearer $api_key",
 
                  "Cache-Control: no-cache",
              ));

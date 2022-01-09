@@ -459,6 +459,8 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
 
             $pay_type = $request->session()->get('pay_type');
             $reff = $request->reference;
+            //api key
+            $api_key = env('PAYSTACK_SECRET_KEY');
 
             $curl = curl_init();
             $url = "https://api.paystack.co/transaction/verify/" . $reff;
@@ -473,7 +475,7 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer sk_test_83908abce2264dc4533d99b55eec6035d18c1ba8",
+                    "Authorization: Bearer $api_key",
 
                     "Cache-Control: no-cache",
                 ),

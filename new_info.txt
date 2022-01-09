@@ -1,11 +1,17 @@
-
+1. Force pull
 https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files
-
+2. Mysql error
 https://stackoverflow.com/questions/8746207/1071-specified-key-was-too-long-max-key-length-is-1000-bytes
-
+3. Laravel 8 - defining controller classes
 https://stackoverflow.com/questions/63807930/target-class-controller-does-not-exist-laravel-8
-
+4. Events and listeners in Laravel
 https://laravelproject.com/using-events-and-listeners-in-laravel-7-with-example/
+5. Deploying Laravel projects online
+https://laraveldaily.com/how-to-deploy-laravel-projects-to-live-server-the-ultimate-guide/
+https://laraveldaily.com/what-server-is-needed-to-deploy-laravel-projects/
+6. Sending Mails to users on Laravel
+https://shouts.dev/send-custom-welcome-email-on-registration-in-laravel
+https://laraveldaily.com/mail-notifications-customize-templates/
 
 
 =======================
