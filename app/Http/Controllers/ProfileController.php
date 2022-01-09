@@ -89,9 +89,12 @@ class ProfileController extends Controller
          $pay_type = $request->input('pay_type');
          $rand = rand();
 
-         // save pay_type to the session
+         // save some details to the session to help us later
          $request->session()->put('pay_type', $pay_type);
          $request->session()->put('transactionId', $rand);
+         $request->session()->put('amount', $amount);
+         $request->session()->put('cust_email', $cust_email);
+         $request->session()->put('cust_fname', $cust_fname);
          //print_r($request->session()->all());die;
 
 

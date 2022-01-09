@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\FailedOrder;
+use App\Listeners\SaveFailedOrders;
 use App\Events\NewUser;
 use App\Listeners\MailNewUser;
 use Illuminate\Auth\Events\Registered;
@@ -22,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         NewUser::class => [
             MailNewUser::class,
+        ],
+        FailedOrder::class => [
+            SaveFailedOrders::class,
         ],
     ];
 

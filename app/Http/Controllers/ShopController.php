@@ -8,6 +8,7 @@ use App\Models\Items;
 use Illuminate\Support\Facades\DB;
 use Response;
 use Session;
+use App\Events\FailedOrder;
 
 class ShopController extends Controller
 {
@@ -615,6 +616,9 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
         //api key
         $api_key = env('FLW_SECRET_KEY');
 
+       // so that the event listener will have access to the transaction ID
+        $request->session()->put('trans_id', $_GET['transaction_id']);
+
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -638,24 +642,26 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
         $res = json_decode($response, true);
 
         if ($res['status'] == "error") {
+            // fire a new event listener that stores every failed order to the database
+            event(new FailedOrder("fire_failed", "Request $request"));
             $page = 'fail';
             /*$err = curl_error($curl);
             curl_close($curl);*/
             return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $_GET['transaction_id']]);
 
         } else {
-            $ref = $res['data']['reference'];
+            $ref = $res['data']['id'];
             if ($res) {
                 // get current user to be updated
                 $profile = \Auth::user();
 
                 $order = new Orders;
                 $order->user = $profile->name;
-                $order->amount = $res['data']['amount'] / 100;
-                $order->ref = $res['data']['reference'];
-                $order->status = $res['data']['gateway_response'];
+                $order->amount = $res['data']['amount'];
+                $order->ref = $res['data']['id'];
+                $order->status = $res['data']['status'];
                 //$order->log_time = date('d-m-Y H:i:s', strtotime($res['data']['paid_at']));
-                $order->channel = $res['data']['channel'];
+                $order->channel = $res['data']['payment_type'];
                 $order->items = $data;
                 $order->pay_type = "FLUTTERWAVE";
                 $order->save();
