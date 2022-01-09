@@ -155,7 +155,6 @@ class ProfileController extends Controller
 
 // uncomment out this line if you want to redirect the user to the payment page
 //print_r($transaction['data']['link']);
-             //echo "redirect == ".$redirect_url;die;
 
 // redirect to page so User can pay
 // uncomment this line to allow the user redirect to the payment page

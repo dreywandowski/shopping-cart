@@ -13,7 +13,7 @@ class CreateFailedOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('failed_orders', function (Blueprint $table) {
+        Schema::create('failedorders', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('ref');
@@ -32,6 +32,6 @@ class CreateFailedOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('failed_orders');
+        Schema::dropIfExists('failedorders');
     }
 }

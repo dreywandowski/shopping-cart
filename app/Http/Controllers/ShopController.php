@@ -370,8 +370,11 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
             $number = $request->input('number');
             $count = $request->input('count');
             $priceFin = $request->input('priceFin');
+            $cust = \Auth::user();
+            $cust_name = $cust->name;
+            $cust_mail = $cust->email;
 
-            $values = compact('name', 'type', 'price', 'file', 'number', 'count', 'priceFin');
+            $values = compact('name', 'type', 'price', 'file', 'number', 'count', 'priceFin','cust_name','cust_mail');
 
             //remove a session item
             //$request->session()->pull('cart_no', 'aduramimo');
@@ -460,6 +463,9 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
 
             $pay_type = $request->session()->get('pay_type');
             $reff = $request->reference;
+
+        $request->session()->put('trans_id', $reff);
+
             //api key
             $api_key = env('PAYSTACK_SECRET_KEY');
 
@@ -484,15 +490,20 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
 
             $response = curl_exec($curl);
             $res = json_decode($response, true);
+       /* echo "<pre>";
+        print_r($res);
+        echo "</pre>";
+        die;*/
 
-            $ref = $res['data']['reference'];
             if ($res) {
-                // get current user to be updated
-                $profile = \Auth::user();
+                $ref = $res['data']['reference'];
+                if ($res['status'] == 1 && $res['data']['status'] == 'success'){
+                    // get current user to be updated
+                    $profile = \Auth::user();
 
                 $order = new Orders;
                 $order->user = $profile->name;
-                $order->amount = $res['data']['amount']/100;
+                $order->amount = $res['data']['amount'] / 100;
                 $order->ref = $res['data']['reference'];
                 $order->status = $res['data']['gateway_response'];
                 //$order->log_time = date('d-m-Y H:i:s', strtotime($res['data']['paid_at']));
@@ -506,15 +517,25 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
                 else $page = 'pending';
 
                 // reset cart to zero
-                $cant =  $request->session()->forget('details');
+                $cant = $request->session()->forget('details');
 
                 //return response()->json("order successfull.", 200);
                 /*echo "<pre>" . "Rep2";
                 print_r($res);
                 echo "</pre>";*/
-            } else $page = 'fail';
-            /*$err = curl_error($curl);
-            curl_close($curl);*/
+            }
+            } else {
+                $res['status'] = 'error';
+                // fire a new event listener that stores every failed order to the database
+                event(new FailedOrder($res['status']));
+
+                $page = 'fail';
+                $cant = $request->session()->forget('details');
+                /*$err = curl_error($curl);
+                 // reset cart to zero
+
+                curl_close($curl);*/
+            }
         return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $ref]);
         }
 
@@ -615,9 +636,12 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
 
         //api key
         $api_key = env('FLW_SECRET_KEY');
-
+//echo $_GET['transaction_id'].''.$_GET['tx_ref'];
+//print_r($data);
        // so that the event listener will have access to the transaction ID
         $request->session()->put('trans_id', $_GET['transaction_id']);
+        $request->session()->put('pay_type', 'FLUTTERWAVE');
+        //print_r($request->session()->all());die;
 
         $curl = curl_init();
 
@@ -643,7 +667,11 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
 
         if ($res['status'] == "error") {
             // fire a new event listener that stores every failed order to the database
-            event(new FailedOrder("fire_failed", "Request $request"));
+            event(new FailedOrder($res['status']));
+
+            // reset cart to zero
+            $cant = $request->session()->forget('details');
+
             $page = 'fail';
             /*$err = curl_error($curl);
             curl_close($curl);*/
