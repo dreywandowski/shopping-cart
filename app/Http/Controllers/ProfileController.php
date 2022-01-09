@@ -100,38 +100,43 @@ class ProfileController extends Controller
 
              $curl = curl_init();
 
+             $rand = rand();
              $customer_email =  $cust_email;
              $amount = $amount;
              $currency = "NGN";
              $txref = "rave-".$rand; // ensure you generate unique references per transaction.
-             $PBFPubKey = "FLWPUBK_TEST-636b39c5d49113be7c6181fd168b7b22-X"; // get your public key from the dashboard.
-             $redirect_url = "shopping-cart/thankyou_flutter";
+             //api key
+             $api_key = env('FLW_SECRET_KEY');
+             $redirect_url = "http://127.0.0.1:8000/shopping-cart/thankyou_flutter";
+             //$redirect_url = str_replace("https://ravemodal-dev.herokuapp.com/v3/hosted/", "", $redirect_url);
              //$payment_plan = "pass the plan id"; // this is only required for recurring payments.
+             $customer = ['email' => $cust_email, 'phonenumber' => $phone, 'name' => $cust_fname];
 
 
              curl_setopt_array($curl, array(
-                 CURLOPT_URL => "https://api.ravepay.co/flwv3-pug/getpaidx/api/v2/hosted/pay",
+                 CURLOPT_URL => "https://api.flutterwave.com/v3/payments",
                  CURLOPT_RETURNTRANSFER => true,
                  CURLOPT_CUSTOMREQUEST => "POST",
                  CURLOPT_SSL_VERIFYPEER => false,
                  CURLOPT_SSL_VERIFYHOST => false,
                  CURLOPT_POSTFIELDS => json_encode([
                      'amount'=>$amount,
-                     'customer_email'=>$customer_email,
+                     'customer'=>$customer,
                      'currency'=>$currency,
-                     'txref'=>$txref,
-                     'PBFPubKey'=>$PBFPubKey,
+                     'tx_ref'=>$txref,
                      'redirect_url'=>$redirect_url,
                      //'payment_plan'=>$payment_plan
                  ]),
                  CURLOPT_HTTPHEADER => [
                      "content-type: application/json",
-                     "cache-control: no-cache"
+                     "cache-control: no-cache",
+                     "Authorization: Bearer $api_key",
                  ],
              ));
 
              $response = curl_exec($curl);
              $err = curl_error($curl);
+
 
              if($err){
                  // there was an error contacting the rave API
@@ -147,7 +152,7 @@ class ProfileController extends Controller
 
 // uncomment out this line if you want to redirect the user to the payment page
 //print_r($transaction['data']['link']);
-             //echo "here";die;
+             //echo "redirect == ".$redirect_url;die;
 
 // redirect to page so User can pay
 // uncomment this line to allow the user redirect to the payment page

@@ -37,7 +37,7 @@ Route::get('/shopping-cart/remita_pay/{remita_code}', [App\Http\Controllers\Shop
 Route::get('/shopping-cart/my-orders', [App\Http\Controllers\ProfileController::class, 'orders'])->middleware('auth')->name('orders');
 
 
-Route::post('/shopping-cart/thankyou_flutter', [App\Http\Controllers\ShopController::class, 'thankFlutter']);
+Route::get('/shopping-cart/thankyou_flutter', [App\Http\Controllers\ShopController::class, 'thankFlutter']);
 Route::get('/shopping-cart/thankyou_remita/{remita}', [App\Http\Controllers\ShopController::class, 'thanksRemita'])->middleware('auth');
 Route::get('/shopping-cart/thankyou', [App\Http\Controllers\ShopController::class, 'thanks'])->middleware('auth');
 //

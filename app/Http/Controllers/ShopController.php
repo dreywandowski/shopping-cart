@@ -597,9 +597,87 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
 //echo $response;
 
 
-        return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $ref]);
+        return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $order->ref]);
     }
 
+    public function thankFlutter(Request $request)
+    {
+        $data = session('details');
+        $cant;
+
+        if ($data != null) {
+
+            $cant = count($data);
+        } else {
+            $cant = ' ';
+        }
+
+        //api key
+        $api_key = env('FLW_SECRET_KEY');
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://api.flutterwave.com/v3/transactions/123456/verify",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_SSL_VERIFYPEER => 0,
+            CURLOPT_SSL_VERIFYHOST => 0,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "Content-Type: application/json",
+                "Authorization: Bearer $api_key"
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $res = json_decode($response, true);
+
+        if ($res['status'] == "error") {
+            $page = 'fail';
+            /*$err = curl_error($curl);
+            curl_close($curl);*/
+            return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $_GET['transaction_id']]);
+
+        } else {
+            $ref = $res['data']['reference'];
+            if ($res) {
+                // get current user to be updated
+                $profile = \Auth::user();
+
+                $order = new Orders;
+                $order->user = $profile->name;
+                $order->amount = $res['data']['amount'] / 100;
+                $order->ref = $res['data']['reference'];
+                $order->status = $res['data']['gateway_response'];
+                //$order->log_time = date('d-m-Y H:i:s', strtotime($res['data']['paid_at']));
+                $order->channel = $res['data']['channel'];
+                $order->items = $data;
+                $order->pay_type = "FLUTTERWAVE";
+                $order->save();
+
+
+                if ($order->save()) $page = 'ok';
+                else $page = 'pending';
+
+                // reset cart to zero
+                $cant = $request->session()->forget('details');
+
+                //return response()->json("order successfull.", 200);
+                /*echo "<pre>" . "Rep2";
+                print_r($res);
+                echo "</pre>";*/
+            } else $page = 'fail';
+            /*$err = curl_error($curl);
+            curl_close($curl);*/
+            return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $ref]);
+
+        }
+    }
 
     public function admin(Request $request){
         return view('shopping-cart/admin', ['show' => '', 'page' => '']);
