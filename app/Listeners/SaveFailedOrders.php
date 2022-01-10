@@ -43,6 +43,8 @@ class SaveFailedOrders
                     $failed_order->cust_email = $dt['cust_mail'];
                     $failed_order->items = $data;
                     $failed_order->pay_type = session('pay_type');
+                    $failed_order->status   = "Failed";
+                    $failed_order->channel  = "CARD";
                     $failed_order->save();
                 }
             }

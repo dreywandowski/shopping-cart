@@ -8,6 +8,7 @@ use Response;
 use App\Models\Coupons;
 use App\Models\Items;
 use Session;
+use App\Models\FailedOrders;
 
 class ProfileController extends Controller
 {
@@ -62,6 +63,14 @@ class ProfileController extends Controller
     $profile->user = $profile->name;
     $order = Orders::where('user' , '=', $profile->user)->get()->toArray();
 
+    // bring the failed orders too and merge as part of the array to be returned
+    $failed = FailedOrders::where('customer_name', '=', $profile->user)->get()->toArray();
+
+   $order = array_merge($order, $failed);
+    /*echo "<pre>" . "Rep2";
+    print_r($order);
+    echo "</pre>";die;*/
+
     /*echo "<pre>" . "Rep2";
     print_r($order);
     echo "</pre>";
@@ -84,6 +93,7 @@ class ProfileController extends Controller
          $cust_email = $request->input('email');
          $amount = $request->input('amount');
          $cust_fname = $request->input('name');
+         $order_notes = $request->input('c_order_notes');
          $cust_lname = '';
          $phone  = $request->input('phone');
          $pay_type = $request->input('pay_type');
@@ -95,7 +105,8 @@ class ProfileController extends Controller
          $request->session()->put('amount', $amount);
          $request->session()->put('cust_email', $cust_email);
          $request->session()->put('cust_fname', $cust_fname);
-         //print_r($request->session()->all());die;
+         $request->session()->put('c_order_notes', $order_notes);
+       //  print_r($request->session()->all());die;
 
 
          // handle flutterwave payment option
