@@ -467,7 +467,7 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
         $request->session()->put('trans_id', $reff);
 
             //api key
-            $api_key = env('PAYSTACK_SECRET_KEY');
+        $api_key = config('app.paystack_key');
 
             $curl = curl_init();
             $url = "https://api.paystack.co/transaction/verify/" . $reff;
@@ -635,7 +635,7 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
         }
 
         //api key
-        $api_key = env('FLW_SECRET_KEY');
+        $api_key = config('app.flutterwave_key');
 //echo $_GET['transaction_id'].''.$_GET['tx_ref'];
 //print_r($data);
        // so that the event listener will have access to the transaction ID

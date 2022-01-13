@@ -120,6 +120,8 @@ return [
     */
 
     'key' => env('APP_KEY'),
+    'paystack_key' => env('PAYSTACK_SECRET_KEY'),
+    'flutterwave_key' => env('FLW_SECRET_KEY'),
 
     'cipher' => 'AES-256-CBC',
 
