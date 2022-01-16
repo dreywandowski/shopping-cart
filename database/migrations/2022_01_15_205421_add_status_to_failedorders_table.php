@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddStatusToOrdersTable extends Migration
+class AddStatusToFailedOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddStatusToOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->integer('status');
+        Schema::table('failedorders', function (Blueprint $table) {
+            $table->string('status'); // add this
+            $table->foreign('customer_name')->references('users')
+                ->on('name')
+                ->onDelete('cascade');
         });
     }
 
@@ -25,7 +28,7 @@ class AddStatusToOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
+        Schema::table('failedorders', function (Blueprint $table) {
             //
         });
     }
