@@ -12,6 +12,8 @@ https://laraveldaily.com/what-server-is-needed-to-deploy-laravel-projects/
 6. Sending Mails to users on Laravel
 https://shouts.dev/send-custom-welcome-email-on-registration-in-laravel
 https://laraveldaily.com/mail-notifications-customize-templates/
+7. Laravel Events and Listeners
+https://blog.devgenius.io/laravel-events-and-listeners-5965b5cadcef
 
 
 =======================

@@ -10,6 +10,8 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+    const ADMIN_USER = 'admin';
+    const NORMAL_USER = 'user';
 
     /**
      * The attributes that are mass assignable.
@@ -47,6 +49,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin(){
+        return $this->admin == User::ADMIN_USER;
+    }
 
     public static function search($query)
     {

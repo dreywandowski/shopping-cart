@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTypeToUsersTable extends Migration
+class AddStatusToOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class AddTypeToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->enum('user_type', ['admin', 'user'])->default('user'); // add this
-            $table->tinyInteger('age'); // add this
-            $table->string('address')->nullable(); // add this
+        Schema::table('orders', function (Blueprint $table) {
+            //$table->integer('status');
+            $table->foreign('user')->references('users')
+                ->on('name')
+                ->onDelete('cascade');
         });
     }
 
@@ -27,7 +28,7 @@ class AddTypeToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('coupons', function (Blueprint $table) {
+        Schema::table('orders', function (Blueprint $table) {
             //
         });
     }
