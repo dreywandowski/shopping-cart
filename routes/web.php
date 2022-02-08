@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Mail;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
+Route::get('/', [App\Http\Controllers\ShopController::class, 'index']);
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index']);
 Route::get('/shopping-cart/shop/{req}', [App\Http\Controllers\ShopController::class, 'shop']);
 Route::get('/shopping-cart/shop-single/{req}', [App\Http\Controllers\ShopController::class, 'single'])->middleware('auth');

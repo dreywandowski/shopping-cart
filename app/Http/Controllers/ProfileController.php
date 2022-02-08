@@ -121,7 +121,7 @@ class ProfileController extends Controller
              $txref = "rave-".$rand; // ensure you generate unique references per transaction.
              //api key
              $api_key = env('FLW_SECRET_KEY');
-             $redirect_url = "http://127.0.0.1:8000/shopping-cart/thankyou_flutter";
+             $redirect_url = "http://idumota.tk/shopping-cart/thankyou_flutter";
              //$redirect_url = str_replace("https://ravemodal-dev.herokuapp.com/v3/hosted/", "", $redirect_url);
              //$payment_plan = "pass the plan id"; // this is only required for recurring payments.
              $customer = ['email' => $cust_email, 'phonenumber' => $phone, 'name' => $cust_fname];
@@ -183,7 +183,7 @@ class ProfileController extends Controller
              $fields = [
                  'email' => $cust_email,
                  'amount' => $amount * 100,
-                 'callback_url' => 'http://127.0.0.1:8000/shopping-cart/thankyou',
+                 'callback_url' => 'http://idumota.tk/shopping-cart/thankyou',
                  'first_name' => $cust_fname,
                  'last_name' => $cust_lname,
              ];
@@ -302,7 +302,7 @@ class ProfileController extends Controller
 
              $logdate = date('Y-m-d');
 
-             header("Location: http://127.0.0.1:8000/shopping-cart/remita_pay/".$remita_code);
+             header("Location: http://idumota.tk/shopping-cart/remita_pay/".$remita_code);
                    die;
              //  curl_close($curl);
              //echo $response;
