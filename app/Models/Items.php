@@ -13,6 +13,7 @@ class Items extends Model
         'name',
         'price',
         'type',
-        'file_path'
+        'file_path',
+        'coupon_code'
     ];
 }
