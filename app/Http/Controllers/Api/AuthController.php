@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -17,6 +18,7 @@ class AuthController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:55',
             'email' => 'email|required|unique:users',
+            'username' => 'username|required|unique:users',
             'password' => 'required|confirmed'
         ]);
 
@@ -44,6 +46,16 @@ class AuthController extends Controller
 
         return response(['user' => auth()->user(), 'access_token' => $accessToken]);
 }
+
+public function logout (Request $request) {
+        $accessToken = auth()->user()->token();
+        $token = $request->user()->tokens->find($accessToken);
+        $token->revoke();
+
+        return response([
+            'message' => 'You have been successfully logged out.',
+        ], 200);
+    }
 
 
 
