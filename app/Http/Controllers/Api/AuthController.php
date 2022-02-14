@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 
 use App\Http\Controllers\Controller;
@@ -11,11 +11,12 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    
+
 
     public function register(Request $request)
     {
-        $validatedData = $request->validate([
+           /* $data = $request->all();
+            $validatedData = Validator::make($data, [
             'name' => 'required|max:55',
             'email' => 'email|required|unique:users',
             'username' => 'username|required|unique:users',
@@ -24,7 +25,14 @@ class AuthController extends Controller
 
         $validatedData['password'] = Hash::make($request->password);
 
-        $user = User::create($validatedData);
+        $user = User::create($request);*/
+
+        $user =  User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'username' => $request->username,
+        ]);
 
         $accessToken = $user->createToken('authToken')->accessToken;
 
@@ -55,6 +63,7 @@ public function logout (Request $request) {
         return response([
             'message' => 'You have been successfully logged out.',
         ], 200);
+    }
     }
 
 

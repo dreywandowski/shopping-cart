@@ -18,6 +18,7 @@ class ItemsControllerApi extends Controller
     public function index()
     {
         $items = Items::all();
+      //  dd($items);
 
         // the ShopResources class that has the toArray method has been used in our web controllers (ShopController,
          // we just want the method to be abstracted here )
@@ -72,7 +73,7 @@ class ItemsControllerApi extends Controller
    //Image::make(storage_path('app/public/profile.jpg'))->resize(300, 200);
     }
 }
-    else return response(['message' => 'No photos included in your request'], 401]);
+    else return response(['message' => 'No photos included in your request'], 401);
 
 }
 
