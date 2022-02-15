@@ -16,7 +16,18 @@ https://laraveldaily.com/mail-notifications-customize-templates/
 https://blog.devgenius.io/laravel-events-and-listeners-5965b5cadcef
 8. Run a specific migration 
 https://www.edureka.co/community/80016/how-can-i-run-specific-migration-in-laravel
+9. Laravel Resource routes
+https://stackoverflow.com/questions/54721576/laravel-route-apiresource-difference-between-apiresource-and-resource-in-route
+10. Laravel API
+https://www.toptal.com/laravel/restful-laravel-api-tutorial
 
+Used this approach for this particular project:
+https://dev.to/kingsconsult/how-to-create-a-secure-crud-restful-api-in-laravel-8-and-7-using-laravel-passport-31fh
+
+https://www.toptal.com/laravel/passport-tutorial-auth-user-access
+
+11. API routes returning to the login page on Postman
+https://github.com/laravel/framework/issues/13311
 
 =======================
 FOREIGN KEY
