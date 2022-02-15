@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\Api\ItemsControllerApi;
+//use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +25,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('register', [App\Http\Controllers\Api\AuthController::class, 'register']);
 Route::post('login', [App\Http\Controllers\Api\AuthController::class, 'login']);
 
+// items routes
+Route::middleware('auth:api')->get('items', [App\Http\Controllers\Api\ItemsControllerApi::class, 'index']);
+Route::get('upload', [App\Http\Controllers\Api\ItemsControllerApi::class, 'store'])->middleware('auth:api');
+Route::get('update', [App\Http\Controllers\Api\ItemsControllerApi::class, 'update'])->middleware('auth:api');
+Route::get('delete', [App\Http\Controllers\Api\ItemsControllerApi::class, 'destroy'])->middleware('auth:api');
 
-Route::get('items', [App\Http\Controllers\Api\ItemsControllerApi::class, 'index']);
+// payment routes
+Route::get('delete', [App\Http\Controllers\Api\PaymentControllerApi::class, 'index'])->middleware('auth:api');
