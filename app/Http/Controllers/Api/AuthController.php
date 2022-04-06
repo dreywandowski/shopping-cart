@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -12,9 +13,10 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
 
-
+    use RegistersUsers;
     public function register(Request $request)
     {
+        // TODO: Make sure the Validator works for the API before creating users
            /* $data = $request->all();
             $validatedData = Validator::make($data, [
             'name' => 'required|max:55',

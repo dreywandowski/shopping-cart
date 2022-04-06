@@ -53,11 +53,25 @@
 <div class="col-sm-6 col-lg-4 mb-4" id = "newcontent" data-aos="fade-up">
                 <div class="block-4 text-center border">
                   <figure class="block-4-image">
+                      @php
+                          $file =  $item->file_path;
+                              if(strpos($file, 'public') === 0){
+                                  $content = str_replace('public/images/', '',$file);
+                                  //$content_ = Storage::get($content);
+                                  $content_ = asset('storage/images/'.$content);
+                                  $item->file_path = $content_;
+                                 }
+                      @endphp
                     <a href="/shopping-cart/shop-single/{{ $item->name }}"><img src="{{ $item->file_path }}" alt="Image placeholder" class="img-fluid"></a>
                   </figure>
+
                   <div class="block-4-text p-4">
                     <h3><a href="/shopping-cart/shop-single/{{ $item->name }}">{{ $item->name }}</a></h3>
-                    <p class="mb-0">Finding perfect t-shirt</p>
+                    <p class="mb-0">@if($item->description !='')
+                            {{ $item->description }}
+                        @else
+                         Finding perfect wears</p>
+                      @endif
                     <p class="text-primary font-weight-bold">NGN {{ $item->price }}</p>
                   </div>
                 </div>
@@ -106,7 +120,7 @@
               </div>
        <form method="GET" action="/shopping-cart/apply">
            @csrf
-       <div class="col-md-6">
+       <div class="col-md-6" >
            <input type="text" name="first" id="first" class="form-control border-0 pl-0 bg-white"  hidden="" />
            <input type="text" name="second" id="second" class="form-control border-0 pl-0 bg-white"  hidden="" />
            <input type="text" name="req" id="last" class="form-control border-0 pl-0 bg-white"  hidden value="{{$req}}" />
@@ -115,9 +129,12 @@
            </button>
        </div>
        </form>
-          <br>
-
         </div>
-
-
+    <br><br><br>
+              <br><br><br>
+              <br><br><br>
+              <br><br><br>
+              <br><br><br>
+              <br><br><br>
+              <br><br><br>
     @endsection

@@ -7,6 +7,7 @@ use App\Models\Items;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\ShopResources;
+use Illuminate\Support\Facades\Storage;
 
 class ItemsControllerApi extends Controller
 {
@@ -17,12 +18,15 @@ class ItemsControllerApi extends Controller
      */
     public function index()
     {
-        $items = Items::all();
-      //  dd($items);
+        $items = Items::select('name', 'price' ,'type','file_path','coupon_code', 'description', 'updated_at as uploaded')
+            ->get()->toArray();
 
+       // $contents = Storage::get('images/OXtXF7gRsNUkc95a4dKJxVz9rNEtfGNOjP4V0VFV.jpg');
+        //$contents = asset('images/OXtXF7gRsNUkc95a4dKJxVz9rNEtfGNOjP4V0VFV.jpg');
+        //echo "jere".$contents;
         // the ShopResources class that has the toArray method has been used in our web controllers (ShopController,
          // we just want the method to be abstracted here )
-        return response([ 'items' => ShopResources::collection($items), 'message' => 'Items Retrieved successfully'], 200);
+        return response()->json([ 'items' => ShopResources::collection($items), 'message' => 'Items Retrieved successfully'], 200);
     }
 
     /**
@@ -34,8 +38,9 @@ class ItemsControllerApi extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        //print_r($data);die;
 
-        $validator = $request->validate([
+       /* $validator = $request->validate([
             'name' => 'required|max:255',
             'description' => 'required|max:255',
             'type' => 'required|max:255',
@@ -47,27 +52,54 @@ class ItemsControllerApi extends Controller
         if ($validator->fails()) {
             return response(['error' => $validator->errors(), 'Validation Error']);
         }
+        echo "here";*/
 
         if($request->hasFile('photos')){
          $allowedfileExtension = ['jpg','png','jpeg'];
          $files = $request->file('photos');
 
-         foreach($files as $file){
-         $filename = $file->getClientOriginalName();
-         $extension = $file->getClientOriginalExtension();
+         //foreach($files as $file){
+         $filename = $files->getClientOriginalName();
+         $extension = $files->getClientOriginalExtension();
          $check = in_array($extension,$allowedfileExtension);
+         //$path = $request->file('photos')->store('/images');
+          /*  $path = Storage::putFileAs(
+                'images', $request->file('photos'), $request->name
+            );*/
+            $path1 = Storage::putFile('public/images', $request->file('photos'));
+            //$img_name = str_replace('images/', '',$path1);
+           // $path =  Storage::move('images/'.$img_name, 'public/images/'.$img_name);
+          //echo "path == $path";die;
 
-         //dd($check);
-        if($check){
-        $items = Item::create($request->all());
-        foreach ($request->photos as $photo) {
-        $filename = $photo->store('photos');
-        $validator['filename'] = $filename;
-        $items = Items::create($validator);
-              }
-        }
+        if($check) {
+            try {
 
-        return response(['items' => new ShopResources($items), 'message' => 'Items uploaded successfully'], 201);
+
+                $save = new Items;
+                $save->name = $request->name;
+                $save->type = $request->type;
+                $save->description = $request->description;
+                $save->price = $request->price;
+                $save->coupon_code = $request->coupon_code;
+                $save->file_path = $path1;
+
+                $save->save();
+            /*foreach ($request->photos as $photo) {
+                $filename = $photo->store('photos');
+                $validator['filename'] = $filename;
+                //$items = Items::create($validator);
+                //}
+                 }*/
+           // }
+            }
+            catch (\Illuminate\Database\QueryException $e)
+
+            {
+                return response()->json(['message' => $e], 400);
+            }
+
+
+        return response()->json(['message' => 'Item uploaded successfully'], 201);
 
     // TODO: install intervention/image package to automatically resize images
    //Image::make(storage_path('app/public/profile.jpg'))->resize(300, 200);
