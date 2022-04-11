@@ -12,7 +12,7 @@
         "kingflamez/laravelrave": "^4.2",
         "laravel/framework": "^8.12",
         "laravel/passport": "^10.3",
-        "laravel/sanctum": "^2.14",
+        "laravel/sanctum": "^2.15",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "livewire/livewire": "2.3",

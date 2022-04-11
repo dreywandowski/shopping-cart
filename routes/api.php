@@ -26,7 +26,8 @@ Route::post('register', [App\Http\Controllers\Api\AuthController::class, 'regist
 Route::post('login', [App\Http\Controllers\Api\AuthController::class, 'login']);
 
 // items routes
-Route::get('items', [App\Http\Controllers\Api\ItemsControllerApi::class, 'index']);
+Route::get('items', [App\Http\Controllers\Api\ItemsControllerApi::class, 'index'])
+    ->middleware('auth:api');
 Route::post('upload', [App\Http\Controllers\Api\ItemsControllerApi::class, 'store']);
 Route::get('update', [App\Http\Controllers\Api\ItemsControllerApi::class, 'update'])->middleware('auth:api');
 Route::get('delete', [App\Http\Controllers\Api\ItemsControllerApi::class, 'destroy'])->middleware('auth:api');
