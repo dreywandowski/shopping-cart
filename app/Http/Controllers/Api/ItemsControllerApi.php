@@ -126,9 +126,14 @@ class ItemsControllerApi extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Item $items)
+    public function update(Request $request)
     {
-        $items->update($request->all());
+        $items =  Items::findorFail($request->id);
+        $items->coupon_code = $request->coupon_code;
+        $items->price = $request->price;
+        $items->description = $request->description;
+
+        $items->save();
 
         return response(['items' => new ShopResources($items), 'message' => 'Update successfully'], 200);
     }
@@ -139,10 +144,11 @@ class ItemsControllerApi extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $items)
+    public function destroy(Request $request)
     {
+        $items =  Items::find($request->id);
         $items->delete();
 
-        return response(['message' => 'Deleted']);
+        return response(['message' => 'Deleted'], 200);
     }
 }

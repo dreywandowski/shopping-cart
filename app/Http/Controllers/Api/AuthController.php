@@ -70,7 +70,7 @@ public function logout (Request $request) {
         /*$accessToken = auth()->user()->token();
         $token = $request->user()->tokens->find($accessToken);
         $token->revoke();*/
-    print_r($request->all());
+    //print_r($request->all());
 
     // Revoke all tokens...
    // $user->tokens()->delete();
