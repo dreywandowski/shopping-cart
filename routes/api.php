@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ItemsControllerApi;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\PaymentControllerApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
 // authentication routes
-Route::
-controller(AuthController::class)->group(function () {
+Route::controller(AuthController::class)->group(function () {
         Route::post('register', 'register');
         Route::post('login', 'login');
         Route::post('logout', 'logout')->middleware('auth:sanctum');
@@ -40,5 +41,11 @@ controller(AuthController::class)->group(function () {
 
 
 // payment routes
+Route::middleware('auth:sanctum')
+     ->controller(PaymentControllerApi::class)->group(function () {
+            Route::post('paystack', 'paystack');
+            Route::post('flutterwave', 'flutterwave');
+            Route::post('remita', 'remita');
+     });
     Route::get('delete', [App\Http\Controllers\Api\PaymentControllerApi::class, 'index']);
 
