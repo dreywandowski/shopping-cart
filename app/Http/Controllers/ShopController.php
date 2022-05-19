@@ -636,6 +636,7 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
 
         //api key
         $api_key = config('app.flutterwave_key');
+        $ref = $_GET['transaction_id'];
 //echo $_GET['transaction_id'].''.$_GET['tx_ref'];
 //print_r($data);
        // so that the event listener will have access to the transaction ID
@@ -646,7 +647,7 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.flutterwave.com/v3/transactions/123456/verify",
+            CURLOPT_URL => "https://api.flutterwave.com/v3/transactions/".$ref."/verify",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,

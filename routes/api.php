@@ -44,8 +44,10 @@ Route::controller(AuthController::class)->group(function () {
 Route::middleware('auth:sanctum')
      ->controller(PaymentControllerApi::class)->group(function () {
             Route::post('paystack', 'paystack');
+            Route::get('verifyPaystack', 'verifyPaystack');
             Route::post('flutterwave', 'flutterwave');
+            Route::get('verifyFlutterwave', 'verifyFlutterwave');
             Route::post('remita', 'remita');
      });
-    Route::get('delete', [App\Http\Controllers\Api\PaymentControllerApi::class, 'index']);
+
 
