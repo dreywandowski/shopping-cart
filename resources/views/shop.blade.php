@@ -71,8 +71,8 @@
           </div>
         </div>
       </div>
-
-
+<br>
+      <span> <p style="color:maroon;text-transform:uppercase;padding:15px;width:28%;border-style: inset;">&nbsp;View Today's currency exchange rates <a href="/shopping-cart/rates">here!!</p></a></span>
       <nav class="site-navigation text-right text-md-center" role="navigation">
         <div class="container">
           <ul class="site-menu js-clone-nav d-none d-md-block">

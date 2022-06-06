@@ -62,8 +62,8 @@
         </div>
       </div>
 
-    </header>
-
+    </header><br>
+    <span> <p style="color:maroon;padding:15px;text-transform:uppercase;width:28%;border-style: inset;">&nbsp;View Today's currency exchange rates <a href="/shopping-cart/rates">here!!</p></a></span>
 
 @yield('content')
 

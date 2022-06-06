@@ -41,6 +41,8 @@ Route::get('/shopping-cart/my-orders', [App\Http\Controllers\ProfileController::
 Route::get('/shopping-cart/thankyou_flutter', [App\Http\Controllers\ShopController::class, 'thankFlutter']);
 Route::get('/shopping-cart/thankyou_remita/{remita}', [App\Http\Controllers\ShopController::class, 'thanksRemita'])->middleware('auth');
 Route::get('/shopping-cart/thankyou', [App\Http\Controllers\ShopController::class, 'thanks'])->middleware('auth');
+
+Route::get('/shopping-cart/rates', [App\Http\Controllers\ExchangeController::class, 'showRates']);
 //
 //Route::get('/shopping-cart/mail-test', [App\Http\Controllers\MailController::class, 'sendMail']);
 Route::get('/shopping-cart/mail-test', function (){

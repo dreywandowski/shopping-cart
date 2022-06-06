@@ -1,0 +1,1296 @@
+<pre>Array
+(
+    [success] => 1
+    [query] => Array
+        (
+            [from] => CNY
+            [to] => NGN
+            [amount] => 1
+        )
+
+    [info] => Array
+        (
+            [timestamp] => 1654505283
+            [rate] => 62.472046
+        )
+
+    [date] => 2022-06-06
+    [result] => 62.472046
+)
+</pre><br>
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:112
+    108▕                 $convert = new Fx_rates();
+    109▕                 $convert->base_curr = "NGN";
+    110▕                 $convert->target_curr = $currency;
+    111▕                 $convert->online_forex_rate = $res;
+  ➜ 112▕                 $convert->desc = $word;
+    113▕                 $convert->save();
+    114▕ 
+    115▕                 //echo "<script>alert('Converted successfully!')</script>";
+    116▕
+
+  1   app/Console/Commands/CurrencyCron.php:112
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+<pre>Array
+(
+    [success] => 1
+    [query] => Array
+        (
+            [from] => CNY
+            [to] => NGN
+            [amount] => 1
+        )
+
+    [info] => Array
+        (
+            [timestamp] => 1654505283
+            [rate] => 62.472046
+        )
+
+    [date] => 2022-06-06
+    [result] => 62.472046
+)
+</pre><br>
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:112
+    108▕                 $convert = new Fx_rates();
+    109▕                 $convert->base_curr = "NGN";
+    110▕                 $convert->target_curr = $currency;
+    111▕                 $convert->online_forex_rate = $res;
+  ➜ 112▕                 $convert->desc = $word;
+    113▕                 $convert->save();
+    114▕ 
+    115▕                 //echo "<script>alert('Converted successfully!')</script>";
+    116▕
+
+  1   app/Console/Commands/CurrencyCron.php:112
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+<pre>Array
+(
+    [success] => 1
+    [query] => Array
+        (
+            [from] => CNY
+            [to] => NGN
+            [amount] => 1
+        )
+
+    [info] => Array
+        (
+            [timestamp] => 1654505343
+            [rate] => 62.469998
+        )
+
+    [date] => 2022-06-06
+    [result] => 62.469998
+)
+</pre><br>
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:112
+    108▕                 $convert = new Fx_rates();
+    109▕                 $convert->base_curr = "NGN";
+    110▕                 $convert->target_curr = $currency;
+    111▕                 $convert->online_forex_rate = $res;
+  ➜ 112▕                 $convert->desc = $word;
+    113▕                 $convert->save();
+    114▕ 
+    115▕                 //echo "<script>alert('Converted successfully!')</script>";
+    116▕
+
+  1   app/Console/Commands/CurrencyCron.php:112
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+<pre>Array
+(
+    [success] => 1
+    [query] => Array
+        (
+            [from] => CNY
+            [to] => NGN
+            [amount] => 1
+        )
+
+    [info] => Array
+        (
+            [timestamp] => 1654505403
+            [rate] => 62.470759
+        )
+
+    [date] => 2022-06-06
+    [result] => 62.470759
+)
+</pre><br>
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:112
+    108▕                 $convert = new Fx_rates();
+    109▕                 $convert->base_curr = "NGN";
+    110▕                 $convert->target_curr = $currency;
+    111▕                 $convert->online_forex_rate = $res;
+  ➜ 112▕                 $convert->desc = $word;
+    113▕                 $convert->save();
+    114▕ 
+    115▕                 //echo "<script>alert('Converted successfully!')</script>";
+    116▕
+
+  1   app/Console/Commands/CurrencyCron.php:112
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+<pre>Array
+(
+    [success] => 1
+    [query] => Array
+        (
+            [from] => CNY
+            [to] => NGN
+            [amount] => 1
+        )
+
+    [info] => Array
+        (
+            [timestamp] => 1654505463
+            [rate] => 62.471419
+        )
+
+    [date] => 2022-06-06
+    [result] => 62.471419
+)
+</pre><br>
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:112
+    108▕                 $convert = new Fx_rates();
+    109▕                 $convert->base_curr = "NGN";
+    110▕                 $convert->target_curr = $currency;
+    111▕                 $convert->online_forex_rate = $res;
+  ➜ 112▕                 $convert->desc = $word;
+    113▕                 $convert->save();
+    114▕ 
+    115▕                 //echo "<script>alert('Converted successfully!')</script>";
+    116▕
+
+  1   app/Console/Commands/CurrencyCron.php:112
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+<pre>Array
+(
+    [success] => 1
+    [query] => Array
+        (
+            [from] => CNY
+            [to] => NGN
+            [amount] => 1
+        )
+
+    [info] => Array
+        (
+            [timestamp] => 1654505536
+            [rate] => 62.471904
+        )
+
+    [date] => 2022-06-06
+    [result] => 62.471904
+)
+</pre><br>
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:112
+    108▕                 $convert = new Fx_rates();
+    109▕                 $convert->base_curr = "NGN";
+    110▕                 $convert->target_curr = $currency;
+    111▕                 $convert->online_forex_rate = $res;
+  ➜ 112▕                 $convert->desc = $word;
+    113▕                 $convert->save();
+    114▕ 
+    115▕                 //echo "<script>alert('Converted successfully!')</script>";
+    116▕
+
+  1   app/Console/Commands/CurrencyCron.php:112
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+<pre>Array
+(
+    [success] => 1
+    [query] => Array
+        (
+            [from] => CNY
+            [to] => NGN
+            [amount] => 1
+        )
+
+    [info] => Array
+        (
+            [timestamp] => 1654505585
+            [rate] => 62.468234
+        )
+
+    [date] => 2022-06-06
+    [result] => 62.468234
+)
+</pre><br>
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:112
+    108▕                 $convert = new Fx_rates();
+    109▕                 $convert->base_curr = "NGN";
+    110▕                 $convert->target_curr = $currency;
+    111▕                 $convert->online_forex_rate = $res;
+  ➜ 112▕                 $convert->desc = $word;
+    113▕                 $convert->save();
+    114▕ 
+    115▕                 //echo "<script>alert('Converted successfully!')</script>";
+    116▕
+
+  1   app/Console/Commands/CurrencyCron.php:112
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+<pre>Array
+(
+    [success] => 1
+    [query] => Array
+        (
+            [from] => CNY
+            [to] => NGN
+            [amount] => 1
+        )
+
+    [info] => Array
+        (
+            [timestamp] => 1654505644
+            [rate] => 62.468291
+        )
+
+    [date] => 2022-06-06
+    [result] => 62.468291
+)
+</pre><br>
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:112
+    108▕                 $convert = new Fx_rates();
+    109▕                 $convert->base_curr = "NGN";
+    110▕                 $convert->target_curr = $currency;
+    111▕                 $convert->online_forex_rate = $res;
+  ➜ 112▕                 $convert->desc = $word;
+    113▕                 $convert->save();
+    114▕ 
+    115▕                 //echo "<script>alert('Converted successfully!')</script>";
+    116▕
+
+  1   app/Console/Commands/CurrencyCron.php:112
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:108
+    104▕                 $convert = new Fx_rates();
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+    107▕                 $convert->online_forex_rate = $res;
+  ➜ 108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 //echo "<script>alert('Converted successfully!')</script>";
+    112▕
+
+  1   app/Console/Commands/CurrencyCron.php:108
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:106
+    102▕                 $convert = new Fx_rates();
+    103▕                 $convert->base_curr = "NGN";
+    104▕                 $convert->target_curr = $currency;
+    105▕                 $convert->online_forex_rate = $res;
+  ➜ 106▕                 $convert->desc = $word;
+    107▕                 $convert->save();
+    108▕ 
+    109▕                 //echo "<script>alert('Converted successfully!')</script>";
+    110▕
+
+  1   app/Console/Commands/CurrencyCron.php:106
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:106
+    102▕                 $convert = new Fx_rates();
+    103▕                 $convert->base_curr = "NGN";
+    104▕                 $convert->target_curr = $currency;
+    105▕                 $convert->online_forex_rate = $res;
+  ➜ 106▕                 $convert->desc = $word;
+    107▕                 $convert->save();
+    108▕ 
+    109▕                 //echo "<script>alert('Converted successfully!')</script>";
+    110▕
+
+  1   app/Console/Commands/CurrencyCron.php:106
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:106
+    102▕                 $convert = new Fx_rates();
+    103▕                 $convert->base_curr = "NGN";
+    104▕                 $convert->target_curr = $currency;
+    105▕                 $convert->online_forex_rate = $res;
+  ➜ 106▕                 $convert->desc = $word;
+    107▕                 $convert->save();
+    108▕ 
+    109▕                 //echo "<script>alert('Converted successfully!')</script>";
+    110▕
+
+  1   app/Console/Commands/CurrencyCron.php:106
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:106
+    102▕                 $convert = new Fx_rates();
+    103▕                 $convert->base_curr = "NGN";
+    104▕                 $convert->target_curr = $currency;
+    105▕                 $convert->online_forex_rate = $res;
+  ➜ 106▕                 $convert->desc = $word;
+    107▕                 $convert->save();
+    108▕ 
+    109▕                 //echo "<script>alert('Converted successfully!')</script>";
+    110▕
+
+  1   app/Console/Commands/CurrencyCron.php:106
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:106
+    102▕                 $convert = new Fx_rates();
+    103▕                 $convert->base_curr = "NGN";
+    104▕                 $convert->target_curr = $currency;
+    105▕                 $convert->online_forex_rate = $res;
+  ➜ 106▕                 $convert->desc = $word;
+    107▕                 $convert->save();
+    108▕ 
+    109▕                 //echo "<script>alert('Converted successfully!')</script>";
+    110▕
+
+  1   app/Console/Commands/CurrencyCron.php:106
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:106
+    102▕                 $convert = new Fx_rates();
+    103▕                 $convert->base_curr = "NGN";
+    104▕                 $convert->target_curr = $currency;
+    105▕                 $convert->online_forex_rate = $res;
+  ➜ 106▕                 $convert->desc = $word;
+    107▕                 $convert->save();
+    108▕ 
+    109▕                 //echo "<script>alert('Converted successfully!')</script>";
+    110▕
+
+  1   app/Console/Commands/CurrencyCron.php:106
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:106
+    102▕                 $convert = new Fx_rates();
+    103▕                 $convert->base_curr = "NGN";
+    104▕                 $convert->target_curr = $currency;
+    105▕                 $convert->online_forex_rate = $res;
+  ➜ 106▕                 $convert->desc = $word;
+    107▕                 $convert->save();
+    108▕ 
+    109▕                 //echo "<script>alert('Converted successfully!')</script>";
+    110▕
+
+  1   app/Console/Commands/CurrencyCron.php:106
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:106
+    102▕                 $convert = new Fx_rates();
+    103▕                 $convert->base_curr = "NGN";
+    104▕                 $convert->target_curr = $currency;
+    105▕                 $convert->online_forex_rate = $res;
+  ➜ 106▕                 $convert->desc = $word;
+    107▕                 $convert->save();
+    108▕ 
+    109▕                 //echo "<script>alert('Converted successfully!')</script>";
+    110▕
+
+  1   app/Console/Commands/CurrencyCron.php:106
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   ErrorException 
+
+  Undefined variable: word
+
+  at app/Console/Commands/CurrencyCron.php:106
+    102▕                 $convert = new Fx_rates();
+    103▕                 $convert->base_curr = "NGN";
+    104▕                 $convert->target_curr = $currency;
+    105▕                 $convert->online_forex_rate = $res;
+  ➜ 106▕                 $convert->desc = $word;
+    107▕                 $convert->save();
+    108▕ 
+    109▕                 //echo "<script>alert('Converted successfully!')</script>";
+    110▕
+
+  1   app/Console/Commands/CurrencyCron.php:106
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
