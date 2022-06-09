@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Fx_rates;
+use App\Mail\ExchangeRates;
 
 class ExchangeController extends Controller
 {
@@ -29,6 +30,10 @@ class ExchangeController extends Controller
         $today = date('Y-m-d');
         $today = date("jS F, Y", strtotime($today));
 
+        // send the rates to my email
+        $mailData = $rates;
+        Mail::to('aduramimo@gmail.com','Dreywandowski')->send(new ExchangeRates($mailData));
+
         // show exchange rates for today only
         if($rates != null)return view('/shopping-cart/rates', ['exchange' => $rates, 'show' => $cant, 'today' => $today]);
 
@@ -38,6 +43,11 @@ class ExchangeController extends Controller
 
             $today = date('Y-m-d');
             $today = date("jS F, Y", strtotime($today));
+
+            // send the rates to my email
+            $mailData = $rates;
+            \Mail::to('aduramimo@gmail.com','Dreywandowski')->send(new ExchangeRates($mailData));
+
             if($rates != null)return view('/shopping-cart/rates', ['exchange' => $rates, 'show' => $cant, 'today' => $today]);
         }
 

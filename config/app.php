@@ -122,6 +122,10 @@ return [
     'key' => env('APP_KEY'),
     'paystack_key' => env('PAYSTACK_SECRET_KEY'),
     'flutterwave_key' => env('FLW_SECRET_KEY'),
+    'rapid_api_exchange' => env('RAPID_API_EXCHANGE_RATE_SK'),
+    'mail_from' => env('MAIL_FROM_ADDRESS'),
+    'mail_name' => env('MAIL_FROM_NAME'),
+
 
     'cipher' => 'AES-256-CBC',
 

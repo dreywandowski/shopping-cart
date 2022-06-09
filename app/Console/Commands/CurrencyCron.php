@@ -42,7 +42,7 @@ class CurrencyCron extends Command
 
           // Write your database logic we bellow:
         $currencies_to_convert = array("CNY", "ZAR","GBP", "EUR","USD");
-
+        $api_key = config('app.rapid_api_exchange');
 // loop 2ru each of the currencies and convert to the naira value
         foreach ($currencies_to_convert as $currency) {
 
@@ -60,7 +60,7 @@ class CurrencyCron extends Command
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => [
                     "X-RapidAPI-Host: currency-conversion-and-exchange-rates.p.rapidapi.com",
-                    "X-RapidAPI-Key: 7ebc61f064msh33e513b1997f085p10c728jsn2254c7306fc5"
+                    "X-RapidAPI-Key: $api_key"
                 ],
             ]);
 
