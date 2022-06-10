@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Mail\ExchangeRates;
 use Illuminate\Console\Command;
 use App\Models\Fx_rates;
 
@@ -43,6 +44,7 @@ class CurrencyCron extends Command
           // Write your database logic we bellow:
         $currencies_to_convert = array("CNY", "ZAR","GBP", "EUR","USD");
         $api_key = config('app.rapid_api_exchange');
+        $rates = array();
 // loop 2ru each of the currencies and convert to the naira value
         foreach ($currencies_to_convert as $currency) {
 
@@ -89,16 +91,25 @@ class CurrencyCron extends Command
                         $convert->online_forex_rate = $res;
                         $convert->desc = $word;
                         $convert->save();
+
+                        $rates['target_curr']       = $currency;
+                        $rates['desc']              = $word;
+                        $rates['online_forex_rate'] = $res;
+
                 }
                 //echo "<script>alert('Converted successfully!')</script>";
-
                 /*echo "<pre>";
                 print_r($response);
                 echo "</pre>";
                 echo "<br>";*/
-//	var_dump($response);die;
+           //	var_dump($response);die;
 
             }
+
+
+        // send the rates to my email
+        $mailData = $rates;
+        \Mail::to('aduramimo@gmail.com','Dreywandowski')->send(new ExchangeRates($mailData));
         }
 
 }
