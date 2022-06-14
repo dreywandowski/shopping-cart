@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
         $schedule->command('curr:cron')
            ->timezone('Africa/Lagos')
-          // ->everyMinute();
+          // ->everyMinute()
            //->appendOutputTo('/var/www/html/shopping-cart/cron.txt');
             ->dailyAt('08:00');
     }

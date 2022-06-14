@@ -1294,3 +1294,1832 @@
       [2m+13 vendor frames [22m
   15  artisan:37
       Illuminate\Foundation\Console\Kernel::handle()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.502706
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.502706
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.502134
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.501057
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.498264
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.498264
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.506089
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.508119
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.484438
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.505074
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.505074
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.692385
+)
+</pre><br><pre>Array
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.751972
+)
+</pre><br><pre>Array
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 502.948129
+)
+</pre><br><pre>Array
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.347159
+)
+</pre><br><pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.510656
+)
+</pre><br><pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.510656
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.692385
+)
+</pre><br><pre>Array
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.751972
+)
+</pre><br><pre>Array
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 502.948129
+)
+</pre><br><pre>Array
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.347159
+)
+</pre><br><pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.504962
+)
+</pre><br><pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.504962
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Array
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.681505
+)
+</pre><br><pre>Array
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.750512
+)
+</pre><br><pre>Array
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 502.886417
+)
+</pre><br><pre>Array
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.218002
+)
+</pre><br><pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.498496
+)
+</pre><br><pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.498496
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Final ArrayArray
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.675958
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.75282
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 502.878489
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.218002
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.498496
+)
+</pre><br><pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.498496
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Final ArrayArray
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.675958
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.75282
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 502.878489
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.218002
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.498496
+)
+</pre><br><pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.498496
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>Final ArrayArray
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.669192
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.752257
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 502.828395
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.212125
+)
+</pre><br><pre>Final ArrayArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.502293
+)
+</pre><br><pre>Array
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.502293
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>penultimate ArrayArray
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.670597
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.756795
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 502.801209
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.670597
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.245328
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.756795
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.499594
+)
+</pre><br><pre>dinallllArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.499594
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>penultimate ArrayArray
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 502.801209
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.245328
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.501218
+)
+</pre><br><pre>dinallllArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.501218
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>penultimate ArrayArray
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.669919
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.777045
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 503.01582
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.305739
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.501218
+)
+</pre><br><pre>dinallllArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.501218
+)
+</pre><br>
+   Illuminate\View\ViewException 
+
+  Illegal string offset 'target_curr' (View: /var/www/html/shopping-cart/resources/views/emails/exchange_rates.blade.php)
+
+  at storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+     24▕                     <?php $__currentLoopData = $exchange; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+     25▕                         <ul>
+     26▕                             <tr class='table-info'>
+     27▕ 
+  ➜  28▕                                 <td> <?php echo e($rate['target_curr']); ?> </td>
+     29▕                                 <td> <?php echo e($rate['desc']); ?> </td>
+     30▕                                 <td> &#8358; <?php echo e($rate['online_forex_rate']); ?> </td>
+     31▕                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+     32▕                             </tr>
+
+      [2m+2 vendor frames [22m
+  3   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      ErrorException::("Illegal string offset 'target_curr'")
+
+  4   storage/framework/views/6a6ed916fd526e65c0c9b02d2308f1080942226a.php:28
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+<pre>penultimate ArrayArray
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.669533
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.817815
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 503.345266
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.424818
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.498496
+)
+</pre><br><pre>dinallllArray
+(
+    [0] => Array
+        (
+            [target_curr] => CNY
+            [desc] => Chinese Yuan
+            [online_forex_rate] => 61.669533
+        )
+
+    [1] => Array
+        (
+            [target_curr] => ZAR
+            [desc] => South African Rand
+            [online_forex_rate] => 25.817815
+        )
+
+    [2] => Array
+        (
+            [target_curr] => GBP
+            [desc] => Great British Pound
+            [online_forex_rate] => 503.345266
+        )
+
+    [3] => Array
+        (
+            [target_curr] => EUR
+            [desc] => Euro
+            [online_forex_rate] => 433.424818
+        )
+
+    [4] => Array
+        (
+            [target_curr] => USD
+            [desc] => United States Dollar
+            [online_forex_rate] => 415.498496
+        )
+
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.669533
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.817815
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 503.218869
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.398553
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.477673
+)
+</pre><br><pre>dinallllArray
+(
+    [0] => Array
+        (
+            [target_curr] => CNY
+            [desc] => Chinese Yuan
+            [online_forex_rate] => 61.669533
+        )
+
+    [1] => Array
+        (
+            [target_curr] => ZAR
+            [desc] => South African Rand
+            [online_forex_rate] => 25.817815
+        )
+
+    [2] => Array
+        (
+            [target_curr] => GBP
+            [desc] => Great British Pound
+            [online_forex_rate] => 503.218869
+        )
+
+    [3] => Array
+        (
+            [target_curr] => EUR
+            [desc] => Euro
+            [online_forex_rate] => 433.398553
+        )
+
+    [4] => Array
+        (
+            [target_curr] => USD
+            [desc] => United States Dollar
+            [online_forex_rate] => 415.477673
+        )
+
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.688426
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.817051
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 503.218869
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.398553
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.497447
+)
+</pre><br><pre>dinallllArray
+(
+    [0] => Array
+        (
+            [target_curr] => CNY
+            [desc] => Chinese Yuan
+            [online_forex_rate] => 61.688426
+        )
+
+    [1] => Array
+        (
+            [target_curr] => ZAR
+            [desc] => South African Rand
+            [online_forex_rate] => 25.817051
+        )
+
+    [2] => Array
+        (
+            [target_curr] => GBP
+            [desc] => Great British Pound
+            [online_forex_rate] => 503.218869
+        )
+
+    [3] => Array
+        (
+            [target_curr] => EUR
+            [desc] => Euro
+            [online_forex_rate] => 433.398553
+        )
+
+    [4] => Array
+        (
+            [target_curr] => USD
+            [desc] => United States Dollar
+            [online_forex_rate] => 415.497447
+        )
+
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => CNY
+    [desc] => Chinese Yuan
+    [online_forex_rate] => 61.697748
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => ZAR
+    [desc] => South African Rand
+    [online_forex_rate] => 25.815344
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => GBP
+    [desc] => Great British Pound
+    [online_forex_rate] => 503.041964
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => EUR
+    [desc] => Euro
+    [online_forex_rate] => 433.297174
+)
+</pre><br><pre>penultimate ArrayArray
+(
+    [target_curr] => USD
+    [desc] => United States Dollar
+    [online_forex_rate] => 415.497447
+)
+</pre><br><pre>dinallllArray
+(
+    [0] => Array
+        (
+            [target_curr] => CNY
+            [desc] => Chinese Yuan
+            [online_forex_rate] => 61.697748
+        )
+
+    [1] => Array
+        (
+            [target_curr] => ZAR
+            [desc] => South African Rand
+            [online_forex_rate] => 25.815344
+        )
+
+    [2] => Array
+        (
+            [target_curr] => GBP
+            [desc] => Great British Pound
+            [online_forex_rate] => 503.041964
+        )
+
+    [3] => Array
+        (
+            [target_curr] => EUR
+            [desc] => Euro
+            [online_forex_rate] => 433.297174
+        )
+
+    [4] => Array
+        (
+            [target_curr] => USD
+            [desc] => United States Dollar
+            [online_forex_rate] => 415.497447
+        )
+
+)
+</pre><br>

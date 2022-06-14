@@ -39,9 +39,8 @@ class CurrencyCron extends Command
      */
     public function handle()
     {
-        \Log::info("Cron is working fine!");
 
-          // Write your database logic we bellow:
+        // Write your database logic  bellow:
         $currencies_to_convert = array("CNY", "ZAR","GBP", "EUR","USD");
         $api_key = config('app.rapid_api_exchange');
         $rates = array();
@@ -96,20 +95,25 @@ class CurrencyCron extends Command
                         $rates['desc']              = $word;
                         $rates['online_forex_rate'] = $res;
 
-                }
-                //echo "<script>alert('Converted successfully!')</script>";
-                /*echo "<pre>";
-                print_r($response);
+                        $mailData[] = $rates;
+
+                /*echo "<pre>"."penultimate Array";
+                print_r($rates);
                 echo "</pre>";
                 echo "<br>";*/
-           //	var_dump($response);die;
 
+                }
             }
 
+       /* ini_set('display_errors',1);
+        echo "<pre>"."finallll";
+                print_r($mailData);
+                echo "</pre>";
+                echo "<br>";*/
 
         // send the rates to my email
-        $mailData = $rates;
         \Mail::to('aduramimo@gmail.com','Dreywandowski')->send(new ExchangeRates($mailData));
+
         }
 
 }

@@ -30,6 +30,8 @@ class ExchangeController extends Controller
         $today = date('Y-m-d');
         $today = date("jS F, Y", strtotime($today));
 
+        \Mail::to('aduramimo@gmail.com','Dreywandowski')->send(new ExchangeRates($rates));
+
 
         // show exchange rates for today only
         if($rates != null)return view('/shopping-cart/rates', ['exchange' => $rates, 'show' => $cant, 'today' => $today]);
