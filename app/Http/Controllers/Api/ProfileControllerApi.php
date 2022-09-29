@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
+use App\Http\Resources\ShopResources;
+use App\Models\Orders;
+use App\Models\FailedOrders;
+
 use Illuminate\Http\Request;
 
-class ProfileContollerApi extends Controller
+class ProfileControllerApi extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,9 +48,25 @@ class ProfileContollerApi extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showOrders()
     {
-        //
+        $profile = \Auth::user();
+        $profile->user = $profile->name;
+        $order = Orders::where('user' , '=', $profile->user)->get()->toArray();
+    
+        // bring the failed orders too and merge as part of the array to be returned
+        $failed = FailedOrders::where('customer_name', '=', $profile->user)->get()->toArray();
+    
+       $order = array_merge($order, $failed);
+       $order = Orders::where('user' , '=', $profile->user)->get()->toArray();
+
+       // bring the failed orders too and merge as part of the array to be returned
+       $failed = FailedOrders::where('customer_name', '=', $profile->user)->get()->toArray();
+
+        $order = array_merge($order, $failed);
+    
+        return response()->json(['orders' => ShopResources::collection($order), 'message' => 'Orders Retrieved successfully'], 200);
+    
     }
 
     /**

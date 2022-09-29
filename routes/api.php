@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ItemsControllerApi;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\PaymentControllerApi;
+use App\Http\Controllers\Api\ProfileControllerApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,5 +50,13 @@ Route::middleware('auth:sanctum')
             Route::get('verifyFlutterwave', 'verifyFlutterwave');
             Route::post('remita', 'remita');
      });
+
+
+     // profile routes
+Route::middleware('auth:sanctum')
+->controller(ProfileControllerApi::class)->group(function () {
+       Route::get('orders', 'showOrders');
+});
+
 
 

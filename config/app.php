@@ -123,6 +123,7 @@ return [
     'paystack_key' => env('PAYSTACK_SECRET_KEY'),
     'flutterwave_key' => env('FLW_SECRET_KEY'),
     'rapid_api_exchange' => env('RAPID_API_EXCHANGE_RATE_SK'),
+    'fixer_api_exchange' => env('FIXER_API_KEY'),
     'mail_from' => env('MAIL_FROM_ADDRESS'),
     'mail_name' => env('MAIL_FROM_NAME'),
 

@@ -32,13 +32,15 @@ class ExchangeRates extends Mailable
     {
         $from = config('app.mail_from');
         $name = config('app.mail_name');
+        $files = public_path('images/drey.png');
 
 
         return $this->from($from, $name)
             ->view('emails.exchange_rates')
             ->with([
             'exchange' => $this->mailData,
-             ]);
+             ])
+            ->attach($files);
             //->html('emails.orders.shipped_plain');
 
     }

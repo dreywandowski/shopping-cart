@@ -119,10 +119,10 @@ class ProfileController extends Controller
              $amount = $amount;
              $currency = "NGN";
              $txref = "rave-".$rand; // ensure you generate unique references per transaction.
-             //api key
-
+             
             // $api_key = env('FLW_SECRET_KEY');
-             $redirect_url = "http://idumota.tk/shopping-cart/thankyou_flutter";
+            // $redirect_url = "http://idumota.tk/shopping-cart/thankyou_flutter";
+            $redirect_url = "http://idumota.dreywandowski.xyz/shopping-cart/thankyou_flutter";
 
              $api_key = config('app.flutterwave_key');
              //$redirect_url = "http://127.0.0.1:8000/shopping-cart/thankyou_flutter";
@@ -188,7 +188,7 @@ class ProfileController extends Controller
              $fields = [
                  'email' => $cust_email,
                  'amount' => $amount * 100,
-                 'callback_url' => 'http://idumota.tk/shopping-cart/thankyou',
+                 'callback_url' => 'http://idumota.dreywandowski.xyz/shopping-cart/thankyou',
                  'first_name' => $cust_fname,
                  'last_name' => $cust_lname,
              ];
@@ -308,7 +308,7 @@ class ProfileController extends Controller
 
              $logdate = date('Y-m-d');
 
-             header("Location: http://idumota.tk/shopping-cart/remita_pay/".$remita_code);
+             header("Location: http://idumota.dreywandowski.xyz/shopping-cart/remita_pay/".$remita_code);
                    die;
              //  curl_close($curl);
              //echo $response;
