@@ -1,127 +1,25 @@
 PHP Warning:  Module 'curl' already loaded in Unknown on line 0
-<pre>penultimate ArrayArray
-(
-    [success] => 1
-    [query] => Array
-        (
-            [from] => CNY
-            [to] => NGN
-            [amount] => 1
-        )
+previous rates deleted sucessfully
+   ErrorException 
 
-    [info] => Array
-        (
-            [timestamp] => 1664472064
-            [rate] => 60.63734
-        )
+  Undefined variable: res
 
-    [date] => 2022-09-29
-    [result] => 60.63734
-)
-</pre><br><pre>penultimate ArrayArray
-(
-    [success] => 1
-    [query] => Array
-        (
-            [from] => ZAR
-            [to] => NGN
-            [amount] => 1
-        )
+  at app/Console/Commands/CurrencyCron.php:107
+    103▕                 $convert = new Fx_rates();
+    104▕ 
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+  ➜ 107▕                 $convert->online_forex_rate = $res;
+    108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 $rates['target_curr'] = $currency;
 
-    [info] => Array
-        (
-            [timestamp] => 1664472064
-            [rate] => 23.987803
-        )
-
-    [date] => 2022-09-29
-    [result] => 23.987803
-)
-</pre><br><pre>penultimate ArrayArray
-(
-    [success] => 1
-    [query] => Array
-        (
-            [from] => GBP
-            [to] => NGN
-            [amount] => 1
-        )
-
-    [info] => Array
-        (
-            [timestamp] => 1664472064
-            [rate] => 478.420203
-        )
-
-    [date] => 2022-09-29
-    [result] => 478.420203
-)
-</pre><br><pre>penultimate ArrayArray
-(
-    [success] => 1
-    [query] => Array
-        (
-            [from] => EUR
-            [to] => NGN
-            [amount] => 1
-        )
-
-    [info] => Array
-        (
-            [timestamp] => 1664472064
-            [rate] => 422.811887
-        )
-
-    [date] => 2022-09-29
-    [result] => 422.811887
-)
-</pre><br><pre>penultimate ArrayArray
-(
-    [success] => 1
-    [query] => Array
-        (
-            [from] => USD
-            [to] => NGN
-            [amount] => 1
-        )
-
-    [info] => Array
-        (
-            [timestamp] => 1664472064
-            [rate] => 432.039756
-        )
-
-    [date] => 2022-09-29
-    [result] => 432.039756
-)
-</pre><br>
-   Swift_TransportException 
-
-  Failed to authenticate on SMTP server with username "aduramimodamilare@gmail.com" using 3 possible authenticators. Authenticator LOGIN returned Expected response code 235 but got code "535", with message "535-5.7.8 Username and Password not accepted. Learn more at
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials f12-20020aa7968c000000b0055a5a3bda9asm6315188pfk.109 - gsmtp
-". Authenticator PLAIN returned Expected response code 235 but got code "535", with message "535-5.7.8 Username and Password not accepted. Learn more at
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials f12-20020aa7968c000000b0055a5a3bda9asm6315188pfk.109 - gsmtp
-". Authenticator XOAUTH2 returned Expected response code 250 but got code "535", with message "535-5.7.8 Username and Password not accepted. Learn more at
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials f12-20020aa7968c000000b0055a5a3bda9asm6315188pfk.109 - gsmtp
-".
-
-  at vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/AuthHandler.php:191
-    187▕             $message = 'Failed to authenticate on SMTP server with username "'.$this->username.'" using '.$count.' possible authenticators.';
-    188▕             foreach ($errors as $error) {
-    189▕                 $message .= ' Authenticator '.$error[0].' returned '.$error[1].'.';
-    190▕             }
-  ➜ 191▕             throw new Swift_TransportException($message);
-    192▕         }
-    193▕     }
-    194▕ 
-    195▕     /**
-
-      [2m+11 vendor frames [22m
-  12  app/Console/Commands/CurrencyCron.php:143
-      Illuminate\Mail\PendingMail::send()
+  1   app/Console/Commands/CurrencyCron.php:107
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
 
       [2m+13 vendor frames [22m
-  26  artisan:37
+  15  artisan:37
       Illuminate\Foundation\Console\Kernel::handle()
 
    Whoops\Exception\ErrorException 
@@ -132,99 +30,42 @@ PHP Warning:  Module 'curl' already loaded in Unknown on line 0
   2   [internal]:0
       Whoops\Run::handleShutdown()
 PHP Warning:  Module 'curl' already loaded in Unknown on line 0
-<pre>penultimate ArrayArray
-(
-    [success] => 1
-    [query] => Array
-        (
-            [from] => CNY
-            [to] => NGN
-            [amount] => 1
-        )
+previous rates deleted sucessfully
+   ErrorException 
 
-    [info] => Array
-        (
-            [timestamp] => 1664472543
-            [rate] => 60.637199
-        )
+  Undefined variable: res
 
-    [date] => 2022-09-29
-    [result] => 60.637199
-)
-</pre><br><pre>penultimate ArrayArray
-(
-    [success] => 1
-    [query] => Array
-        (
-            [from] => ZAR
-            [to] => NGN
-            [amount] => 1
-        )
+  at app/Console/Commands/CurrencyCron.php:107
+    103▕                 $convert = new Fx_rates();
+    104▕ 
+    105▕                 $convert->base_curr = "NGN";
+    106▕                 $convert->target_curr = $currency;
+  ➜ 107▕                 $convert->online_forex_rate = $res;
+    108▕                 $convert->desc = $word;
+    109▕                 $convert->save();
+    110▕ 
+    111▕                 $rates['target_curr'] = $currency;
 
-    [info] => Array
-        (
-            [timestamp] => 1664472543
-            [rate] => 24.009834
-        )
+  1   app/Console/Commands/CurrencyCron.php:107
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
 
-    [date] => 2022-09-29
-    [result] => 24.009834
-)
-</pre><br><pre>penultimate ArrayArray
-(
-    [success] => 1
-    [query] => Array
-        (
-            [from] => GBP
-            [to] => NGN
-            [amount] => 1
-        )
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
 
-    [info] => Array
-        (
-            [timestamp] => 1664472543
-            [rate] => 477.997105
-        )
+   Whoops\Exception\ErrorException 
 
-    [date] => 2022-09-29
-    [result] => 477.997105
-)
-</pre><br><pre>penultimate ArrayArray
-(
-    [success] => 1
-    [query] => Array
-        (
-            [from] => EUR
-            [to] => NGN
-            [amount] => 1
-        )
+  Module 'curl' already loaded
 
-    [info] => Array
-        (
-            [timestamp] => 1664472543
-            [rate] => 422.663289
-        )
-
-    [date] => 2022-09-29
-    [result] => 422.663289
-)
-</pre><br><pre>penultimate ArrayArray
-(
-    [success] => 1
-    [query] => Array
-        (
-            [from] => USD
-            [to] => NGN
-            [amount] => 1
-        )
-
-    [info] => Array
-        (
-            [timestamp] => 1664472543
-            [rate] => 432.040074
-        )
-
-    [date] => 2022-09-29
-    [result] => 432.040074
-)
-</pre><br>
+      [2m+1 vendor frames [22m
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
+previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
+previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
+previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
+previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
+previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
+previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
+previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfully

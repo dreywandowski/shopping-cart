@@ -44,6 +44,7 @@ class CurrencyCron extends Command
         $currencies_to_convert = array("CNY", "ZAR", "GBP", "EUR", "USD");
         $api_key = config('app.fixer_api_exchange');
         $rates = array();
+        
 // loop 2ru each of the currencies and convert to the naira value
         foreach ($currencies_to_convert as $currency) {
 
@@ -55,7 +56,7 @@ curl_setopt_array($curl, array(
   CURLOPT_URL => "https://api.apilayer.com/exchangerates_data/convert?to=NGN&from=".$currency."&amount=1",
   CURLOPT_HTTPHEADER => array(
     "Content-Type: text/plain",
-    "apikey: m5FvL8FwJmo1zCQDupczAqimsQWiiFhy"
+    "apikey: $api_key"
   ),
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
@@ -66,24 +67,6 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => "GET"
 ));
 
-
-
-           /* curl_setopt_array($curl, [
-                CURLOPT_URL => "https://fixer-fixer-currency-v1.p.rapidapi.com/latest?base=NGN&symbols=".$currency,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_SSL_VERIFYPEER => 0,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_HTTPHEADER => [
-                    "X-RapidAPI-Host: fixer-fixer-currency-v1.p.rapidapi.com",
-                    "X-RapidAPI-Key: $api_key"
-                ],
-            ]);
-*/
             $response = curl_exec($curl);
             $err = curl_error($curl);
 
@@ -103,7 +86,22 @@ curl_setopt_array($curl, array(
                 else if ($currency == "CNY") $word = "Chinese Yuan";
                 else if ($currency == "ZAR") $word = "South African Rand";
 
+        
+                // delete previous records off the db to have just one day record
+                $old = Fx_rates::orderBy('target_curr', 'asc')->first()->toArray();
+                $old_curr = $old['id'];
+
+                try{
+                    $del_old = Fx_rates::where('id',$old_curr)->delete();
+                    echo "previous rates deleted sucessfully";
+                }
+                catch(\Illuminate\Database\QueryException $e){
+                   echo "error removing db entries..".$e;
+
+                }
+              
                 $convert = new Fx_rates();
+
                 $convert->base_curr = "NGN";
                 $convert->target_curr = $currency;
                 $convert->online_forex_rate = $res;
@@ -116,10 +114,10 @@ curl_setopt_array($curl, array(
 
                 $mailData[] = $rates;
 
-                echo "<pre>"."penultimate Array";
+                /*echo "<pre>"."penultimate Array";
                 print_r($response);
                 echo "</pre>";
-                echo "<br>";
+                echo "<br>";*/
 
             }
         }
@@ -137,8 +135,9 @@ curl_setopt_array($curl, array(
                        'aduramimo@gmail.com');
 
             // send the rates to my email
-            \Mail::to('aduramimo@gmail.com', 'Dreywandowski')->send(new ExchangeRates($mailData));
+         //   \Mail::to('aduramimo@gmail.com', 'Dreywandowski')->send(new ExchangeRates($mailData));
 
+            // multiple mails
            /* foreach($mails as $mail){
           \Mail::to($mail)->send(new ExchangeRates($mailData));
             }*/
