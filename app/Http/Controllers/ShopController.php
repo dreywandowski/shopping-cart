@@ -470,7 +470,7 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
         $api_key = config('app.paystack_key');
 
             $curl = curl_init();
-            $url = "https://api.paystack.co/transaction/verify/" . $reff;
+            $url = config('app.paystack_verify') . $reff;
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -548,17 +548,17 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
             $cant = count($data);
         } else {
             $cant = ' ';
-        }
+        } 
 
             $RRR = $remita;
 //echo "RRR==".$RRR;
-         $hash = hash('sha512', $RRR.'1946'.'2547916');
+         $hash = hash('sha512', $RRR.config('app.remita_api_key').config('app.remita_merchant_id'));
 //echo "hash== ".$hash;
         // https://remitademo.net/remita/exapp/api/v1/send/api/echannelsvc/{{merchantId}}/{{rrr}}/{{apiHash}}/status.reg
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://remitademo.net/remita/exapp/api/v1/send/api/echannelsvc/2547916/'.$RRR.'/'.$hash.'/status.reg',
+                CURLOPT_URL => 'https://remitademo.net/remita/exapp/api/v1/send/api/echannelsvc/'.config('app.remita_merchant_id').'/'.$RRR.'/'.$hash.'/status.reg',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -647,7 +647,7 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.flutterwave.com/v3/transactions/".$ref."/verify",
+            CURLOPT_URL => config('app.flw_verify').$ref."/verify",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,

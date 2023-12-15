@@ -126,6 +126,17 @@ return [
     'fixer_api_exchange' => env('FIXER_API_KEY'),
     'mail_from' => env('MAIL_FROM_ADDRESS'),
     'mail_name' => env('MAIL_FROM_NAME'),
+    'flw_ini' => env('FLW_INI'),
+    'flw_verify' => env('FLW_VERIFY'),
+    'redirect_url' => env('REDIRECT_URL'),
+    'redirect_url_flutter' => env('REDIRECT_URL_FLUTTER'),
+    'paystack_ini' => env('PAYSTACK_INI'),
+    'paystack_verify' => env('PAYSTACK_VERIFY'),
+    'remita_ini' => env('REMITA_INI'),
+    'remita_service_id' => env('REMITA_SERVICE_ID'),
+    'remita_merchant_id' => env('REMITA_MERCHANT_ID'),
+    'remita_api_key' => env('REMITA_API_KEY'),
+    'exchange_rates' =>env('EXCHANGE_RATE_ENDPOINT'),
 
 
     'cipher' => 'AES-256-CBC',

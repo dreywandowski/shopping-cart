@@ -51,7 +51,7 @@ class CurrencyCron extends Command
             $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.apilayer.com/exchangerates_data/convert?to=NGN&from=".$currency."&amount=1",
+  CURLOPT_URL => config('app.exchange_rates').$currency."&amount=1",
   CURLOPT_HTTPHEADER => array(
     "Content-Type: text/plain",
     "apikey: $api_key"

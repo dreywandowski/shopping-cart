@@ -17,8 +17,7 @@ class PaymentControllerApi extends Controller
     public function paystack(Request $request)
     {
         // initializes paystack payments
-        //$this->redirect_url= 'http://idumota.tk/shopping-cart/api/thankyou';
-        $this->redirect_url= 'http://idumota.dreywandowski.xyz/shopping-cart/api/thankyou';
+        $this->redirect_url= config('app.redirect_url');
         $api_key = config('app.paystack_key');
 
        /* echo "<pre>";
@@ -26,7 +25,7 @@ class PaymentControllerApi extends Controller
        echo "</pre>";*/
 
         $response = Http::withToken($api_key)
-        ->post('https://api.paystack.co/transaction/initialize', [
+        ->post(config('app.paystack_ini'), [
             'amount'=>$request->amount * 100,
             'first_name'=>$request->first_name,
             'last_name'=>$request->last_name,
@@ -56,7 +55,7 @@ class PaymentControllerApi extends Controller
         $ref = $request->req;
         $api_key = config('app.paystack_key');
         $response = Http::withToken($api_key)
-            ->get('https://api.paystack.co/transaction/verify/' . $ref,
+            ->get(config('app.paystack_verify'). $ref,
                 [
                     'verify' => false
                 ]);
@@ -69,15 +68,14 @@ class PaymentControllerApi extends Controller
 
     public function flutterwave(Request $request)
     {
-        // $api_key = env('FLW_SECRET_KEY');
-        $redirect_url = "http://idumota.dreywandowski.xyz/shopping-cart/api/thankyou_flutter";
+        $redirect_url = config('app.redirect_url_flutter');
         $customer = ['email' => $request->email, 'phonenumber' => $request->phone, 'name' => $request->full_name];
         $api_key = config('app.flutterwave_key');
         $rand = rand();
         $txref = "rave-".$rand;
 
         $response = Http::withToken($api_key)
-            ->post('https://api.flutterwave.com/v3/payments', [
+            ->post(config('app.flw_ini'), [
                 'amount'=>$request->amount,
                 'customer'=>$customer,
                 'currency'=>'NGN',
@@ -107,7 +105,7 @@ class PaymentControllerApi extends Controller
         $ref = $request->ref;
         $api_key = config('app.flutterwave_key');
         $response = Http::withToken($api_key)
-            ->get('https://api.flutterwave.com/v3/transactions/'.$ref.'/verify',
+            ->get(config('app.flw_verify').$ref.'/verify',
                 [
                     'verify' => false
                 ]);
@@ -125,10 +123,9 @@ class PaymentControllerApi extends Controller
 
         //$hash = hash('sha512', {{merchantId}}.{{serviceTypeID}}.{{orderID}}.{{amount}}.{{apikey}});
 
-        $hash = hash('sha512', '2547916'.'4430731'.$cur_date. $request->amount.'1946');
+        $hash = hash('sha512', config('app.remita_merchant_id').config('app.remita_service_id').$cur_date. $request->amount.config('app.remita_api_key'));
         // handles remita payments
-       // $this->redirect_url= 'http://idumota.tk/shopping-cart/api/thankyou';
-        $this->redirect_url= 'http://idumota.dreywandowski.xyz/shopping-cart/api/thankyou';
+        $this->redirect_url= config('app.redirect_url');
        
 
         $api_key = "remitaConsumerKey=2547916,remitaConsumerToken=$hash";
@@ -136,7 +133,7 @@ class PaymentControllerApi extends Controller
         $response = Http::withHeaders([
             "Authorization: $api_key"
         ])
-            ->post('https://remitademo.net/remita/exapp/api/v1/send/api/echannelsvc/merchant/api/paymentinit', [
+            ->post(config('app.remita_ini'), [
                 'amount'=>$request->amount,
                 "serviceTypeId" =>"4430731",
                 'payerName'=>$request->full_name,

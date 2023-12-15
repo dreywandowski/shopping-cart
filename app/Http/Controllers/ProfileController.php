@@ -120,15 +120,10 @@ class ProfileController extends Controller
              $currency = "NGN";
              $txref = "rave-".$rand; // ensure you generate unique references per transaction.
              
-            // $api_key = env('FLW_SECRET_KEY');
-            // $redirect_url = "http://idumota.tk/shopping-cart/thankyou_flutter";
-            $redirect_url = "http://idumota.dreywandowski.ng/shopping-cart/thankyou_flutter";
+            $redirect_url = config('app.redirect_url_flutter');
 
              $api_key = config('app.flutterwave_key');
-             //$redirect_url = "http://127.0.0.1:8000/shopping-cart/thankyou_flutter";
 
-             //$redirect_url = str_replace("https://ravemodal-dev.herokuapp.com/v3/hosted/", "", $redirect_url);
-             //$payment_plan = "pass the plan id"; // this is only required for recurring payments.
              $customer = ['email' => $cust_email, 'phonenumber' => $phone, 'name' => $cust_fname];
 
 

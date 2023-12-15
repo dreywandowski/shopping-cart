@@ -22,7 +22,7 @@ class PaymentController extends Controller
         return view('shopping-cart/verify_paystack');
         die;
         $curl = curl_init();
-        $url = "https://api.paystack.co/transaction/verify/" . $reff;
+        $url = config('app.paystack_verify') . $reff;
 //echo "$url";
         curl_setopt_array($curl, array(
             CURLOPT_URL => $url,
@@ -35,7 +35,7 @@ class PaymentController extends Controller
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-                "Authorization: Bearer sk_test_83908abce2264dc4533d99b55eec6035d18c1ba8",
+                "Authorization: Bearer ".config('app.paystack_verify'),
 
                 "Cache-Control: no-cache",
             ),
