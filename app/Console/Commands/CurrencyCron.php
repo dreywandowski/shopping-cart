@@ -113,19 +113,9 @@ curl_setopt_array($curl, array(
 
                 $mailData[] = $rates;
 
-                /*echo "<pre>"."penultimate Array";
-                print_r($response);
-                echo "</pre>";
-                echo "<br>";*/
 
             }
         }
-
-        /* ini_set('display_errors',1);
-         echo "<pre>"."finallll";
-                 print_r($mailData);
-                 echo "</pre>";
-                 echo "<br>";*/
 
 
         $mails = array('waspery4love@yahoo.com',
