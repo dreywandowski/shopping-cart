@@ -6,9 +6,11 @@ on:
   pull_request:
     branches: [ "master" ]
 
+jobs:
+  deploy:
     runs-on: ubuntu-latest
 
-   steps:
+    steps:
       - name: Setup SSH and Deploy Changes
         uses: appleboy/ssh-action@master
         with:
