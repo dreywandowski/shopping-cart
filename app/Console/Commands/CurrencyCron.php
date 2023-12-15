@@ -41,14 +41,12 @@ class CurrencyCron extends Command
     {
 
         // Write your database logic  bellow:
-        $currencies_to_convert = array("CNY", "ZAR", "GBP", "EUR", "USD");
+        $currencies_to_convert = array("CNY", "ZAR", "GBP", "EUR", "USD","CAD");
         $api_key = config('app.fixer_api_exchange');
         $rates = array();
         
 // loop 2ru each of the currencies and convert to the naira value
         foreach ($currencies_to_convert as $currency) {
-
-            $curl = curl_init();
 
             $curl = curl_init();
 
@@ -85,8 +83,9 @@ curl_setopt_array($curl, array(
                 else if ($currency == "GBP") $word = "Great British Pound";
                 else if ($currency == "CNY") $word = "Chinese Yuan";
                 else if ($currency == "ZAR") $word = "South African Rand";
+                else if ($currency == "CAD") $word = "Canadian Dollar";
 
-        
+/*        
                 // delete previous records off the db to have just one day record
                 $old = Fx_rates::orderBy('target_curr', 'asc')->first()->toArray();
                 $old_curr = $old['id'];
@@ -99,7 +98,7 @@ curl_setopt_array($curl, array(
                    echo "error removing db entries..".$e;
 
                 }
-              
+  */            
                 $convert = new Fx_rates();
 
                 $convert->base_curr = "NGN";

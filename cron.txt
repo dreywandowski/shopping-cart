@@ -1,21 +1,37 @@
 PHP Warning:  Module 'curl' already loaded in Unknown on line 0
-previous rates deleted sucessfully
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+
    ErrorException 
 
-  Undefined variable: res
+  Trying to access array offset on value of type null
 
-  at app/Console/Commands/CurrencyCron.php:107
-    103▕                 $convert = new Fx_rates();
-    104▕ 
-    105▕                 $convert->base_curr = "NGN";
-    106▕                 $convert->target_curr = $currency;
-  ➜ 107▕                 $convert->online_forex_rate = $res;
-    108▕                 $convert->desc = $word;
-    109▕                 $convert->save();
-    110▕ 
-    111▕                 $rates['target_curr'] = $currency;
+  at app/Console/Commands/CurrencyCron.php:78
+     74▕                 echo "cURL Error #:" . $err;
+     75▕                 echo "<br>";
+     76▕             } else {
+     77▕                 $response = json_decode($response, true);
+  ➜  78▕                 $res = $response['result'];
+     79▕ 
+     80▕                 $word = "";
+     81▕                 if ($currency == "USD") $word = "United States Dollar";
+     82▕                 else if ($currency == "EUR") $word = "Euro";
 
-  1   app/Console/Commands/CurrencyCron.php:107
+  1   app/Console/Commands/CurrencyCron.php:78
       Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
 
       [2m+13 vendor frames [22m
@@ -30,23 +46,68 @@ previous rates deleted sucessfully
   2   [internal]:0
       Whoops\Run::handleShutdown()
 PHP Warning:  Module 'curl' already loaded in Unknown on line 0
-previous rates deleted sucessfully
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+
    ErrorException 
 
-  Undefined variable: res
+  Trying to access array offset on value of type null
 
-  at app/Console/Commands/CurrencyCron.php:107
-    103▕                 $convert = new Fx_rates();
-    104▕ 
-    105▕                 $convert->base_curr = "NGN";
-    106▕                 $convert->target_curr = $currency;
-  ➜ 107▕                 $convert->online_forex_rate = $res;
-    108▕                 $convert->desc = $word;
-    109▕                 $convert->save();
-    110▕ 
-    111▕                 $rates['target_curr'] = $currency;
+  at app/Console/Commands/CurrencyCron.php:78
+     74▕                 echo "cURL Error #:" . $err;
+     75▕                 echo "<br>";
+     76▕             } else {
+     77▕                 $response = json_decode($response, true);
+  ➜  78▕                 $res = $response['result'];
+     79▕ 
+     80▕                 $word = "";
+     81▕                 if ($currency == "USD") $word = "United States Dollar";
+     82▕                 else if ($currency == "EUR") $word = "Euro";
 
-  1   app/Console/Commands/CurrencyCron.php:107
+  1   app/Console/Commands/CurrencyCron.php:78
       Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
 
       [2m+13 vendor frames [22m
@@ -61,11 +122,147 @@ previous rates deleted sucessfully
   2   [internal]:0
       Whoops\Run::handleShutdown()
 PHP Warning:  Module 'curl' already loaded in Unknown on line 0
-previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
-previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
-previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
-previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
-previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
-previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
-previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyPHP Warning:  Module 'curl' already loaded in Unknown on line 0
-previous rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfullyprevious rates deleted sucessfully
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+
+   ErrorException 
+
+  Trying to access array offset on value of type null
+
+  at app/Console/Commands/CurrencyCron.php:78
+     74▕                 echo "cURL Error #:" . $err;
+     75▕                 echo "<br>";
+     76▕             } else {
+     77▕                 $response = json_decode($response, true);
+  ➜  78▕                 $res = $response['result'];
+     79▕ 
+     80▕                 $word = "";
+     81▕                 if ($currency == "USD") $word = "United States Dollar";
+     82▕                 else if ($currency == "EUR") $word = "Euro";
+
+  1   app/Console/Commands/CurrencyCron.php:78
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError()
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   Whoops\Exception\ErrorException 
+
+  Module 'curl' already loaded
+
+      [2m+1 vendor frames [22m
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+PHP Warning:  Module 'curl' already loaded in Unknown on line 0

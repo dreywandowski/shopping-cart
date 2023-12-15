@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Console;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         //
         Commands\CurrencyCron::class,
+        Commands\RemoveOldFx::class,
     ];
 
     /**
@@ -28,9 +29,15 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
         $schedule->command('curr:cron')
            ->timezone('Africa/Lagos')
-         // ->everyMinute()
+//          ->everyMinute()
            ->appendOutputTo('/var/www/html/shopping-cart/cron.txt')
            ->dailyAt('08:00');
+
+           $schedule->command('delete:cron')
+           ->timezone('Africa/Lagos')
+           //->everyMinute()
+           ->appendOutputTo('/var/www/html/shopping-cart/delete_cron.txt')
+          ->dailyAt('08:30');
     }
 
     /**

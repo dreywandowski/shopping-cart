@@ -20,7 +20,7 @@ class ExchangeController extends Controller
         $yesterday = date('Y-m-d',(strtotime ( '-1 day' , strtotime ( $today) ) ));
 
         // $rates = Fx_rates::where('updated_at', '=', $today)->orderBy('desc','desc')->get()->toArray();
-        $rates = Fx_rates::latest()->take(5)->get()->toArray();
+        $rates = Fx_rates::latest()->take(6)->get()->toArray();
        /*echo "<pre>";
         print_r($rates);
         echo "</pre>";*/
