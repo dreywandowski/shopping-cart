@@ -702,13 +702,7 @@ return view('shopping-cart/cart', ['page' => 'Cart', 'show' => $cant, 'data' => 
                 // reset cart to zero
                 $cant = $request->session()->forget('details');
 
-                //return response()->json("order successfull.", 200);
-                /*echo "<pre>" . "Rep2";
-                print_r($res);
-                echo "</pre>";*/
             } else $page = 'fail';
-            /*$err = curl_error($curl);
-            curl_close($curl);*/
             return view('shopping-cart/thankyou', ['page' => $page, 'msg' => 'Order verification page', 'show' => $cant, 'pay' => $page, 'ref' => $ref]);
 
         }
