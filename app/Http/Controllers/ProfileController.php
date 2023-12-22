@@ -67,21 +67,6 @@ class ProfileController extends Controller
     $failed = FailedOrders::where('customer_name', '=', $profile->user)->get()->toArray();
 
    $order = array_merge($order, $failed);
-    /*echo "<pre>" . "Rep2";
-    print_r($order);
-    echo "</pre>";die;*/
-
-    /*echo "<pre>" . "Rep2";
-    print_r($order);
-    echo "</pre>";
-    foreach ($order as $item) {
-        $day = $item['updated_at'];
-
-        $fin_date = date('l jS \of F Y h:i:s A', strtotime($day));
-        foreach ($item['items'] as $items) {
-            //echo $items[0]['file'];
-        }
-    }*/
     return view('shopping-cart/orders' , ['order' => $order]);
 }
 
@@ -128,7 +113,7 @@ class ProfileController extends Controller
 
 
              curl_setopt_array($curl, array(
-                 CURLOPT_URL => "https://api.flutterwave.com/v3/payments",
+                 CURLOPT_URL => config('app.flw_ini'),
                  CURLOPT_RETURNTRANSFER => true,
                  CURLOPT_CUSTOMREQUEST => "POST",
                  CURLOPT_SSL_VERIFYPEER => false,
@@ -139,7 +124,6 @@ class ProfileController extends Controller
                      'currency'=>$currency,
                      'tx_ref'=>$txref,
                      'redirect_url'=>$redirect_url,
-                     //'payment_plan'=>$payment_plan
                  ]),
                  CURLOPT_HTTPHEADER => [
                      "content-type: application/json",
@@ -179,17 +163,16 @@ class ProfileController extends Controller
          elseif ($pay_type == "PAYSTACK"){
 
 
-             $url = "https://api.paystack.co/transaction/initialize";
+             $url = config('app.paystack_ini');
              $fields = [
                  'email' => $cust_email,
                  'amount' => $amount * 100,
-                 'callback_url' => 'http://idumota.dreywandowski.ng/shopping-cart/thankyou',
+                 'callback_url' => config('app.redirect_url'),
                  'first_name' => $cust_fname,
                  'last_name' => $cust_lname,
              ];
              $fields_string = http_build_query($fields);
              //api key
-            // $api_key = env('PAYSTACK_SECRET_KEY');
              $api_key = config('app.paystack_key');
 
 //open connection
@@ -238,13 +221,12 @@ class ProfileController extends Controller
              $cur_date = time() * 1000;
 
              //$hash = hash('sha512', {{merchantId}}.{{serviceTypeID}}.{{orderID}}.{{amount}}.{{apikey}});
-
-             $hash = hash('sha512', '2547916'.'4430731'.$cur_date.$amount.'1946');
+             $hash = hash('sha512', config('app.remita_merchant_id').config('app.remita_service_id').$cur_date.$amount.config('app.remita_api_key'));
              //echo 'hash == '.$hash;
              //die;
             $curl = curl_init();
 
-             $post_data = array("serviceTypeId" =>"4430731",
+             $post_data = array("serviceTypeId" =>config('app.remita_service_id'),
                  "amount" =>$amount,
                  "orderId" => $cur_date,
                  "payerName" => $cust_fname,
@@ -257,9 +239,9 @@ class ProfileController extends Controller
              //echo "</pre>";die;
              $post_data = json_encode($post_data);
              //echo "post_data == $post_data";die;
-
+             
              curl_setopt_array($curl, array(
-                 CURLOPT_URL => 'https://remitademo.net/remita/exapp/api/v1/send/api/echannelsvc/merchant/api/paymentinit',
+                 CURLOPT_URL => config('app.remita_ini'),
                  CURLOPT_RETURNTRANSFER => true,
                  CURLOPT_ENCODING => '',
                  CURLOPT_MAXREDIRS => 10,
@@ -302,8 +284,9 @@ class ProfileController extends Controller
              //echo "rrr===".session('remita_code');die;
 
              $logdate = date('Y-m-d');
+             $red = config('app.redirect_url_remita');
 
-             header("Location: http://idumota.dreywandowski.ng/shopping-cart/remita_pay/".$remita_code);
+             header("Location: $red".$remita_code);
                    die;
              //  curl_close($curl);
              //echo $response;

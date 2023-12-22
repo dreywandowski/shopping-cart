@@ -130,6 +130,7 @@ return [
     'flw_verify' => env('FLW_VERIFY'),
     'redirect_url' => env('REDIRECT_URL'),
     'redirect_url_flutter' => env('REDIRECT_URL_FLUTTER'),
+    'redirect_url_remita' => env('REDIRECT_URL_REMITA'),
     'paystack_ini' => env('PAYSTACK_INI'),
     'paystack_verify' => env('PAYSTACK_VERIFY'),
     'remita_ini' => env('REMITA_INI'),
